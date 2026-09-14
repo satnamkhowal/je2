@@ -1,4 +1,8 @@
 <?php
+header('X-Robots-Tag: noindex, nofollow, noarchive, nosnippet', true);
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+
 $pageTitle = 'Install Expert | Jaipur Engineers';
 $pageDescription = 'Configure database details and create required lead tables for Jaipur Engineers.';
 $configDir = __DIR__ . '/config';
@@ -9,6 +13,7 @@ $errors = [];
 $installed = is_file($lockPath) && is_file($configPath);
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $installed) {
+    http_response_code(423);
     $errors[] = 'Installer is locked. Remove config/install.lock before reinstalling.';
 } elseif (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     $host = trim((string)($_POST['host'] ?? 'localhost'));
@@ -21,17 +26,37 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $installed) {
         $errors[] = 'Database name and username are required.';
     }
 
+    if (!preg_match('/^[A-Za-z0-9_\-\.]+$/', $host)) {
+        $errors[] = 'Database host contains unsupported characters.';
+    }
+
+    if (!preg_match('/^[A-Za-z0-9_\-]+$/', $database)) {
+        $errors[] = 'Database name contains unsupported characters.';
+    }
+
+    if (!preg_match('/^[A-Za-z0-9_\-]+$/', $charset)) {
+        $errors[] = 'Charset contains unsupported characters.';
+    }
+
     if (!$errors) {
         try {
-            if (!is_dir($configDir)) {
-                mkdir($configDir, 0755, true);
+            if (!is_dir($configDir) && !mkdir($configDir, 0755, true) && !is_dir($configDir)) {
+                throw new RuntimeException('Unable to create the config directory.');
             }
+
             $dsn = 'mysql:host=' . $host . ';dbname=' . $database . ';charset=' . $charset;
             $pdo = new PDO($dsn, $username, $password, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
             ]);
-            $pdo->exec(file_get_contents(__DIR__ . '/database/jaipur-engineers-install.sql'));
+
+            $schemaPath = __DIR__ . '/database/jaipur-engineers-install.sql';
+            $schema = is_file($schemaPath) ? file_get_contents($schemaPath) : false;
+            if ($schema === false || trim($schema) === '') {
+                throw new RuntimeException('Database schema file is missing or empty.');
+            }
+            $pdo->exec($schema);
 
             $config = "<?php\nreturn " . var_export([
                 'host' => $host,
@@ -39,12 +64,20 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $installed) {
                 'username' => $username,
                 'password' => $password,
                 'charset' => $charset,
-            ], true) . ";\n?>\n";
+            ], true) . ";\n";
 
-            file_put_contents($configPath, $config, LOCK_EX);
-            file_put_contents($lockPath, 'Installed at ' . date('c') . PHP_EOL, LOCK_EX);
+            if (file_put_contents($configPath, $config, LOCK_EX) === false) {
+                throw new RuntimeException('Unable to save database configuration.');
+            }
+            @chmod($configPath, 0600);
+
+            if (file_put_contents($lockPath, 'Installed at ' . date('c') . PHP_EOL, LOCK_EX) === false) {
+                throw new RuntimeException('Unable to create installer lock file.');
+            }
+            @chmod($lockPath, 0600);
+
             $installed = true;
-            $messages[] = 'Database connected, config saved and lead table verified.';
+            $messages[] = 'Database connected, config saved and lead table verified. The installer is now locked.';
         } catch (Throwable $exception) {
             $errors[] = 'Install failed: ' . $exception->getMessage();
         }
@@ -56,6 +89,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $installed) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
     <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
     <?php include __DIR__ . '/head.php'; ?>
@@ -84,22 +119,25 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $installed) {
                         <?php foreach ($errors as $error): ?>
                             <div class="je-alert je-alert-error"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></div>
                         <?php endforeach; ?>
-                        <?php if ($installed && !$errors): ?>
-                            <div class="je-alert je-alert-info">Installer lock exists. To reinstall, remove <strong>config/install.lock</strong> from hosting file manager.</div>
+
+                        <?php if ($installed): ?>
+                            <div class="je-alert je-alert-info">Installer is locked because the database configuration already exists. Remove <strong>config/install.lock</strong> manually only when an authorized reinstall is required.</div>
+                            <p>No database credentials are accepted while the installer is locked.</p>
+                        <?php else: ?>
+                            <form action="install-expert.php" method="post" autocomplete="off">
+                                <label for="je-db-host">Database Host</label>
+                                <input id="je-db-host" class="je-form-control" type="text" name="host" value="localhost" required autocomplete="off">
+                                <label for="je-db-name">Database Name</label>
+                                <input id="je-db-name" class="je-form-control" type="text" name="database" placeholder="database_name" required autocomplete="off">
+                                <label for="je-db-user">Database Username</label>
+                                <input id="je-db-user" class="je-form-control" type="text" name="username" placeholder="database_user" required autocomplete="off">
+                                <label for="je-db-password">Database Password</label>
+                                <input id="je-db-password" class="je-form-control" type="password" name="password" placeholder="database_password" autocomplete="new-password">
+                                <label for="je-db-charset">Charset</label>
+                                <input id="je-db-charset" class="je-form-control" type="text" name="charset" value="utf8mb4" required autocomplete="off">
+                                <button class="je-submit-btn" type="submit">Verify and Install</button>
+                            </form>
                         <?php endif; ?>
-                        <form action="install-expert.php" method="post">
-                            <label>Database Host</label>
-                            <input class="je-form-control" type="text" name="host" value="localhost" required>
-                            <label>Database Name</label>
-                            <input class="je-form-control" type="text" name="database" placeholder="database_name" required>
-                            <label>Database Username</label>
-                            <input class="je-form-control" type="text" name="username" placeholder="database_user" required>
-                            <label>Database Password</label>
-                            <input class="je-form-control" type="password" name="password" placeholder="database_password">
-                            <label>Charset</label>
-                            <input class="je-form-control" type="text" name="charset" value="utf8mb4" required>
-                            <button class="je-submit-btn" type="submit">Verify and Install</button>
-                        </form>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -111,8 +149,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $installed) {
                             <li>Saves credentials in <strong>config/database.php</strong>.</li>
                             <li>Creates <strong>config/install.lock</strong> after setup.</li>
                         </ul>
-                        <p>Keep this page private. After setup, forms can submit leads through <strong>lead-submit.php</strong>.</p>
-                        <a class="je-card-link" href="database/jaipur-engineers-install.sql">View SQL schema <i class="fa fa-angle-right"></i></a>
+                        <p>This setup utility is intentionally excluded from search indexing. Keep access private and leave the installer locked after setup.</p>
                     </div>
                 </div>
             </div>
