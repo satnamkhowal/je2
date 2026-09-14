@@ -30,6 +30,7 @@
     <meta name="twitter:image" content="https://jaipurengineers.com/assets/images/seo/jaipur-engineers-it-training-institute-jaipur.webp">
 
     <?php include("head.php"); ?>
+    <link rel="stylesheet" href="assets/css/java-full-stack-course-card.css">
 
     <!-- Organization + Local Business + Website structured data -->
     <script type="application/ld+json">
@@ -206,13 +207,20 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 grid-item filter1 filter2">
-                    <div class="courses-item mb-30">
+                    <div class="courses-item je-java-course-card mb-30">
                         <div class="img-part">
                             <a href="java-full-stack-course-jaipur.php"><img src="assets/images/courses/home14/2.jpg" width="600" height="400" loading="lazy" alt="Java Full Stack course in Jaipur at Jaipur Engineers"></a>
                         </div>
                         <div class="content-part">
-                            <ul class="meta-part"><li><span class="price">Practical Training</span></li></ul>
+                            <ul class="meta-part"><li><span class="price">Light Orange Track</span></li></ul>
                             <h3 class="title"><a href="java-full-stack-course-jaipur.php">Java Full Stack Course in Jaipur</a></h3>
+                            <p class="je-java-card-desc">Learn Core Java, Spring Boot, REST APIs, Hibernate, MySQL and frontend integration through practical project workflows.</p>
+                            <div class="je-java-card-tags">
+                                <span>Spring Boot</span>
+                                <span>REST APIs</span>
+                                <span>MySQL</span>
+                            </div>
+                            <a class="je-java-card-cta" href="java-full-stack-course-jaipur.php">View Course Details <i class="flaticon-right-arrow"></i></a>
                         </div>
                     </div>
                 </div>

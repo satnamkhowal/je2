@@ -15,6 +15,7 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
 
     <?php include("head.php"); ?>
     <link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
+    <link rel="stylesheet" href="assets/css/java-full-stack-course-card.css">
 
     <meta property="og:title" content="Java Full Stack Course in Jaipur | Jaipur Engineers">
     <meta property="og:description" content="Practical Java full stack training in Jaipur with Core Java, Spring Boot, REST APIs, Hibernate, MySQL, frontend skills and real projects.">
@@ -83,7 +84,7 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
     </script>
 </head>
 
-<body class="je-course-page">
+<body class="je-course-page je-java-full-stack-page">
 
 <?php include("./header.php"); ?>
 
