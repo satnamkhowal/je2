@@ -175,7 +175,7 @@ $contactPages = [
 
         <!-- Topbar Area Start -->
         <div class="topbar-area home11-topbar modify1">
-            <div class="container-fluid">
+            <div class="container-fluid p-2 w-100">
                 <div class="row y-middle">
                     <div class="col-md-5">
                         <ul class="topbar-contact">
@@ -197,7 +197,8 @@ $contactPages = [
                         <ul class="toolbar-sl-share">
                             <li class="opening">
                                 <i class="flaticon-location"></i>
-                               <a href="https://maps.app.goo.gl/CHBSzdERCSxfj3UR9"> 122/228,, Mansarovar, Jaipur, Rajasthan, India,302020</a>
+                                <a href="https://maps.app.goo.gl/CHBSzdERCSxfj3UR9"> 122/228,, Mansarovar, Jaipur,
+                                    Rajasthan, India,302020</a>
                             </li>
                             <li>
                                 <a href="https://www.facebook.com/JaipurEngineersTrainings/" target="_blank"
@@ -238,7 +239,7 @@ $contactPages = [
 
         <!-- Menu Start -->
         <div class="menu-area menu-sticky">
-            <div class="container-fluid">
+            <div class="container-fluid p-3 w-100">
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="logo-cat-wrap">
@@ -264,10 +265,10 @@ $contactPages = [
                                     <ul class="nav-menu">
 
                                         <!-- Home -->
-                                        <li class="<?= $menuActive(['index.php']) ?>">
+                                        <!--  <li class="<?= $menuActive(['index.php']) ?>">
                                             <a href="index.php">Home</a>
                                         </li>
-
+-->
                                         <!-- About -->
                                         <li class="menu-item-has-children<?= $menuActive($aboutPages) ?>">
                                             <a href="about-us.php">About Us</a>
