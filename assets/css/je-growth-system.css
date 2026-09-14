@@ -1,0 +1,168 @@
+.je-catalog-hero{
+    background:linear-gradient(135deg,#111 0%,#1b1b1b 70%,#331b0f 100%);
+    color:#fff;
+    padding:74px 0 62px;
+}
+.je-catalog-hero h1,
+.je-blog-hero h1,
+.je-install-hero h1{color:#fff;font-weight:800}
+.je-catalog-hero p,
+.je-blog-hero p,
+.je-install-hero p{color:rgba(255,255,255,.82);font-size:17px;line-height:1.7}
+.je-catalog-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    height:100%;
+    overflow:hidden;
+    transition:.2s ease;
+}
+.je-catalog-card:hover{
+    transform:translateY(-5px);
+    border-color:#ffd2b6;
+    box-shadow:0 14px 35px rgba(0,0,0,.08);
+}
+.je-catalog-card img{width:100%;height:205px;object-fit:cover}
+.je-catalog-body{padding:22px}
+.je-catalog-label{
+    display:inline-flex;
+    align-items:center;
+    background:#fff3e8;
+    border:1px solid #ffd8ba;
+    color:#d95e09;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:800;
+    padding:6px 10px;
+    margin-bottom:11px;
+}
+.je-catalog-label i{margin-right:6px}
+.je-catalog-body h3{font-size:20px;font-weight:800;line-height:1.35;margin-bottom:9px}
+.je-catalog-body p{color:#666;line-height:1.65;margin-bottom:14px}
+.je-chip-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.je-chip-row span{
+    background:#fafafa;
+    border:1px solid #ededed;
+    border-radius:4px;
+    color:#333;
+    font-size:12px;
+    font-weight:700;
+    padding:5px 8px;
+}
+.je-card-link{color:#ff6f18;font-weight:800;font-size:13px}
+.je-card-link i{margin-left:5px}
+.je-course-media-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 18px 55px rgba(0,0,0,.18);
+}
+.je-course-media-card img{width:100%;height:220px;object-fit:cover}
+.je-course-media-card .inner{padding:22px}
+.je-tool-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    border-radius:9px;
+    background:#fff3e8;
+    color:#f47a23;
+    margin-right:9px;
+}
+.je-blog-hero,.je-install-hero{
+    background:linear-gradient(135deg,#111 0%,#201a16 72%,#40200f 100%);
+    color:#fff;
+    padding:70px 0;
+}
+.je-blog-layout{padding:70px 0;background:#fafafa}
+.je-blog-card{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:10px;
+    height:100%;
+    overflow:hidden;
+    transition:.2s ease;
+}
+.je-blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.07)}
+.je-blog-card img{width:100%;height:190px;object-fit:cover}
+.je-blog-card-body{padding:21px}
+.je-blog-meta{color:#f47a23;font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:8px}
+.je-blog-card h2,.je-blog-card h3{font-size:20px;font-weight:800;line-height:1.35;margin-bottom:9px}
+.je-blog-card p{color:#666;line-height:1.65;margin-bottom:12px}
+.je-blog-sidebar{
+    position:sticky;
+    top:95px;
+}
+.je-side-box{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:10px;
+    padding:22px;
+    margin-bottom:18px;
+}
+.je-side-box h3{font-size:19px;font-weight:800;margin-bottom:14px}
+.je-side-links{list-style:none;padding:0;margin:0}
+.je-side-links li{border-bottom:1px solid #f0f0f0}
+.je-side-links li:last-child{border-bottom:0}
+.je-side-links a{display:block;padding:10px 0;color:#333;font-weight:700;font-size:14px}
+.je-side-links a:hover{color:#f47a23}
+.je-blog-article{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:10px;
+    padding:34px;
+}
+.je-blog-article h1{font-size:36px;font-weight:800;line-height:1.2;margin-bottom:14px;color:#111}
+.je-blog-article h2{font-size:25px;font-weight:800;margin-top:30px;margin-bottom:12px}
+.je-blog-article p{color:#555;line-height:1.8}
+.je-blog-article ul{padding-left:20px;color:#555;line-height:1.8}
+.je-post-image{width:100%;max-height:360px;object-fit:cover;border-radius:10px;margin:18px 0 24px}
+.je-form-control{
+    width:100%;
+    border:1px solid #dfdfdf;
+    border-radius:6px;
+    padding:12px 13px;
+    margin-bottom:10px;
+    font-size:14px;
+}
+.je-form-control:focus{outline:0;border-color:#f47a23}
+.je-submit-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:46px;
+    border:0;
+    border-radius:6px;
+    background:#f47a23;
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+}
+.je-submit-btn:hover{background:#de6512}
+.je-install-card{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:10px;
+    padding:28px;
+    box-shadow:0 12px 35px rgba(0,0,0,.05);
+}
+.je-alert{
+    padding:12px 14px;
+    border-radius:6px;
+    margin-bottom:16px;
+    font-weight:700;
+}
+.je-alert-success{background:#edf8ef;color:#16712b;border:1px solid #cdeed4}
+.je-alert-error{background:#fff0ef;color:#a9271a;border:1px solid #ffd0ca}
+.je-alert-info{background:#fff7ed;color:#97520d;border:1px solid #ffd8ad}
+@media(max-width:991px){
+    .je-blog-sidebar{position:static;margin-top:25px}
+    .je-catalog-card img{height:180px}
+}
+@media(max-width:767px){
+    .je-blog-article{padding:24px}
+    .je-blog-article h1{font-size:29px}
+}
