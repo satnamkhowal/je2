@@ -15,6 +15,27 @@ if (!$course) {
 
 $canonical = $course ? 'https://jaipurengineers.com/' . $course['slug'] : 'https://jaipurengineers.com/courses.php';
 $allCourses = je_course_pages();
+$courseSchemaJson = false;
+if ($course) {
+    $courseSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Course',
+        'name' => $course['h1'],
+        'description' => $course['meta'],
+        'url' => $canonical,
+        'provider' => [
+            '@type' => 'EducationalOrganization',
+            'name' => 'Jaipur Engineers',
+            'url' => 'https://jaipurengineers.com/',
+        ],
+        'areaServed' => [
+            '@type' => 'City',
+            'name' => 'Jaipur',
+        ],
+        'inLanguage' => 'en-IN',
+    ];
+    $courseSchemaJson = json_encode($courseSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+}
 ?>
 <!doctype html>
 <html lang="en-IN">
@@ -27,22 +48,8 @@ $allCourses = je_course_pages();
     <?php include __DIR__ . '/head.php'; ?>
     <link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
     <link rel="stylesheet" href="assets/css/je-growth-system.css">
-    <?php if ($course): ?>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>",
-      "description": "<?php echo htmlspecialchars($course['meta'], ENT_QUOTES, 'UTF-8'); ?>",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Jaipur Engineers",
-        "url": "https://jaipurengineers.com/"
-      },
-      "areaServed": {"@type": "City", "name": "Jaipur"},
-      "inLanguage": "en"
-    }
-    </script>
+    <?php if ($courseSchemaJson !== false): ?>
+    <script type="application/ld+json"><?php echo $courseSchemaJson; ?></script>
     <?php endif; ?>
 </head>
 <body class="je-course-page">
