@@ -4,6 +4,40 @@
 if (http_response_code() === 404): ?>
 <meta name="robots" content="noindex,follow">
 <?php endif; ?>
+<?php
+// Course templates define $course and $canonical before loading this shared head.
+// Generate breadcrumb JSON-LD with json_encode so course names cannot break structured-data syntax.
+if (isset($course) && is_array($course) && !empty($course['h1']) && !empty($canonical)) {
+    $breadcrumbSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => 'https://jaipurengineers.com/',
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Courses',
+                'item' => 'https://jaipurengineers.com/courses.php',
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 3,
+                'name' => $course['h1'],
+                'item' => $canonical,
+            ],
+        ],
+    ];
+    $breadcrumbJson = json_encode($breadcrumbSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if ($breadcrumbJson !== false): ?>
+<script type="application/ld+json"><?php echo $breadcrumbJson; ?></script>
+<?php endif;
+}
+?>
 <link rel="apple-touch-icon" href="assets/images/fav-orange.png">
 <link rel="icon" type="image/png" href="assets/images/fav-orange.png">
 <link rel="shortcut icon" type="image/png" href="assets/images/fav-orange.png">
