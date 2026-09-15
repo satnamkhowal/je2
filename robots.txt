@@ -1,9 +1,11 @@
 User-agent: *
 Allow: /
 
-# Keep private/setup and lead-processing endpoints out of search results.
-Disallow: /install-expert.php
-Disallow: /lead-submit.php
+# Keep the private admin area out of crawler access.
 Disallow: /admin/
+
+# Installer and lead-processing endpoints intentionally remain crawlable so
+# search engines can see their explicit noindex directives instead of leaving
+# blocked URL-only entries in the index.
 
 Sitemap: https://jaipurengineers.com/sitemap.xml
