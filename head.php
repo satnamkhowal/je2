@@ -1,3 +1,9 @@
+<?php
+// Keep error pages out of search indexes while allowing crawlers to follow useful recovery links.
+// This shared guard applies automatically to templates that set a 404 status before including head.php.
+if (http_response_code() === 404): ?>
+<meta name="robots" content="noindex,follow">
+<?php endif; ?>
 <link rel="apple-touch-icon" href="assets/images/fav-orange.png">
 <link rel="icon" type="image/png" href="assets/images/fav-orange.png">
 <link rel="shortcut icon" type="image/png" href="assets/images/fav-orange.png">
