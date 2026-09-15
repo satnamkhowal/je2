@@ -1,4 +1,21 @@
 <?php
+// Add consistent social-preview metadata when a page supplies its normal SEO variables.
+// Reuse existing title/description/canonical values so social metadata cannot drift from page SEO.
+if (isset($pageTitle, $pageDescription)) {
+    $socialUrl = isset($canonical) && is_string($canonical) && $canonical !== ''
+        ? $canonical
+        : 'https://jaipurengineers.com/';
+    ?>
+<meta property="og:site_name" content="Jaipur Engineers">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo htmlspecialchars((string)$pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+<meta property="og:description" content="<?php echo htmlspecialchars((string)$pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+<meta property="og:url" content="<?php echo htmlspecialchars($socialUrl, ENT_QUOTES, 'UTF-8'); ?>">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<?php echo htmlspecialchars((string)$pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+<meta name="twitter:description" content="<?php echo htmlspecialchars((string)$pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+<?php
+}
 // Keep error pages out of search indexes while allowing crawlers to follow useful recovery links.
 // This shared guard applies automatically to templates that set a 404 status before including head.php.
 if (http_response_code() === 404): ?>
