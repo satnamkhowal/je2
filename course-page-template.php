@@ -85,7 +85,7 @@ if ($course) {
                 </div>
                 <div class="col-lg-4">
                     <div class="je-course-media-card">
-                        <img src="<?php echo htmlspecialchars($course['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>">
+                        <img src="<?php echo htmlspecialchars($course['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>" loading="eager" fetchpriority="high" decoding="async">
                         <div class="inner">
                             <div class="d-flex align-items-center mb-3">
                                 <span class="je-tool-icon"><i class="fa <?php echo htmlspecialchars($course['icon'], ENT_QUOTES, 'UTF-8'); ?>"></i></span>
@@ -145,10 +145,14 @@ if ($course) {
                             <h3>Get Course Details</h3>
                             <form action="lead-submit.php" method="post">
                                 <input type="hidden" name="source" value="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>">
-                                <input class="je-form-control" type="text" name="name" placeholder="Your Name" required>
-                                <input class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" required>
-                                <input class="je-form-control" type="email" name="email" placeholder="Email Address">
-                                <input class="je-form-control" type="text" name="course" value="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>">
+                                <label class="sr-only" for="je-lead-name">Your Name</label>
+                                <input id="je-lead-name" class="je-form-control" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+                                <label class="sr-only" for="je-lead-phone">Mobile Number</label>
+                                <input id="je-lead-phone" class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" autocomplete="tel" inputmode="tel" required>
+                                <label class="sr-only" for="je-lead-email">Email Address</label>
+                                <input id="je-lead-email" class="je-form-control" type="email" name="email" placeholder="Email Address" autocomplete="email">
+                                <label class="sr-only" for="je-lead-course">Course</label>
+                                <input id="je-lead-course" class="je-form-control" type="text" name="course" value="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>" readonly>
                                 <button class="je-submit-btn" type="submit">Request Callback</button>
                             </form>
                         </div>
