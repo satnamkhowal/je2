@@ -5,6 +5,21 @@ if (http_response_code() === 404): ?>
 <meta name="robots" content="noindex,follow">
 <?php endif; ?>
 <?php
+// Add a minimal, factual WebSite entity on shared pages so search engines can consistently
+// associate the site name with the canonical Jaipur Engineers domain without inventing claims.
+$websiteSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'WebSite',
+    '@id' => 'https://jaipurengineers.com/#website',
+    'url' => 'https://jaipurengineers.com/',
+    'name' => 'Jaipur Engineers',
+    'inLanguage' => 'en-IN',
+];
+$websiteSchemaJson = json_encode($websiteSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+if ($websiteSchemaJson !== false): ?>
+<script type="application/ld+json"><?php echo $websiteSchemaJson; ?></script>
+<?php endif; ?>
+<?php
 // Course templates define $course and $canonical before loading this shared head.
 // Generate breadcrumb JSON-LD with json_encode so course names cannot break structured-data syntax.
 if (isset($course) && is_array($course) && !empty($course['h1']) && !empty($canonical)) {
