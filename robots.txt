@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Keep private/setup and lead-processing endpoints out of search results.
+Disallow: /install-expert.php
+Disallow: /lead-submit.php
+Disallow: /admin/
+
+Sitemap: https://jaipurengineers.com/sitemap.xml
