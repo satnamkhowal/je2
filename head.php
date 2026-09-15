@@ -1,5 +1,6 @@
-<link rel="apple-touch-icon" href="">
-<link rel="shortcut icon" type="image/x-icon" href="assets/images/fav-orange.png">
+<link rel="apple-touch-icon" href="assets/images/fav-orange.png">
+<link rel="icon" type="image/png" href="assets/images/fav-orange.png">
+<link rel="shortcut icon" type="image/png" href="assets/images/fav-orange.png">
 <!-- Bootstrap v4.4.1 css -->
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <!-- font-awesome css -->
