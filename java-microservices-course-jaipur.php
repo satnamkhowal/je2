@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'java-microservices-course-jaipur.php','name'=>'Java Microservices Course in Jaipur','category'=>'Java Development','chips'=>['Microservices','Spring Boot','REST APIs','Service Design','Deployment'],'icon'=>'fa-server','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

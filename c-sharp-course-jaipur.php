@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'c-sharp-course-jaipur.php','name'=>'C# Course in Jaipur','category'=>'Programming Languages','chips'=>['C#','.NET','OOP','Collections','LINQ'],'icon'=>'fa-windows']; include __DIR__.'/course-page-quick.php'; ?>

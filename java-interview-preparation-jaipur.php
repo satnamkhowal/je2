@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'java-interview-preparation-jaipur.php','name'=>'Java Interview Preparation in Jaipur','category'=>'Career Preparation','chips'=>['Core Java','OOP','Collections','Spring Boot','Interview Practice'],'icon'=>'fa-briefcase','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

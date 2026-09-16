@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'react-js-course-jaipur.php','name'=>'React.js Course in Jaipur','category'=>'Frontend Development','chips'=>['React.js','Components','Hooks','Routing','REST APIs']]; include __DIR__.'/course-page-quick.php'; ?>

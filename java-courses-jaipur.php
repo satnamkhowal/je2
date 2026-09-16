@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'java-courses-jaipur.php','name'=>'Java Courses in Jaipur','category'=>'Java Development','chips'=>['Core Java','Advanced Java','Spring Boot','Hibernate','REST APIs'],'icon'=>'fa-coffee','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'java-design-patterns-course-jaipur.php','name'=>'Java Design Patterns Course in Jaipur','category'=>'Java Development','chips'=>['SOLID','Creational','Structural','Behavioral','Architecture'],'icon'=>'fa-cogs','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'node-js-course-jaipur.php','name'=>'Node.js Course in Jaipur','category'=>'Backend Development','chips'=>['Node.js','Express.js','REST APIs','Database','Authentication'],'icon'=>'fa-server']; include __DIR__.'/course-page-quick.php'; ?>

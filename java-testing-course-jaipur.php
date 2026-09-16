@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'java-testing-course-jaipur.php','name'=>'Java Testing Course in Jaipur','category'=>'Java Development','chips'=>['JUnit','Mockito','Unit Testing','Integration Testing','Test Automation'],'icon'=>'fa-check-square-o','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'c-plus-plus-course-jaipur.php','name'=>'C++ Programming Course in Jaipur','category'=>'Programming Languages','chips'=>['C++','OOP','STL','Classes','File Handling']]; include __DIR__.'/course-page-quick.php'; ?>

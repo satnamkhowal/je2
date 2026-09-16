@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'java-multithreading-course-jaipur.php','name'=>'Java Multithreading Course in Jaipur','category'=>'Java Development','chips'=>['Threads','Concurrency','Synchronization','Executors','Locks'],'icon'=>'fa-cogs','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

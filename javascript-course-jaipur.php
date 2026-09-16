@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'javascript-course-jaipur.php','name'=>'JavaScript Course in Jaipur','category'=>'Programming Languages','chips'=>['JavaScript','ES6+','DOM','Events','Async JavaScript']]; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'helidon-course-jaipur.php','name'=>'Helidon Course in Jaipur','category'=>'Java Development','chips'=>['Helidon','Microservices','REST','Cloud Native','Java'],'icon'=>'fa-cloud','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'jdbc-course-jaipur.php','name'=>'JDBC Course in Jaipur','category'=>'Java Development','chips'=>['JDBC','SQL','MySQL','PreparedStatement','DAO'],'icon'=>'fa-database','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

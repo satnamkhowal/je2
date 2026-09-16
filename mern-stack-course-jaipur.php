@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'mern-stack-course-jaipur.php','name'=>'MERN Stack Course in Jaipur','category'=>'Full Stack Development','chips'=>['MongoDB','Express.js','React.js','Node.js','REST APIs']]; include __DIR__.'/course-page-quick.php'; ?>

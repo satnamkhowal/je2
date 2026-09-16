@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'kafka-java-course-jaipur.php','name'=>'Kafka with Java Course in Jaipur','category'=>'Java and Big Data','chips'=>['Apache Kafka','Java','Producers','Consumers','Streaming'],'icon'=>'fa-exchange','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'big-data-java-course-jaipur.php','name'=>'Big Data with Java Course in Jaipur','category'=>'Java and Big Data','chips'=>['Java','Big Data','Hadoop','Data Processing','Distributed Systems'],'icon'=>'fa-database','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

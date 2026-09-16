@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'dotnet-full-stack-course-jaipur.php','name'=>'ASP.NET Full Stack Course in Jaipur','category'=>'Full Stack Development','chips'=>['C#','ASP.NET Core','Web API','SQL','Frontend'],'icon'=>'fa-windows']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'java-rest-api-course-jaipur.php','name'=>'Java REST API Course in Jaipur','category'=>'Java Development','chips'=>['REST APIs','Spring Boot','JSON','Validation','Postman'],'icon'=>'fa-exchange','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

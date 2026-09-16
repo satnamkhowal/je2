@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'hadoop-course-jaipur.php','name'=>'Hadoop Course in Jaipur','category'=>'Big Data','chips'=>['Hadoop','HDFS','MapReduce','YARN','Big Data'],'icon'=>'fa-database','image'=>'assets/images/courses/home14/4.jpg']; include __DIR__.'/course-page-quick.php'; ?>

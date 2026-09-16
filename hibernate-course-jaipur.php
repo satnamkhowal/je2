@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'hibernate-course-jaipur.php','name'=>'Hibernate Course in Jaipur','category'=>'Java Development','chips'=>['Hibernate','ORM','Entities','Mappings','HQL'],'icon'=>'fa-database','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

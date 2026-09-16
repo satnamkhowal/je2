@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'next-js-course-jaipur.php','name'=>'Next.js Course in Jaipur','category'=>'Full Stack Development','chips'=>['Next.js','React','Routing','Server Rendering','APIs']]; include __DIR__.'/course-page-quick.php'; ?>

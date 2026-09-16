@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'servlets-jsp-course-jaipur.php','name'=>'Servlets and JSP Course in Jaipur','category'=>'Java Development','chips'=>['Servlets','JSP','Sessions','MVC','JDBC'],'icon'=>'fa-coffee','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>

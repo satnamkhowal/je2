@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'spring-mvc-course-jaipur.php','name'=>'Spring MVC Course in Jaipur','category'=>'Java Development','chips'=>['Spring MVC','Controllers','Views','Validation','Forms'],'icon'=>'fa-leaf','image'=>'assets/images/courses/home14/2.jpg']; include __DIR__.'/course-page-quick.php'; ?>
