@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'email-marketing-course-jaipur.php','name'=>'Email Marketing Course in Jaipur','category'=>'Digital Marketing','chips'=>['Email Campaigns','Lists','Automation','Copywriting','Analytics'],'icon'=>'fa-envelope','image'=>'assets/images/courses/style5/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

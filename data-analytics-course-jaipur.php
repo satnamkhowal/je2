@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'data-analytics-course-jaipur.php','name'=>'Data Analytics Course in Jaipur','category'=>'Data Analytics','chips'=>['Excel','SQL','Power BI','Python','Data Visualization'],'icon'=>'fa-line-chart','image'=>'assets/images/courses/home14/4.jpg']; include __DIR__.'/course-page-quick.php'; ?>

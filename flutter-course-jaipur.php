@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'flutter-course-jaipur.php','name'=>'Flutter Course in Jaipur','category'=>'Mobile App Development','chips'=>['Flutter','Dart','Widgets','State Management','APIs'],'icon'=>'fa-mobile']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'content-marketing-course-jaipur.php','name'=>'Content Marketing Course in Jaipur','category'=>'Digital Marketing','chips'=>['Content Strategy','SEO Content','Blogs','Social Content','Analytics'],'icon'=>'fa-pencil','image'=>'assets/images/courses/style5/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

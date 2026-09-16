@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'selenium-course-jaipur.php','name'=>'Selenium Course in Jaipur','category'=>'Software Testing','chips'=>['Selenium WebDriver','Locators','TestNG','Page Objects','Automation'],'icon'=>'fa-check-square-o']; include __DIR__.'/course-page-quick.php'; ?>

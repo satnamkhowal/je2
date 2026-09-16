@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'ai-tools-course-jaipur.php','name'=>'AI Productivity Tools Course in Jaipur','category'=>'AI Skills','chips'=>['AI Tools','Prompting','Research','Content Workflows','Productivity'],'icon'=>'fa-lightbulb-o','image'=>'assets/images/courses/home14/4.jpg']; include __DIR__.'/course-page-quick.php'; ?>

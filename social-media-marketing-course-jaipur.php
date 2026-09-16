@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'social-media-marketing-course-jaipur.php','name'=>'Social Media Marketing Course in Jaipur','category'=>'Digital Marketing','chips'=>['Social Media','Content Planning','Meta Ads','Analytics','Campaigns'],'icon'=>'fa-share-alt','image'=>'assets/images/courses/style5/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

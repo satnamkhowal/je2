@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'generative-ai-course-jaipur.php','name'=>'Generative AI Course in Jaipur','category'=>'Data Science and AI','chips'=>['Generative AI','Prompt Engineering','LLMs','AI Tools','Applied Projects'],'icon'=>'fa-lightbulb-o','image'=>'assets/images/courses/home14/4.jpg']; include __DIR__.'/course-page-quick.php'; ?>

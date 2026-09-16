@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'google-ads-course-jaipur.php','name'=>'Google Ads Course in Jaipur','category'=>'Digital Marketing','chips'=>['Google Ads','Search Campaigns','Keywords','Conversion Tracking','Optimization'],'icon'=>'fa-bullhorn','image'=>'assets/images/courses/style5/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

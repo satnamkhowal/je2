@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'seo-course-jaipur.php','name'=>'SEO Course in Jaipur','category'=>'Digital Marketing','chips'=>['On-Page SEO','Technical SEO','Keywords','Link Building','Search Console'],'icon'=>'fa-search','image'=>'assets/images/courses/style5/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

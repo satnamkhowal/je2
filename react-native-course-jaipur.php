@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'react-native-course-jaipur.php','name'=>'React Native Course in Jaipur','category'=>'Mobile App Development','chips'=>['React Native','JavaScript','Components','Navigation','APIs'],'icon'=>'fa-mobile']; include __DIR__.'/course-page-quick.php'; ?>

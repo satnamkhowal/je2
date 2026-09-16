@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'other-it-courses-jaipur.php','name'=>'Other IT Courses in Jaipur','category'=>'IT Training','chips'=>['Advanced Excel','SQL','AI Tools','Personality Development','Career Skills']]; include __DIR__.'/course-page-quick.php'; ?>

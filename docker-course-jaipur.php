@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'docker-course-jaipur.php','name'=>'Docker Course in Jaipur','category'=>'Cloud and DevOps','chips'=>['Docker','Images','Containers','Dockerfile','Compose'],'icon'=>'fa-cube','image'=>'assets/images/courses/home14/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'kotlin-course-jaipur.php','name'=>'Kotlin Course in Jaipur','category'=>'Mobile App Development','chips'=>['Kotlin','Null Safety','OOP','Collections','Coroutines'],'icon'=>'fa-android']; include __DIR__.'/course-page-quick.php'; ?>

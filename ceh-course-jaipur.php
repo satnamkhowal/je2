@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'ceh-course-jaipur.php','name'=>'CEH Training Course in Jaipur','category'=>'Cyber Security','chips'=>['Ethical Hacking','Network Security','Web Security','Vulnerability Assessment','Labs'],'icon'=>'fa-shield','image'=>'assets/images/courses/home14/6.jpg']; include __DIR__.'/course-page-quick.php'; ?>

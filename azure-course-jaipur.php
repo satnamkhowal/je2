@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'azure-course-jaipur.php','name'=>'Microsoft Azure Course in Jaipur','category'=>'Cloud Computing','chips'=>['Azure','Virtual Machines','Storage','Networking','Identity'],'icon'=>'fa-cloud','image'=>'assets/images/courses/home14/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

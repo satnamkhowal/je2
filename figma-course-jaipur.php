@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'figma-course-jaipur.php','name'=>'Figma Course in Jaipur','category'=>'UI UX Design','chips'=>['Figma','Components','Auto Layout','Prototyping','Design Systems'],'icon'=>'fa-paint-brush']; include __DIR__.'/course-page-quick.php'; ?>

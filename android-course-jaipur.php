@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'android-course-jaipur.php','name'=>'Android Development Course in Jaipur','category'=>'Mobile App Development','chips'=>['Android','Kotlin','Activities','Layouts','APIs'],'icon'=>'fa-android']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'playwright-course-jaipur.php','name'=>'Playwright Course in Jaipur','category'=>'Software Testing','chips'=>['Playwright','Browser Automation','Locators','Assertions','Test Frameworks'],'icon'=>'fa-check-square-o']; include __DIR__.'/course-page-quick.php'; ?>

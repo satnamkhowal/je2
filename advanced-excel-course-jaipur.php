@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'advanced-excel-course-jaipur.php','name'=>'Advanced Excel Course in Jaipur','category'=>'Data and Office Skills','chips'=>['Excel','Formulas','Pivot Tables','Dashboards','Data Cleaning'],'icon'=>'fa-table']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'ccna-course-jaipur.php','name'=>'CCNA Course in Jaipur','category'=>'Networking','chips'=>['CCNA','Routing','Switching','IP Addressing','Network Labs'],'icon'=>'fa-sitemap']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'power-bi-course-jaipur.php','name'=>'Power BI Course in Jaipur','category'=>'Data Analytics','chips'=>['Power BI','Power Query','DAX','Dashboards','Data Modeling'],'icon'=>'fa-bar-chart','image'=>'assets/images/courses/home14/4.jpg']; include __DIR__.'/course-page-quick.php'; ?>

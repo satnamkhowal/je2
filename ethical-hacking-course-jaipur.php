@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'ethical-hacking-course-jaipur.php','name'=>'Ethical Hacking Course in Jaipur','category'=>'Cyber Security','chips'=>['Networking','Linux','Reconnaissance','Web Security','Security Labs'],'icon'=>'fa-shield','image'=>'assets/images/courses/home14/6.jpg']; include __DIR__.'/course-page-quick.php'; ?>

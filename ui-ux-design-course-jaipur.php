@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'ui-ux-design-course-jaipur.php','name'=>'UI UX Design Course in Jaipur','category'=>'UI UX Design','chips'=>['UI Design','UX Research','Wireframes','Prototypes','Figma'],'icon'=>'fa-paint-brush']; include __DIR__.'/course-page-quick.php'; ?>

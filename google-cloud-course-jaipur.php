@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'google-cloud-course-jaipur.php','name'=>'Google Cloud Course in Jaipur','category'=>'Cloud Computing','chips'=>['Google Cloud','Compute','Storage','Networking','IAM'],'icon'=>'fa-cloud','image'=>'assets/images/courses/home14/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

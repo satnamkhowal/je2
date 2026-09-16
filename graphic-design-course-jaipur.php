@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'graphic-design-course-jaipur.php','name'=>'Graphic Design Course in Jaipur','category'=>'Graphic Design','chips'=>['Design Principles','Typography','Branding','Social Creatives','Portfolio'],'icon'=>'fa-paint-brush']; include __DIR__.'/course-page-quick.php'; ?>

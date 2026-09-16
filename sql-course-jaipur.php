@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'sql-course-jaipur.php','name'=>'SQL Course in Jaipur','category'=>'Database Skills','chips'=>['SQL','Queries','Joins','Functions','Database Design'],'icon'=>'fa-database']; include __DIR__.'/course-page-quick.php'; ?>

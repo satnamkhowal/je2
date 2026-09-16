@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'aws-course-jaipur.php','name'=>'AWS Course in Jaipur','category'=>'Cloud Computing','chips'=>['AWS','EC2','S3','IAM','VPC'],'icon'=>'fa-cloud','image'=>'assets/images/courses/home14/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

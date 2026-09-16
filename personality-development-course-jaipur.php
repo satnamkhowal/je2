@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'personality-development-course-jaipur.php','name'=>'Personality Development Course in Jaipur','category'=>'Career Skills','chips'=>['Communication','Confidence','Presentation','Interview Skills','Professional Etiquette'],'icon'=>'fa-users']; include __DIR__.'/course-page-quick.php'; ?>

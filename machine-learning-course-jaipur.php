@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'machine-learning-course-jaipur.php','name'=>'Machine Learning Course in Jaipur','category'=>'Data Science and AI','chips'=>['Python','Supervised Learning','Unsupervised Learning','Model Evaluation','Projects'],'icon'=>'fa-line-chart','image'=>'assets/images/courses/home14/4.jpg']; include __DIR__.'/course-page-quick.php'; ?>

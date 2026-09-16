@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'networking-course-jaipur.php','name'=>'Networking Course in Jaipur','category'=>'Networking','chips'=>['TCP/IP','Routing','Switching','Troubleshooting','Network Security'],'icon'=>'fa-sitemap']; include __DIR__.'/course-page-quick.php'; ?>

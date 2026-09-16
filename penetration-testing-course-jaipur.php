@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'penetration-testing-course-jaipur.php','name'=>'Penetration Testing Course in Jaipur','category'=>'Cyber Security','chips'=>['Reconnaissance','Scanning','Web Testing','Reporting','Security Labs'],'icon'=>'fa-shield','image'=>'assets/images/courses/home14/6.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'automation-testing-course-jaipur.php','name'=>'Automation Testing Course in Jaipur','category'=>'Software Testing','chips'=>['Automation','Selenium','Frameworks','Test Scripts','CI Basics'],'icon'=>'fa-cogs']; include __DIR__.'/course-page-quick.php'; ?>

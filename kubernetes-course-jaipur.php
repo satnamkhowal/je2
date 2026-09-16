@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'kubernetes-course-jaipur.php','name'=>'Kubernetes Course in Jaipur','category'=>'Cloud and DevOps','chips'=>['Kubernetes','Pods','Deployments','Services','Helm'],'icon'=>'fa-cubes','image'=>'assets/images/courses/home14/5.jpg']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'ios-app-development-course-jaipur.php','name'=>'iOS App Development Course in Jaipur','category'=>'Mobile App Development','chips'=>['iOS','Swift','UIKit Basics','App Logic','APIs'],'icon'=>'fa-apple']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'mobile-app-development-course-jaipur.php','name'=>'Mobile App Development Course in Jaipur','category'=>'Mobile App Development','chips'=>['Android','Kotlin','Flutter','React Native','APIs'],'icon'=>'fa-mobile']; include __DIR__.'/course-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $quickCourse=['slug'=>'windows-server-course-jaipur.php','name'=>'Windows Server Course in Jaipur','category'=>'System Administration','chips'=>['Windows Server','Active Directory','Users','DNS','Administration'],'icon'=>'fa-windows']; include __DIR__.'/course-page-quick.php'; ?>
