@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'diploma-java-programming-jaipur.php','title'=>'Diploma in Java Programming in Jaipur','kicker'=>'Java Career Program','lead'=>'Build Core Java, Advanced Java, database, Spring and project skills through a structured Java diploma program.','items'=>['Core Java','Advanced Java','Spring and APIs','Projects']]; include __DIR__.'/general-page-quick.php'; ?>

@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'about-us.php','title'=>'About Jaipur Engineers','kicker'=>'IT Training Institute in Jaipur','lead'=>'Learn about Jaipur Engineers, a Jaipur-based practical IT training and career development institute established in 1996.','items'=>['Our Legacy','Practical Training','Industry-Focused Courses','Career Guidance']]; include __DIR__.'/general-page-quick.php'; ?>

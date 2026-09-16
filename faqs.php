@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'faqs.php','title'=>'Frequently Asked Questions','kicker'=>'Course and Admission Help','lead'=>'Find answers about courses, batches, training modes, projects, internships and career assistance at Jaipur Engineers.','items'=>['Course Selection','Batch Information','Projects and Internships','Career Assistance']]; include __DIR__.'/general-page-quick.php'; ?>

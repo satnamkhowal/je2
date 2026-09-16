@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'about-institute.php','title'=>'About Our Institute','kicker'=>'Jaipur Engineers','lead'=>'Discover the learning approach, training environment and practical career focus of Jaipur Engineers in Jaipur.','items'=>['Training Approach','Learning Environment','Practical Projects','Student Support']]; include __DIR__.'/general-page-quick.php'; ?>

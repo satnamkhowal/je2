@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'events.php','title'=>'Events and Webinars','kicker'=>'Learning Events at Jaipur Engineers','lead'=>'Explore workshops, webinars, career sessions and technology learning events organized for students and professionals.','items'=>['Workshops','Webinars','Career Sessions','Technology Events']]; include __DIR__.'/general-page-quick.php'; ?>

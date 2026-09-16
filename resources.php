@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'resources.php','title'=>'Learning Resources','kicker'=>'Career and Technology Resources','lead'=>'Explore tutorials, interview questions, career guides, blogs and event updates created to support continuous learning.','items'=>['Career Guides','Interview Questions','Free Tutorials','Events and Blogs']]; include __DIR__.'/general-page-quick.php'; ?>

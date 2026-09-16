@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'testimonials.php','title'=>'Student Testimonials','kicker'=>'Learner Experiences','lead'=>'Read about student experiences with practical classes, projects, trainer guidance and career-focused learning at Jaipur Engineers.','items'=>['Practical Classes','Trainer Support','Project Experience','Career Guidance']]; include __DIR__.'/general-page-quick.php'; ?>

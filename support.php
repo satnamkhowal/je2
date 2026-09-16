@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'support.php','title'=>'Student Support','kicker'=>'Learning and Course Support','lead'=>'Contact Jaipur Engineers for assistance related to course information, learning support, projects and general student queries.','items'=>['Course Support','Learning Queries','Project Guidance','General Assistance']]; include __DIR__.'/general-page-quick.php'; ?>

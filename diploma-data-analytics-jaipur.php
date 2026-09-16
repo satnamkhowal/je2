@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'diploma-data-analytics-jaipur.php','title'=>'Diploma in Data Analytics in Jaipur','kicker'=>'Analytics Career Program','lead'=>'Build Excel, SQL, Power BI, Python and reporting skills through a structured analytics diploma program.','items'=>['Advanced Excel','SQL','Power BI','Analytics Projects']]; include __DIR__.'/general-page-quick.php'; ?>

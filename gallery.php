@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'gallery.php','title'=>'Jaipur Engineers Gallery','kicker'=>'Campus and Learning Moments','lead'=>'Explore learning, project, workshop and student activity highlights from Jaipur Engineers in Jaipur.','items'=>['Classroom Learning','Workshops','Projects','Student Activities']]; include __DIR__.'/general-page-quick.php'; ?>

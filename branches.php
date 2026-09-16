@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'branches.php','title'=>'Jaipur Engineers Branches','kicker'=>'Training Locations','lead'=>'Find current Jaipur Engineers training location information and contact the team before visiting for counselling or batch details.','items'=>['Mansarovar Jaipur','Course Counselling','Batch Information','Visit Guidance']]; include __DIR__.'/general-page-quick.php'; ?>

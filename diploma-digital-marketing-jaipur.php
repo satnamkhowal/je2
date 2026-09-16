@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'diploma-digital-marketing-jaipur.php','title'=>'Diploma in Digital Marketing in Jaipur','kicker'=>'Digital Marketing Career Program','lead'=>'Learn SEO, paid ads, social media, content and analytics through a structured practical diploma program.','items'=>['SEO','Google Ads','Social Media','Analytics']]; include __DIR__.'/general-page-quick.php'; ?>

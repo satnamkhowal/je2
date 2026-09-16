@@ -1,0 +1,1 @@
+<?php $page=['slug'=>'enquiry.php','title'=>'Course Enquiry','kicker'=>'Request Course Details','lead'=>'Send your details to Jaipur Engineers for current course syllabus, batch timing, training mode and counselling information.','items'=>['Course Selection','Batch Timing','Syllabus Details','Counselling']]; include __DIR__.'/general-page-quick.php'; ?>
