@@ -84,7 +84,7 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
     </script>
 </head>
 
-<body class="je-course-page je-java-full-stack-page">
+<body class="defult-home je-course-page je-java-full-stack-page">
 
 <?php include("./header.php"); ?>
 
