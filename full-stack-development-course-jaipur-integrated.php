@@ -60,7 +60,7 @@ $canonical = "https://jaipurengineers.com/full-stack-development-course-jaipur.p
     </script>
 </head>
 
-<body class="je-course-page">
+<body class="defult-home je-course-page">
 
 <?php include("./header.php"); ?>
 
