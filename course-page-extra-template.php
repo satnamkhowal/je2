@@ -30,7 +30,7 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
 <?php endif; ?>
 </head>
-<body class="je-course-page">
+<body class="defult-home je-course-page">
 <?php include __DIR__ . '/header.php'; ?>
 <?php if (!$course): ?>
 <main class="je-section"><div class="container"><h1>Course not found</h1><p>Please visit our course catalog.</p><a class="je-primary-btn" href="courses.php">View Courses</a></div></main>
