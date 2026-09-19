@@ -52,7 +52,7 @@ if ($course) {
     <script type="application/ld+json"><?php echo $courseSchemaJson; ?></script>
     <?php endif; ?>
 </head>
-<body class="je-course-page">
+<body class="defult-home je-course-page">
 <?php include __DIR__ . '/header.php'; ?>
 
 <?php if (!$course): ?>
