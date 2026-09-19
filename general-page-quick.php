@@ -19,7 +19,7 @@ $canonical = 'https://jaipurengineers.com/' . $slug;
 <?php include __DIR__ . '/head.php'; ?>
 <link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
 </head>
-<body class="je-course-page">
+<body class="defult-home je-course-page">
 <?php include __DIR__ . '/header.php'; ?>
 <main>
 <section class="je-hero"><div class="container"><div class="row align-items-center"><div class="col-lg-8">
