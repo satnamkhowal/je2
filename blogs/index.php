@@ -82,7 +82,6 @@ $sidebarPosts = array_slice(je_blog_posts(), 0, 8, true);
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
     <?php if ($noindexFilteredView): ?><meta name="robots" content="noindex,follow"><?php endif; ?>
     <?php include dirname(__DIR__) . '/head.php'; ?>
-    <link rel="stylesheet" href="assets/css/je-growth-system.css">
 </head>
 <body class="defult-home">
 <?php include dirname(__DIR__) . '/header.php'; ?>

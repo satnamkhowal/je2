@@ -174,32 +174,6 @@
     </div>
 </footer>
 
-<style>
-.je-rich-footer .footer-top{padding-top:80px}
-.je-footer-cta{position:relative;z-index:2;padding:32px 0;background:#ff5a00;color:#fff}
-.je-footer-cta .je-footer-kicker{display:block;margin-bottom:4px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.82)}
-.je-footer-cta h3{margin:0 0 6px;color:#fff;font-size:28px;line-height:1.25}
-.je-footer-cta p{margin:0;color:rgba(255,255,255,.9)}
-.je-footer-cta-btn{display:inline-block;padding:13px 24px;border-radius:6px;background:#111;color:#fff!important;font-weight:700}
-.je-footer-cta-btn:hover{background:#fff;color:#111!important}
-.je-footer-badges{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 20px}
-.je-footer-badges span{display:inline-block;padding:6px 9px;border:1px solid rgba(255,255,255,.16);border-radius:4px;font-size:11px;line-height:1;color:rgba(255,255,255,.78)}
-.je-rich-footer .footer_social{margin-top:15px}
-.je-rich-footer .footer_social li a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%}
-.je-footer-links li{margin-bottom:8px}
-.je-footer-inline-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#ff5a00!important}
-.je-footer-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.je-footer-actions a{padding:6px 10px;border:1px solid rgba(255,255,255,.15);border-radius:4px;color:rgba(255,255,255,.78);font-size:12px}
-.je-footer-actions a:hover{border-color:#ff5a00;color:#ff5a00}
-.je-footer-directory{margin-top:55px;padding-top:35px;border-top:1px solid rgba(255,255,255,.1)}
-.je-footer-directory h4{margin-bottom:14px;color:#fff;font-size:15px;font-weight:700}
-.je-footer-directory a{display:block;margin-bottom:8px;color:rgba(255,255,255,.62);font-size:13px}
-.je-footer-directory a:hover{color:#ff5a00;padding-left:3px}
-.je-rich-footer .address-widget .desc a{word-break:break-word}
-@media(max-width:991px){.je-footer-directory>.row>div{margin-bottom:25px}.je-footer-cta h3{font-size:24px}}
-@media(max-width:767px){.je-footer-cta{text-align:left}.je-footer-cta-btn{margin-top:5px}.je-rich-footer .footer-top{padding-top:55px}}
-</style>
-
 <div id="scrollUp" class="orange-color"><i class="fa fa-angle-up"></i></div>
 
 <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">

@@ -15,7 +15,6 @@ $canonical = 'https://jaipurengineers.com/news/';
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
     <?php include dirname(__DIR__) . '/head.php'; ?>
-    <link rel="stylesheet" href="assets/css/je-growth-system.css">
 </head>
 <body class="defult-home">
 <?php include dirname(__DIR__) . '/header.php'; ?>

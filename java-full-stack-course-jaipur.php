@@ -14,8 +14,6 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
 
     <?php include("head.php"); ?>
-    <link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
-    <link rel="stylesheet" href="assets/css/java-full-stack-course-card.css">
 
     <meta property="og:title" content="Java Full Stack Course in Jaipur | Jaipur Engineers">
     <meta property="og:description" content="Practical Java full stack training in Jaipur with Core Java, Spring Boot, REST APIs, Hibernate, MySQL, frontend skills and real projects.">
@@ -281,6 +279,7 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
             </div>
 
             <div class="col-lg-4" id="enquiry">
+<?php je_render_design_card(); ?>
                 <div class="je-sidebar">
                     <div class="je-sidebar-card">
                         <h3>Get Java Course Details</h3>

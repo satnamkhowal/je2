@@ -46,8 +46,6 @@ if ($course) {
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
     <?php include __DIR__ . '/head.php'; ?>
-    <link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
-    <link rel="stylesheet" href="assets/css/je-growth-system.css">
     <?php if ($courseSchemaJson !== false): ?>
     <script type="application/ld+json"><?php echo $courseSchemaJson; ?></script>
     <?php endif; ?>
@@ -140,6 +138,7 @@ if ($course) {
                     </div>
                 </div>
                 <div class="col-lg-4" id="enquiry">
+<?php je_render_design_card(); ?>
                     <div class="je-sidebar">
                         <div class="je-sidebar-card">
                             <h3>Get Course Details</h3>

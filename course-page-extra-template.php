@@ -20,7 +20,6 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
 <link rel="canonical" href="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
 <?php include __DIR__ . '/head.php'; ?>
-<link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
 <?php if ($course): ?>
 <script type="application/ld+json"><?php echo json_encode([
 '@context'=>'https://schema.org','@type'=>'Course','name'=>$course['name'],
@@ -63,7 +62,8 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <div class="je-section-title"><span class="eyebrow">Course Overview</span><h2>Learn through a structured, practical development workflow.</h2><p><?php echo htmlspecialchars($course['lead']); ?> The training connects concepts, assignments and project implementation.</p></div>
 <div class="row"><?php foreach (array_slice($course['chips'],0,4) as $chip): ?><div class="col-md-6 mb-4"><div class="je-feature-card"><div class="je-feature-icon"><i class="fa <?php echo htmlspecialchars($course['icon']); ?>"></i></div><h3><?php echo htmlspecialchars($chip); ?></h3><p>Learn with trainer-led examples, hands-on practice and project-oriented exercises.</p></div></div><?php endforeach; ?></div>
 </div>
-<div class="col-lg-4" id="enquiry"><div class="je-sidebar"><div class="je-sidebar-card">
+<div class="col-lg-4" id="enquiry">
+<?php je_render_design_card(); ?><div class="je-sidebar"><div class="je-sidebar-card">
 <h3>Get Course Details</h3>
 <form action="lead-submit.php" method="post">
 <input type="hidden" name="source" value="<?php echo htmlspecialchars($course['name']); ?>">

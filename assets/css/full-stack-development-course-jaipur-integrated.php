@@ -8,7 +8,6 @@ $canonical = "https://jaipurengineers.com/full-stack-development-course-jaipur.p
 <html lang="en">
 <head>
     <?php include("head.php"); ?>
-    <link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
 
     <meta property="og:title" content="Full Stack Development Course in Jaipur | Jaipur Engineers">
     <meta property="og:description" content="Practical full stack development training in Jaipur with real-world projects, frontend, backend, APIs, databases and career-focused learning.">

@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . "/includes/design-card.php"; ?>
 <?php
 // Add consistent social-preview metadata when a page supplies its normal SEO variables.
 // Reuse existing title/description/canonical values so social metadata cannot drift from page SEO.
@@ -105,57 +106,10 @@ if (isset($course) && is_array($course) && !empty($course['h1']) && !empty($cano
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-<style>
-    /* Footer Course Directory Fix */
-    .je-footer-directory {
-        margin-top: 55px;
-        padding: 32px 30px;
-        background: #111111;
-        border-top: 4px solid #ff5a00;
-        border-radius: 10px;
-    }
 
-    .je-footer-directory h4 {
-        margin-bottom: 14px;
-        color: #ffffff !important;
-        font-size: 16px;
-        font-weight: 700;
-    }
-
-    .je-footer-directory a {
-        display: block;
-        margin-bottom: 9px;
-        color: #d4d4d4 !important;
-        font-size: 13px;
-        line-height: 1.5;
-    }
-
-    .je-footer-directory a:hover {
-        color: #ff5a00 !important;
-        padding-left: 4px;
-    }
-
-    @media (max-width:991px) {
-        .je-footer-directory>.row>div {
-            margin-bottom: 25px;
-        }
-    }
-
-    @media (max-width:767px) {
-        .je-footer-directory {
-            padding: 25px 20px;
-        }
-    }
-
-    .je-footer-directory h4 {
-        color: #ff5a00 !important;
-    }
-
-    .je-footer-directory a {
-        color: #fff !important;
-    }
-
-    .je-footer-directory a:hover {
-        color: #ff5a00 !important;
-    }
-</style>
+<!-- Shared page components inherit the homepage theme in one ordered stack. -->
+<link rel="stylesheet" href="assets/css/jaipur-engineers-course-landing.css">
+<link rel="stylesheet" href="assets/css/je-growth-system.css">
+<link rel="stylesheet" href="assets/css/site-footer.css">
+<link rel="stylesheet" href="assets/css/java-full-stack-course-card.css">
+<link rel="stylesheet" href="assets/css/site-theme.css">

@@ -2,6 +2,7 @@
 $sidebarPosts = $sidebarPosts ?? array_slice(je_blog_posts(), 0, 8, true);
 ?>
 <aside class="je-blog-sidebar">
+<?php je_render_design_card(); ?>
     <div class="je-side-box">
         <h3>Get Course Guidance</h3>
         <form action="lead-submit.php" method="post">

@@ -94,7 +94,6 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $installed) {
     <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
     <?php include __DIR__ . '/head.php'; ?>
-    <link rel="stylesheet" href="assets/css/je-growth-system.css">
 </head>
 <body class="defult-home">
 <?php include __DIR__ . '/header.php'; ?>

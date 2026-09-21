@@ -34,7 +34,6 @@ $allNews = je_news_articles();
     <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
     <?php include dirname(__DIR__) . '/head.php'; ?>
-    <link rel="stylesheet" href="assets/css/je-growth-system.css">
 </head>
 <body class="defult-home">
 <?php include dirname(__DIR__) . '/header.php'; ?>
@@ -90,6 +89,7 @@ $allNews = je_news_articles();
 
                 <div class="col-lg-4">
                     <aside class="je-blog-sidebar">
+<?php je_render_design_card(); ?>
                         <div class="je-side-box">
                             <h3>Latest Technology News</h3>
                             <ul class="je-side-links">

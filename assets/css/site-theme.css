@@ -1,0 +1,139 @@
+/* Shared extension of the homepage's home14 theme. Keep page content/layout separate. */
+:root {
+    --je-orange: #ff5421;
+    --je-orange-dark: #e44718;
+    --je-orange-soft: #f9f7f8;
+    --je-orange-soft-2: #f9f7f8;
+    --je-black: #101010;
+    --je-text: #333333;
+    --je-muted: #505050;
+    --je-line: #e5e5e5;
+    --je-white: #ffffff;
+    --je-shadow: 0 6px 24px rgba(0, 0, 0, .05);
+}
+/* These aliases let existing course/editorial URLs keep their semantic layouts. */
+.je-hero, .je-catalog-hero, .je-blog-hero, .je-install-hero {
+    padding: 100px 0;
+    background: #f9f7f8 url('../images/banner/home14/border.png') no-repeat bottom left;
+    border: 0;
+    color: var(--je-text);
+}
+.je-hero::before, .je-hero::after, .je-catalog-hero::after,
+.je-blog-hero::after, .je-install-hero::after { content: none; }
+.je-hero h1, .je-catalog-hero h1, .je-blog-hero h1, .je-install-hero h1 {
+    font-family: 'Nunito', sans-serif;
+    color: var(--je-black);
+    font-size: 48px;
+    line-height: 1.29;
+    font-weight: 800;
+    margin-bottom: 30px;
+    overflow-wrap: break-word;
+}
+.je-hero-lead, .je-catalog-hero p, .je-blog-hero p, .je-install-hero p {
+    color: var(--je-text);
+    font-size: 20px;
+    line-height: 1.6;
+}
+.je-kicker, .je-catalog-label, .je-section-title .eyebrow {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--je-orange);
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+.je-section, .je-blog-layout { padding: 100px 0; background: #fff; }
+.je-section-soft, .je-section-dark { background: #f9f7f8; border: 0; }
+.je-section-title h2, .je-section-dark .je-section-title h2 { color: var(--je-black); font-size: 36px; }
+.je-section-title p, .je-section-dark .je-section-title p { color: var(--je-muted); }
+.je-primary-btn, .je-outline-btn, .je-submit-btn {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: 12px 24px;
+    min-height: 48px;
+    text-align: center;
+}
+.je-primary-btn:hover, .je-outline-btn:hover { transform: none; }
+.je-outline-btn { color: var(--je-orange) !important; border-color: var(--je-orange); }
+.je-outline-btn:hover { background: var(--je-orange); color: #fff !important; }
+.je-feature-card, .je-content-card, .je-project, .je-sidebar-card,
+.je-side-box, .je-blog-article, .je-blog-card, .je-catalog-card,
+.je-course-summary-card, .je-course-media-card, .je-stat-box, .je-install-card {
+    background: #fff;
+    border-color: var(--je-line);
+    border-radius: 5px;
+    box-shadow: none;
+}
+.je-feature-card:hover, .je-project:hover, .je-blog-card:hover, .je-catalog-card:hover {
+    transform: none;
+    border-color: var(--je-orange);
+    box-shadow: var(--je-shadow);
+}
+.je-feature-card h3, .je-content-card h3, .je-project h3, .je-sidebar-card h3,
+.je-side-box h3, .je-blog-article h1, .je-blog-article h2,
+.je-blog-card h2, .je-blog-card h3, .je-catalog-body h2, .je-catalog-body h3,
+.je-catalog-body h2 a, .je-catalog-body h3 a, .je-course-summary-card h3 {
+    color: var(--je-black);
+    font-family: 'Nunito', sans-serif;
+}
+.je-feature-card p, .je-content-card p, .je-project p, .je-blog-card p,
+.je-catalog-body p, .je-blog-article p, .je-blog-article ul { color: var(--je-muted); }
+.je-blog-article ul { list-style: disc; }
+.je-blog-article a { color: var(--je-orange-dark); text-decoration: underline !important; }
+.je-blog-meta, .je-card-link { color: var(--je-orange-dark); }
+.je-chip-row span, .je-tech-chip, .je-hero-points li {
+    background: #f9f7f8;
+    color: var(--je-muted);
+    border-color: var(--je-line);
+    box-shadow: none;
+}
+.je-bottom-cta { background: var(--je-orange); border-radius: 3px; }
+.je-bottom-cta .je-primary-btn { background: var(--je-black); border-color: var(--je-black); }
+.je-trust-bar { box-shadow: none; }
+.je-form-control { font-family: inherit; }
+.je-form-control:focus, a:focus-visible, button:focus-visible {
+    outline: 2px solid #101010 !important;
+    outline-offset: 3px;
+}
+[id] { scroll-margin-top: 110px; }
+/* An intentionally empty reserved space until the supplied card artwork is configured. */
+.je-design-slot {
+    aspect-ratio: 4 / 3;
+    background: #f9f7f8;
+    border: 1px solid var(--je-line);
+    border-radius: 5px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+.je-design-slot img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.je-contact-details { font-style: normal; }
+.je-contact-details a { overflow-wrap: anywhere; }
+/* Shared footer uses the homepage's pale surface, including its directory and badges. */
+.je-footer-cta { background: var(--je-orange); }
+.je-footer-directory { background: transparent; border: 0; border-top: 1px solid var(--je-line); border-radius: 0; }
+.je-footer-directory h4 { color: var(--je-black) !important; }
+.je-footer-directory a { color: var(--je-muted) !important; }
+.je-footer-directory a:hover { color: var(--je-orange) !important; }
+.je-footer-badges span, .je-footer-actions a { color: var(--je-muted); border-color: var(--je-line); }
+.je-footer-inline-link { color: var(--je-orange) !important; }
+.je-footer-cta-btn { border-radius: 3px; }
+@media (max-width: 991px) {
+    .je-hero, .je-catalog-hero, .je-blog-hero, .je-install-hero,
+    .je-section, .je-blog-layout { padding: 70px 0; }
+    .je-hero h1, .je-catalog-hero h1, .je-blog-hero h1, .je-install-hero h1 { font-size: 38px; }
+    .je-design-slot { max-width: 480px; }
+}
+@media (max-width: 767px) {
+    .je-hero h1, .je-catalog-hero h1, .je-blog-hero h1, .je-install-hero h1 { font-size: 32px; line-height: 1.25; }
+    .je-hero-lead, .je-catalog-hero p, .je-blog-hero p, .je-install-hero p { font-size: 17px; }
+    .je-section-title h2 { font-size: 28px; }
+    .je-kicker, .je-catalog-label { font-size: 14px; }
+    .je-blog-article { padding: 24px 20px; }
+    .je-primary-btn, .je-outline-btn { max-width: 100%; }
+}

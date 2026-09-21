@@ -63,7 +63,6 @@ $catalogSchema = [
     <meta name="twitter:card" content="summary">
     <script type="application/ld+json"><?php echo json_encode($catalogSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
     <?php include __DIR__ . '/head.php'; ?>
-    <link rel="stylesheet" href="assets/css/je-growth-system.css">
 </head>
 <body class="defult-home">
 <?php include __DIR__ . '/header.php'; ?>
