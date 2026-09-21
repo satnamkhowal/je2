@@ -257,12 +257,12 @@ $contactPages = [
                         <div class="rs-menu-area">
                             <div class="main-menu">
                                 <div class="mobile-menu">
-                                    <a class="rs-menu-toggle" aria-label="Open navigation menu">
+                                    <a class="rs-menu-toggle" role="button" tabindex="0" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation menu">
                                         <i class="fa fa-bars"></i>
                                     </a>
                                 </div>
 
-                                <nav class="rs-menu" aria-label="Main Navigation">
+                                <nav id="main-navigation" class="rs-menu" aria-label="Main Navigation">
                                     <ul class="nav-menu">
 
                                         <!-- Home -->

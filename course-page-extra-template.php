@@ -62,15 +62,15 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <div class="je-section-title"><span class="eyebrow">Course Overview</span><h2>Learn through a structured, practical development workflow.</h2><p><?php echo htmlspecialchars($course['lead']); ?> The training connects concepts, assignments and project implementation.</p></div>
 <div class="row"><?php foreach (array_slice($course['chips'],0,4) as $chip): ?><div class="col-md-6 mb-4"><div class="je-feature-card"><div class="je-feature-icon"><i class="fa <?php echo htmlspecialchars($course['icon']); ?>"></i></div><h3><?php echo htmlspecialchars($chip); ?></h3><p>Learn with trainer-led examples, hands-on practice and project-oriented exercises.</p></div></div><?php endforeach; ?></div>
 </div>
-<div class="col-lg-4" id="enquiry">
-<?php je_render_design_card(); ?><div class="je-sidebar"><div class="je-sidebar-card">
+<div class="col-lg-4">
+<?php je_render_design_card(); ?><div class="je-sidebar"><div class="je-sidebar-card" id="enquiry">
 <h3>Get Course Details</h3>
 <form action="lead-submit.php" method="post">
 <input type="hidden" name="source" value="<?php echo htmlspecialchars($course['name']); ?>">
-<input class="je-form-control" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
-<input class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" autocomplete="tel" required>
-<input class="je-form-control" type="email" name="email" placeholder="Email Address" autocomplete="email">
-<input class="je-form-control" type="text" name="course" value="<?php echo htmlspecialchars($course['name']); ?>" readonly>
+<input aria-label="Your name" class="je-form-control" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+<input aria-label="Mobile number" class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" autocomplete="tel" required>
+<input aria-label="Email address (optional)" class="je-form-control" type="email" name="email" placeholder="Email Address" autocomplete="email">
+<input aria-label="Course" class="je-form-control" type="text" name="course" value="<?php echo htmlspecialchars($course['name']); ?>" readonly>
 <button class="je-submit-btn" type="submit">Request Callback</button>
 </form></div></div></div>
 </div></div></section>

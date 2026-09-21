@@ -375,7 +375,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="banner-img">
-                        <img src="assets/images/about/jaipur-engineers-training.jpg" width="700" height="520" loading="lazy" alt="Practical classroom and software training environment at Jaipur Engineers in Jaipur">
+                        <img src="assets/images/about/tab1.jpg" width="700" height="520" loading="lazy" alt="Students working together on a laptop">
                     </div>
                 </div>
             </div>

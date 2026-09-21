@@ -7,10 +7,10 @@ $sidebarPosts = $sidebarPosts ?? array_slice(je_blog_posts(), 0, 8, true);
         <h3>Get Course Guidance</h3>
         <form action="lead-submit.php" method="post">
             <input type="hidden" name="source" value="Blog Sidebar">
-            <input class="je-form-control" type="text" name="name" placeholder="Your Name" required>
-            <input class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" required>
-            <input class="je-form-control" type="email" name="email" placeholder="Email Address">
-            <select class="je-form-control" name="course">
+            <input aria-label="Your name" class="je-form-control" type="text" name="name" placeholder="Your Name" required>
+            <input aria-label="Mobile number" class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" required>
+            <input aria-label="Email address (optional)" class="je-form-control" type="email" name="email" placeholder="Email Address">
+            <select aria-label="Course" class="je-form-control" name="course">
                 <option value="Course Guidance">Course Guidance</option>
                 <option value="Full Stack Development">Full Stack Development</option>
                 <option value="Java Full Stack">Java Full Stack</option>

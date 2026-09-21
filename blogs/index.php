@@ -97,7 +97,7 @@ $sidebarPosts = array_slice(je_blog_posts(), 0, 8, true);
                 </div>
                 <div class="col-lg-4">
                     <form action="blogs/" method="get">
-                        <input class="je-form-control" type="search" name="q" value="<?php echo htmlspecialchars($query, ENT_QUOTES, 'UTF-8'); ?>" placeholder="Search blogs">
+                        <input aria-label="Search blogs" class="je-form-control" type="search" name="q" value="<?php echo htmlspecialchars($query, ENT_QUOTES, 'UTF-8'); ?>" placeholder="Search blogs">
                         <button class="je-submit-btn" type="submit">Search Blog</button>
                     </form>
                 </div>

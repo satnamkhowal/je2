@@ -278,17 +278,17 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
                 </div>
             </div>
 
-            <div class="col-lg-4" id="enquiry">
+            <div class="col-lg-4">
 <?php je_render_design_card(); ?>
                 <div class="je-sidebar">
-                    <div class="je-sidebar-card">
+                    <div class="je-sidebar-card" id="enquiry">
                         <h3>Get Java Course Details</h3>
                         <form id="course-enquiry-form" action="lead-submit.php" method="post">
                             <input type="hidden" name="source" value="Java Full Stack Course Page">
-                            <input class="je-form-control" type="text" name="name" placeholder="Your Name" required>
-                            <input class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" required>
-                            <input class="je-form-control" type="email" name="email" placeholder="Email Address">
-                            <select class="je-form-control" name="course">
+                            <input aria-label="Your name" class="je-form-control" type="text" name="name" placeholder="Your Name" required>
+                            <input aria-label="Mobile number" class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" required>
+                            <input aria-label="Email address (optional)" class="je-form-control" type="email" name="email" placeholder="Email Address">
+                            <select aria-label="Course" class="je-form-control" name="course">
                                 <option value="Java Full Stack">Java Full Stack</option>
                                 <option value="Core Java">Core Java</option>
                                 <option value="Advanced Java">Advanced Java</option>

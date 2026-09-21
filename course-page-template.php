@@ -137,10 +137,10 @@ if ($course) {
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="col-lg-4" id="enquiry">
+                <div class="col-lg-4">
 <?php je_render_design_card(); ?>
                     <div class="je-sidebar">
-                        <div class="je-sidebar-card">
+                        <div class="je-sidebar-card" id="enquiry">
                             <h3>Get Course Details</h3>
                             <form action="lead-submit.php" method="post">
                                 <input type="hidden" name="source" value="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>">
