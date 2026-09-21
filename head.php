@@ -1,4 +1,8 @@
-<?php require_once __DIR__ . "/includes/design-card.php"; ?>
+<?php
+require_once __DIR__ . '/includes/design-card.php';
+require_once __DIR__ . '/includes/business.php';
+?>
+<script type="application/ld+json"><?php echo json_encode(je_business_schema(), JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?></script>
 <?php
 // Add consistent social-preview metadata when a page supplies its normal SEO variables.
 // Reuse existing title/description/canonical values so social metadata cannot drift from page SEO.

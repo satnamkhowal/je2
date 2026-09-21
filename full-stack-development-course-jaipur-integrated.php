@@ -524,7 +524,7 @@ $canonical = "https://jaipurengineers.com/full-stack-development-course-jaipur.p
 </main>
 
 <div class="je-mobile-cta">
-    <a href="tel:+919587779071"><i class="fa fa-phone mr-1"></i> Call</a>
+    <a href="tel:<?php echo je_business_text('phone'); ?>"><i class="fa fa-phone mr-1"></i> Call</a>
     <a href="#enquiry"><i class="fa fa-paper-plane mr-1"></i> Enquire</a>
 </div>
 

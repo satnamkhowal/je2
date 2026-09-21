@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/includes/business.php';
 // Jaipur Engineers Header Navigation
 $currentPage = basename($_SERVER['PHP_SELF']);
 
@@ -152,6 +153,7 @@ $resourcePages = [
 ];
 
 $contactPages = [
+    'college-admission-guidance-jaipur.php',
     'contact-us.php',
     'branches.php',
     'enquiry.php',
@@ -181,14 +183,14 @@ $contactPages = [
                         <ul class="topbar-contact">
                             <li>
                                 <i class="flaticon-email"></i>
-                                <a href="mailto:info@jaipurenginers.com" aria-label="Email Jaipur Engineers">
-                                    info@jaipurenginers.com
+                                <a href="mailto:<?php echo je_business_text('email'); ?>" aria-label="Email Jaipur Engineers">
+                                    <?php echo je_business_text('email'); ?>
                                 </a>
                             </li>
                             <li>
                                 <i class="fa flaticon-call"></i>
-                                <a href="tel:+917014692039" aria-label="Call Jaipur Engineers">
-                                    70146 92039
+                                <a href="tel:<?php echo je_business_text('phone'); ?>" aria-label="Call Jaipur Engineers">
+                                    <?php echo je_business_text('phone_display'); ?>
                                 </a>
                             </li>
                         </ul>
@@ -197,8 +199,7 @@ $contactPages = [
                         <ul class="toolbar-sl-share">
                             <li class="opening">
                                 <i class="flaticon-location"></i>
-                                <a href="https://maps.app.goo.gl/CHBSzdERCSxfj3UR9"> 122/228,, Mansarovar, Jaipur,
-                                    Rajasthan, India,302020</a>
+                                <a href="<?php echo je_business_text('maps'); ?>"><?php echo je_business_text('address'); ?></a>
                             </li>
                             <li>
                                 <a href="https://www.facebook.com/JaipurEngineersTrainings/" target="_blank"
@@ -569,6 +570,7 @@ $contactPages = [
                                             <ul class="sub-menu">
                                                 <li><a href="branches.php">All Branches</a></li>
                                                 <li><a href="enquiry.php">Enquiry</a></li>
+                                                <li><a href="college-admission-guidance-jaipur.php">College Admission Guidance</a></li>
                                                 <li><a href="support.php">Support</a></li>
                                             </ul>
                                         </li>
@@ -634,7 +636,7 @@ $contactPages = [
                     <li><a href="courses.php">Explore IT Courses</a></li>
                     <li><a href="internship-programs-jaipur.php">Internship Programs</a></li>
                     <li><a href="placements.php">Placement Assistance</a></li>
-                    <li><a href="contact-us.php">Contact Us</a></li>
+                    <li><a href="contact-us.php">Contact Us</a></li><li><a href="college-admission-guidance-jaipur.php">College Admission Guidance</a></li>
                 </ul>
 
                 <ul class="social">

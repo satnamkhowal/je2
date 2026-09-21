@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/includes/business.php'; ?>
 <!-- =========================================================
      Jaipur Engineers Footer
 ========================================================== -->
@@ -30,7 +31,7 @@
                     </div>
                     <div class="textwidget pr-20">
                         <p>
-                            Jaipur Engineers is a Jaipur-based IT training, internship and career-focused skill development institute established in 1996. We focus on practical learning, real-world projects and industry-oriented skills.
+                            Jaipur Engineers is a Software Development Training Institute, IT Training Institute, Computer Training Institute and Software Training Institute in Jaipur. Explore Internship &amp; Industrial Training, plus separate College Admission Guidance and Education Counselling.
                         </p>
                     </div>
                     <div class="je-footer-badges">
@@ -51,15 +52,15 @@
                     <ul class="address-widget">
                         <li>
                             <i class="flaticon-location"></i>
-                            <div class="desc">Mansarovar, Jaipur,<br>Rajasthan, India</div>
+                            <div class="desc"><a href="<?php echo je_business_text('maps'); ?>"><?php echo je_business_text('address'); ?></a></div>
                         </li>
                         <li>
                             <i class="flaticon-call"></i>
-                            <div class="desc"><a href="tel:+919587779071">+91 95877 79071</a></div>
+                            <div class="desc"><a href="tel:<?php echo je_business_text('phone'); ?>"><?php echo je_business_text('phone_display'); ?></a></div>
                         </li>
                         <li>
                             <i class="flaticon-email"></i>
-                            <div class="desc"><a href="mailto:satnamsinghkhowal@gmail.com">satnamsinghkhowal@gmail.com</a></div>
+                            <div class="desc"><a href="mailto:<?php echo je_business_text('email'); ?>"><?php echo je_business_text('email'); ?></a></div>
                         </li>
                         <li>
                             <i class="fa fa-paper-plane"></i>
@@ -90,6 +91,7 @@
                         <div class="col-6">
                             <ul class="site-map je-footer-links">
                                 <li><a href="about-us.php">About Us</a></li>
+                                <li><a href="college-admission-guidance-jaipur.php">College Admission Guidance</a></li>
                                 <li><a href="our-trainers.php">Our Trainers</a></li>
                                 <li><a href="internship-programs-jaipur.php">Internships</a></li>
                                 <li><a href="placements.php">Placements</a></li>
@@ -210,4 +212,3 @@
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/contact.form.js"></script>
 <script src="assets/js/main.js"></script>
-

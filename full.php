@@ -785,7 +785,7 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
 
                         <div class="btn-part mb-40">
                             <a href="enquiry.php" class="btn readon2 orange">Enquire Now</a>
-                            <a href="tel:+919587779071" class="btn readon2 orange-transparent">Call Now</a>
+                            <a href="tel:<?php echo je_business_text('phone'); ?>" class="btn readon2 orange-transparent">Call Now</a>
                         </div>
 
                         <!-- Popular Courses -->

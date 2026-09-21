@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Primary SEO -->
-    <title>IT Training Institute in Jaipur | Jaipur Engineers</title>
-    <meta name="description" content="Jaipur Engineers is an IT training institute in Jaipur, established in 1996, offering Full Stack, Java, Python, Data Science, AI, Cloud, DevOps, Cyber Security, Testing, Digital Marketing, internships and placement assistance.">
+    <title>Software & IT Training Institute in Jaipur | Jaipur Engineers</title>
+    <meta name="description" content="Software development, IT and computer training in Mansarovar, Jaipur. Explore practical courses, internships and separate college admission guidance.">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://jaipurengineers.com/">
 
@@ -15,89 +15,42 @@
     <meta property="og:locale" content="en_IN">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Jaipur Engineers">
-    <meta property="og:title" content="IT Training Institute in Jaipur | Jaipur Engineers">
-    <meta property="og:description" content="Industry-focused IT training in Jaipur since 1996. Learn Full Stack, Java, Python, Data Science & AI, Cloud, DevOps, Cyber Security, Testing and more with practical career-focused training.">
+    <meta property="og:title" content="Software & IT Training Institute in Jaipur | Jaipur Engineers">
+    <meta property="og:description" content="Software development, IT and computer training in Mansarovar, Jaipur. Explore practical courses, internships and separate college admission guidance.">
     <meta property="og:url" content="https://jaipurengineers.com/">
-    <!-- Update this when the final homepage featured image is uploaded -->
-    <meta property="og:image" content="https://jaipurengineers.com/assets/images/seo/jaipur-engineers-it-training-institute-jaipur.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <!-- Reuse the existing homepage hero image for social previews. -->
+    <meta property="og:image" content="https://jaipurengineers.com/assets/images/banner/home14/img.png">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="560">
     <meta property="og:image:alt" content="Jaipur Engineers IT training institute in Jaipur offering practical technology courses">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="IT Training Institute in Jaipur | Jaipur Engineers">
+    <meta name="twitter:title" content="Software & IT Training Institute in Jaipur | Jaipur Engineers">
     <meta name="twitter:description" content="Practical IT courses, internships and career-focused training in Jaipur since 1996.">
-    <meta name="twitter:image" content="https://jaipurengineers.com/assets/images/seo/jaipur-engineers-it-training-institute-jaipur.webp">
+    <meta name="twitter:image" content="https://jaipurengineers.com/assets/images/banner/home14/img.png">
 
     <?php include("head.php"); ?>
 
     <!-- Organization + Local Business + Website structured data -->
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": ["EducationalOrganization", "LocalBusiness"],
-          "@id": "https://jaipurengineers.com/#organization",
-          "name": "Jaipur Engineers",
-          "url": "https://jaipurengineers.com/",
-          "description": "Jaipur Engineers is an industry-focused IT training, internship and career development institute in Jaipur, Rajasthan, established in 1996.",
-          "foundingDate": "1996",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jaipur",
-            "addressRegion": "Rajasthan",
-            "addressCountry": "IN"
-          },
-          "areaServed": {
-            "@type": "City",
-            "name": "Jaipur"
-          },
-          "sameAs": [
-            "https://www.youtube.com/@JaipurEngineers",
-            "https://www.facebook.com/JaipurEngineersTrainings/",
-            "https://x.com/Jaipur_Engineer",
-            "https://www.instagram.com/jaipurengineerstrainings/",
-            "https://www.linkedin.com/company/jaipurengineers"
-          ],
-          "knowsAbout": [
-            "Full Stack Development",
-            "Java Programming",
-            "Python Programming",
-            "Data Science",
-            "Artificial Intelligence",
-            "Machine Learning",
-            "Cloud Computing",
-            "DevOps",
-            "Cyber Security",
-            "Software Testing",
-            "Digital Marketing",
-            "UI UX Design",
-            "Mobile App Development",
-            "Networking"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://jaipurengineers.com/#website",
-          "url": "https://jaipurengineers.com/",
-          "name": "Jaipur Engineers",
-          "publisher": {"@id": "https://jaipurengineers.com/#organization"},
-          "inLanguage": "en-IN"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://jaipurengineers.com/#webpage",
-          "url": "https://jaipurengineers.com/",
-          "name": "IT Training Institute in Jaipur | Jaipur Engineers",
-          "isPartOf": {"@id": "https://jaipurengineers.com/#website"},
-          "about": {"@id": "https://jaipurengineers.com/#organization"},
-          "description": "Industry-focused IT training in Jaipur since 1996 with practical courses, internships, projects and placement assistance.",
-          "inLanguage": "en-IN"
-        }
-      ]
+      "@type": "WebPage",
+      "@id": "https://jaipurengineers.com/#webpage",
+      "url": "https://jaipurengineers.com/",
+      "name": "Software & IT Training Institute in Jaipur | Jaipur Engineers",
+      "isPartOf": {
+        "@id": "https://jaipurengineers.com/#website"
+      },
+      "about": {
+        "@id": "https://jaipurengineers.com/#organization"
+      },
+      "description": "Industry-focused IT training in Jaipur since 1996 with practical courses, internships, projects and placement assistance.",
+      "inLanguage": "en-IN"
     }
-    </script>
+  ]
+}</script>
 </head>
 
 <body class="defult-home">

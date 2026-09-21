@@ -20,6 +20,7 @@ if (!$post) {
 }
 $pageTitle = $post['title'] . ' | Jaipur Engineers Blog';
 $pageDescription = $post['meta'];
+$canonical = 'https://jaipurengineers.com/blogs/post.php?slug=' . rawurlencode($post['slug']);
 $related = $slug ? je_blog_related($slug, 8) : array_slice(je_blog_posts(), 0, 8, true);
 $sidebarPosts = $related;
 ?>

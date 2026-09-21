@@ -90,7 +90,7 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <div class="row"><?php foreach ($course['roles'] as $role): ?><div class="col-6 col-lg-3 mb-4"><div class="je-stat-box"><strong><i class="fa fa-briefcase"></i></strong><span><?php echo htmlspecialchars($role); ?></span></div></div><?php endforeach; ?></div>
 </div></section>
 </main>
-<div class="je-mobile-cta"><a href="tel:+919587779071"><i class="fa fa-phone mr-1"></i> Call</a><a href="#enquiry"><i class="fa fa-paper-plane mr-1"></i> Enquire</a></div>
+<div class="je-mobile-cta"><a href="tel:<?php echo je_business_text('phone'); ?>"><i class="fa fa-phone mr-1"></i> Call</a><a href="#enquiry"><i class="fa fa-paper-plane mr-1"></i> Enquire</a></div>
 <?php endif; ?>
 <?php include __DIR__ . '/footer.php'; ?>
 </body>
