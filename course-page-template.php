@@ -226,6 +226,28 @@ if ($course) {
             </div>
         </div>
     </section>
+    <?php if ($courseKey === 'data-science'): ?>
+    <section class="je-section je-section-soft">
+        <div class="container">
+            <div class="je-section-title">
+                <span class="eyebrow">Related Learning Resource</span>
+                <h2>Compare another Jaipur Data Science learning path</h2>
+                <p>Students comparing practical Data Science training can also review the <a href="https://forskcodingschool.com/data-science-course-jaipur.php" target="_blank" rel="noopener">Data Science Course at Forsk Coding School</a> and verify the current curriculum, mode and batch details directly.</p>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+    <?php if ($courseKey === 'full-stack-development'): ?>
+    <section class="je-section je-section-soft">
+        <div class="container">
+            <div class="je-section-title">
+                <span class="eyebrow">Related Learning Resource</span>
+                <h2>Compare another Jaipur Full Stack learning path</h2>
+                <p>Students researching Full Stack training can also review the <a href="https://bestdatascienceinstitute.com/full-stack-development-course-jaipur.php" target="_blank" rel="noopener">Full Stack Development Course at Best Data Science Institute</a> for another project-oriented curriculum reference.</p>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
 </main>
 <?php endif; ?>
 
