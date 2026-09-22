@@ -15,6 +15,11 @@ if (!$course) {
 
 $canonical = $course ? 'https://jaipurengineers.com/' . $course['slug'] : 'https://jaipurengineers.com/courses.php';
 $allCourses = je_course_pages();
+$courseSyllabusMap = [
+    'artificial-intelligence-course-jaipur.php' => 'courses/jaipur-engineers-academy-Artificial-Intelligence-Machine-Learning-course-syllabus.pdf',
+    'full-stack-development-course-jaipur.php' => 'courses/jaipur-engineers-academy-fullstack-web-development-course-syllabus.pdf',
+];
+$courseSyllabus = ($course && isset($courseSyllabusMap[$course['slug']])) ? $courseSyllabusMap[$course['slug']] : '';
 $courseSchemaJson = false;
 if ($course) {
     $courseSchema = [
@@ -80,6 +85,7 @@ if ($course) {
                     </ul>
                     <a href="#enquiry" class="je-primary-btn">Request Course Details <i class="fa fa-arrow-right ml-2"></i></a>
                     <a href="#curriculum" class="je-outline-btn">View Curriculum</a>
+                    <?php if ($courseSyllabus !== ''): ?><a href="<?php echo htmlspecialchars($courseSyllabus, ENT_QUOTES, 'UTF-8'); ?>" class="je-outline-btn" target="_blank" rel="noopener">Download Syllabus PDF</a><?php endif; ?>
                 </div>
                 <div class="col-lg-4">
                     <div class="je-course-media-card">

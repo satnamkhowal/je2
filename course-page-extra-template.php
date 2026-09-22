@@ -1,5 +1,41 @@
 <?php
 $course = $course ?? null;
+$courseAssetImages = [
+    'advanced-excel-course-jaipur.php' => 'courses/advanced-excel-course-jaipur-jaipur-engineers.webp',
+    'ai-tools-course-jaipur.php' => 'courses/ai-tools-course-jaipur-jaipur-engineers.webp',
+    'android-course-jaipur.php' => 'courses/android-course-jaipur-jaipur-engineers.webp',
+    'ccna-course-jaipur.php' => 'courses/ccna-course-jaipur-jaipur-engineers.webp',
+    'ccnp-course-jaipur.php' => 'courses/ccnp-course-jaipur-jaipur-engineers.webp',
+    'figma-course-jaipur.php' => 'courses/figma-course-jaipur-jaipur-engineers.webp',
+    'flutter-course-jaipur.php' => 'courses/flutter-course-jaipur-jaipur-engineers.webp',
+    'ios-app-development-course-jaipur.php' => 'courses/ios-app-development-course-jaipur-jaipur-engineers.webp',
+];
+$courseSyllabusPdfs = [
+    'advanced-java-course-jaipur.php' => 'courses/jaipur-engineers-academy-advanced-java-course-syllabus.pdf',
+    'c-plus-plus-course-jaipur.php' => 'courses/jaipur-engineers-academy-c-plus-plus-programming-course-syllabus.pdf',
+    'c-programming-course-jaipur.php' => 'courses/jaipur-engineers-academy-c-programming-course-syllabus.pdf',
+    'core-java-course-jaipur.php' => 'courses/jaipur-engineers-academy-core-java-course-syllabus.pdf',
+    'data-analytics-course-jaipur.php' => 'courses/jaipur-engineers-academy-data-analytics-course-syllabus.pdf',
+    'figma-course-jaipur.php' => 'courses/jaipur-engineers-academy-ux-ui-figma-course-syllabus.pdf',
+    'javascript-course-jaipur.php' => 'courses/jaipur-engineers-academy-complete-javascript-course-syllabus.pdf',
+    'machine-learning-course-jaipur.php' => 'courses/jaipur-engineers-academy-machine-learning-course-syllabus.pdf',
+    'node-js-course-jaipur.php' => 'courses/jaipur-engineers-academy-node-js-course-syllabus.pdf',
+    'node-js-development-course-jaipur.php' => 'courses/jaipur-engineers-academy-node-js-course-syllabus.pdf',
+    'react-js-course-jaipur.php' => 'courses/jaipur-engineers-academy-react-js-course-syllabus.pdf',
+    'react-development-course-jaipur.php' => 'courses/jaipur-engineers-academy-react-js-course-syllabus.pdf',
+    'spring-boot-course-jaipur.php' => 'courses/jaipur-engineers-academy-backend-development-with-java-spring-boot-course-syllabus.pdf',
+    'spring-framework-course-jaipur.php' => 'courses/jaipur-engineers-academy-java-frameworks-course-syllabus.pdf',
+    'ui-ux-design-course-jaipur.php' => 'courses/jaipur-engineers-academy-ux-ui-figma-course-syllabus.pdf',
+    'web-designing-course-jaipur.php' => 'courses/jaipur-engineers-academy-web-designing-course-syllabus.pdf',
+];
+if ($course && !empty($course['slug'])) {
+    if (isset($courseAssetImages[$course['slug']])) {
+        $course['image'] = $courseAssetImages[$course['slug']];
+    }
+    if (empty($course['syllabus']) && isset($courseSyllabusPdfs[$course['slug']])) {
+        $course['syllabus'] = $courseSyllabusPdfs[$course['slug']];
+    }
+}
 if (!$course || empty($course['slug']) || empty($course['name'])) {
     http_response_code(404);
     $pageTitle = 'Course Not Found | Jaipur Engineers';
@@ -44,6 +80,7 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <ul class="je-hero-points"><?php foreach (array_slice($course['chips'],0,4) as $chip): ?><li><i class="fa <?php echo htmlspecialchars($course['icon']); ?>"></i><?php echo htmlspecialchars($chip); ?></li><?php endforeach; ?></ul>
 <a href="#enquiry" class="je-primary-btn">Request Course Details <i class="fa fa-arrow-right ml-2"></i></a>
 <a href="#curriculum" class="je-outline-btn">View Curriculum</a>
+<?php if (!empty($course['syllabus'])): ?><a href="<?php echo htmlspecialchars($course['syllabus'], ENT_QUOTES, 'UTF-8'); ?>" class="je-outline-btn" target="_blank" rel="noopener">Download Syllabus PDF</a><?php endif; ?>
 </div>
 <div class="col-lg-4"><div class="je-course-media-card">
 <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>" loading="eager" fetchpriority="high">

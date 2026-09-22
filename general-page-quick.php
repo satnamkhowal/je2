@@ -10,6 +10,22 @@ $pageDescription = $lead;
 $canonical = 'https://jaipurengineers.com/' . $slug;
 $isAdmissions = $slug === 'college-admission-guidance-jaipur.php';
 $isContact = $slug === 'contact-us.php';
+$pageAssetImages = [
+    'corporate-training-jaipur.php' => 'courses/corporate-training-jaipur-jaipur-engineers.webp',
+    'diploma-cloud-computing-jaipur.php' => 'courses/diploma-cloud-computing-jaipur-jaipur-engineers.webp',
+    'diploma-cyber-security-jaipur.php' => 'courses/diploma-cyber-security-jaipur-jaipur-engineers.webp',
+    'diploma-data-analytics-jaipur.php' => 'courses/diploma-data-analytics-jaipur-jaipur-engineers.webp',
+    'diploma-data-science-ai-jaipur.php' => 'courses/diploma-data-science-ai-jaipur-jaipur-engineers.webp',
+    'diploma-digital-marketing-jaipur.php' => 'courses/diploma-digital-marketing-jaipur-jaipur-engineers.webp',
+    'diploma-full-stack-development-jaipur.php' => 'courses/diploma-full-stack-development-jaipur-jaipur-engineers.webp',
+    'diploma-java-programming-jaipur.php' => 'courses/diploma-java-programming-jaipur-jaipur-engineers.webp',
+    'diploma-programs-jaipur.php' => 'courses/diploma-programs-jaipur-jaipur-engineers.webp',
+    'diploma-python-programming-jaipur.php' => 'courses/diploma-python-programming-jaipur-jaipur-engineers.webp',
+    'final-year-projects-jaipur.php' => 'courses/final-year-projects-jaipur-jaipur-engineers.webp',
+    'industrial-training-jaipur.php' => 'courses/industrial-training-jaipur-jaipur-engineers.webp',
+    'internship-programs-jaipur.php' => 'courses/internship-programs-jaipur-jaipur-engineers.webp',
+];
+$pageImage = (string)($page['image'] ?? ($pageAssetImages[$slug] ?? ''));
 $esc = static fn($text) => htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
 ?>
 <!doctype html>
@@ -45,7 +61,9 @@ $esc = static fn($text) => htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
                 <a href="#enquiry" class="je-outline-btn">Enquire Now</a>
             </div>
             <div class="col-lg-4">
-                <div class="je-course-media-card"><div class="inner">
+                <div class="je-course-media-card">
+                    <?php if ($pageImage !== ''): ?><img src="<?= $esc($pageImage) ?>" alt="<?= $esc($title) ?>" loading="eager" fetchpriority="high" decoding="async"><?php endif; ?>
+                    <div class="inner">
                     <span class="je-kicker">Jaipur Engineers</span>
                     <h2 class="h3"><?= $esc($page['card_title'] ?? 'Practical learning since 1996') ?></h2>
                     <p><?= $esc($page['card_text'] ?? 'Training, projects, internships and career-focused guidance in Jaipur.') ?></p>
