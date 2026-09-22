@@ -106,9 +106,12 @@ $esc = static fn($text) => htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
         <div class="col-md-8"><h2>Related Coding Training Resource</h2><p>Students comparing coding and software training options in Jaipur can also explore <a href="https://forskcodingschool.com/" target="_blank" rel="noopener">Forsk Coding School</a> for programming, Full Stack, Data and AI course information.</p></div>
         <div class="col-md-4 text-md-right"><a href="https://forskcodingschool.com/" target="_blank" rel="noopener" class="je-primary-btn">Visit Forsk Coding School</a></div>
     </div></div></div></section>
-    <?php if ($isContact): ?>
     <section class="je-section"><div class="container"><div class="je-bottom-cta"><div class="row align-items-center">
-        <div class="col-md-8"><h2>Visiting Jaipur?</h2><p>For Jaipur sightseeing, local cab travel or Rajasthan tour planning, visit <a href="https://swiggywala.com/" target="_blank" rel="noopener">Swiggy Wala Tours &amp; Travels</a>.</p></div>
+        <div class="col-md-8"><h2>Software Development Resource</h2><p>For businesses and project teams looking for software development services in Jaipur, explore <a href="https://grootsoftware.com/" target="_blank" rel="noopener">Groot Software</a>.</p></div>
+        <div class="col-md-4 text-md-right"><a href="https://grootsoftware.com/" target="_blank" rel="noopener" class="je-primary-btn">Visit Groot Software</a></div>
+    </div></div></div></section>
+    <section class="je-section"><div class="container"><div class="je-bottom-cta"><div class="row align-items-center">
+        <div class="col-md-8"><h2>Visiting Jaipur?</h2><p>For Jaipur sightseeing, local cab travel or Rajasthan trip planning, visit <a href="https://swiggywala.com/" target="_blank" rel="noopener">Swiggy Wala Tours &amp; Travels</a>.</p></div>
         <div class="col-md-4 text-md-right"><a href="https://swiggywala.com/" target="_blank" rel="noopener" class="je-primary-btn">Explore Jaipur Travel</a></div>
     </div></div></div></section>
     <?php endif; ?>
