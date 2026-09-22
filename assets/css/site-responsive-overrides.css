@@ -670,3 +670,24 @@ body.defult-home .rs-partner .row > div > a {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* === Mobile-first completion pass — 2026-09-22 === */
+@media (max-width: 991.98px) {
+    .full-width-header .menu-area,
+    .full-width-header .menu-area.sticky { min-height: 62px; }
+    .full-width-header .rs-menu .nav-menu li,
+    .full-width-header .rs-menu .sub-menu li { min-width: 0; }
+    .full-width-header .rs-menu .sub-menu { max-height: 60vh; overflow-y: auto; overscroll-behavior: contain; }
+    .full-width-header .rs-menu .sub-menu a { min-height: 44px; white-space: normal; overflow-wrap: anywhere; }
+    .je-course-layout, .je-course-main, .je-course-sidebar { min-width: 0; }
+    .je-course-sidebar { position: static !important; top: auto !important; }
+    .je-bottom-cta .row { row-gap: 16px; }
+    .je-bottom-cta .je-primary-btn { width: 100%; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+}
+@media (max-width: 575.98px) {
+    .full-width-header .topbar-area .topbar-contact { justify-content: center; text-align: center; }
+    .full-width-header .topbar-area .topbar-contact li { width: 100%; justify-content: center; }
+    .je-section { padding-top: 44px; padding-bottom: 44px; }
+    .je-bottom-cta { padding: 20px 16px; }
+    .course-card, .je-card { min-width: 0; }
+}
