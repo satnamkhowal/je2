@@ -101,6 +101,12 @@ $esc = static fn($text) => htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
             </div>
         </div>
     </div></div></section>
+    <?php if ($isContact): ?>
+    <section class="je-section"><div class="container"><div class="je-bottom-cta"><div class="row align-items-center">
+        <div class="col-md-8"><h2>Visiting Jaipur?</h2><p>For Jaipur sightseeing, local cab travel or Rajasthan tour planning, visit <a href="https://swiggywala.com/" target="_blank" rel="noopener">Swiggy Wala Tours &amp; Travels</a>.</p></div>
+        <div class="col-md-4 text-md-right"><a href="https://swiggywala.com/" target="_blank" rel="noopener" class="je-primary-btn">Explore Jaipur Travel</a></div>
+    </div></div></div></section>
+    <?php endif; ?>
     <section class="je-section je-section-soft"><div class="container"><div class="je-bottom-cta"><div class="row align-items-center">
         <div class="col-md-8"><h2>Need more information?</h2><p>Talk to Jaipur Engineers for current details, guidance and next steps.</p></div>
         <div class="col-md-4 text-md-right"><a href="#enquiry" class="je-primary-btn">Send Enquiry</a></div>
