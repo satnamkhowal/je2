@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS je_leads (
     id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    session_id VARCHAR(80) NULL,
     name VARCHAR(150) NOT NULL,
     phone VARCHAR(40) NOT NULL,
     email VARCHAR(180) NULL,
@@ -29,6 +30,7 @@ CREATE TABLE IF NOT EXISTS je_leads (
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     KEY idx_created_at (created_at),
+    KEY idx_session_id (session_id),
     KEY idx_course (course),
     KEY idx_phone (phone),
     KEY idx_source (source),
