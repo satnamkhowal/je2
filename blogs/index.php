@@ -136,6 +136,7 @@ $sidebarPosts = array_slice(je_blog_posts(), 0, 8, true);
             </div>
         </div>
     </section>
+<?php if (($jeBlogIntentFilter ?? '') === 'Career Guides') include dirname(__DIR__) . '/includes/industry-profile-reading.php'; ?>
 </main>
 
 <?php include dirname(__DIR__) . '/footer.php'; ?>

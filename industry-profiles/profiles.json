@@ -1,0 +1,77 @@
+{
+  "divya-porwal": {
+    "name": "Divya Porwal", "initials": "DP", "company": "Google", "role": "Software Engineer II", "followers": "275K",
+    "linkedin": "https://in.linkedin.com/in/-divya-porwal",
+    "journey": "Her public profile lists KNIT Sultanpur. In her own joining announcement, she describes reaching a Google SWE-II offer after an earlier rejection. An exact joining date is not established here.",
+    "topics": ["DSA", "CS fundamentals", "Interview preparation"],
+    "attention": "Her rejection-to-offer story connects interview preparation with a personal career milestone. Her posts discuss practice patterns, fundamentals and mock interviews.",
+    "sources": {
+      "Google role and career announcement": "https://www.linkedin.com/posts/-divya-porwal_2024-you-are-rejected-2025-congratulations-activity-7434589499390574592-4MZ2",
+      "DSA and fundamentals discussion (marked paid partnership)": "https://www.linkedin.com/posts/-divya-porwal_dsa-csfundamentals-placements-activity-7360877476635402240-CTu6"
+    }
+  },
+  "shivam-shrivastava": {
+    "name": "Shivam Shrivastava", "initials": "SS", "company": "Google", "role": "Software Engineer, Machine Learning", "followers": "233K",
+    "linkedin": "https://in.linkedin.com/in/shivam-shrivastava-ab6404179",
+    "journey": "His public profile identifies him as a machine-learning software engineer at Google and lists IIT Kharagpur. A colleague's public recommendation describes working with him in Microsoft's data science team.",
+    "topics": ["Machine learning", "AI tools", "Engineering careers"],
+    "attention": "His feed connects an engineering career with practical AI discussions, including coding agents and how developers check their output.",
+    "sources": {"Career guidance post": "https://www.linkedin.com/posts/shivam-shrivastava-ab6404179_i-want-to-work-at-google-or-microsoft-activity-7400843543025741824-rcAD"}
+  },
+  "shreya-narayan": {
+    "name": "Shreya Narayan", "initials": "SN", "company": "Google", "role": "Software Engineer", "followers": "102K",
+    "linkedin": "https://in.linkedin.com/in/shreya-narayan-1536271a4",
+    "journey": "Her profile lists Bangalore Institute of Technology. In a personal career account, she describes a Goldman Sachs internship in 2023 and a Google full-time offer in 2024.",
+    "topics": ["Placement preparation", "Resumes", "DSA", "Internships"],
+    "attention": "She combines a student-to-engineer journey with specific preparation advice. Her discussion of setbacks and internship awareness gives students context beyond an offer announcement.",
+    "sources": {
+      "Personal career timeline": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_careergrowth-engineeringjourney-googlefte-activity-7345294558567489536-qaCx",
+      "Software engineer role and placement content": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_10kfollowers-instagrammilestone-contentcreator-activity-7457266850989514752-CpPu",
+      "Resume advice": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_resumetips-jobsearch-careeradvice-activity-7325724312944963584-qoAG"
+    }
+  },
+  "palak-awasthi": {
+    "name": "Palak Awasthi", "initials": "PA", "company": "Salesforce", "role": "Software Engineer (MTS)", "followers": "120K",
+    "linkedin": "https://in.linkedin.com/in/palakawasthi",
+    "journey": "Her public profile lists Salesforce, and a recent event account identifies her as a Software Engineer (MTS). A public colleague recommendation confirms earlier work together at PayPal. She also lists a Women Techmakers ambassador role.",
+    "topics": ["Career development", "Interview preparation", "AI", "Women in tech"],
+    "attention": "Her public activity blends career support, technology events and workplace experiences. Posts about referrals and hiring discussions address questions job seekers face.",
+    "sources": {}
+  },
+  "piyush-sharma": {
+    "name": "Piyush Sharma", "initials": "PS", "company": "Microsoft", "role": "Software Engineer II", "followers": "43K",
+    "linkedin": "https://in.linkedin.com/in/thepiyushway",
+    "journey": "His LinkedIn profile identifies Microsoft. His public professional bio describes a Software Engineer II role in the Teams organization, following work at Amazon and American Express.",
+    "topics": ["Software engineering", "AI", "System design", "Interview preparation"],
+    "attention": "His content focuses on software engineering and interview preparation. His professional bio connects that guidance to experience building large-scale products and offering mock interviews.",
+    "sources": {"Professional bio, role and previous companies": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"}
+  },
+  "riyasha-jaiswal": {
+    "name": "Riyasha Jaiswal", "initials": "RJ", "company": "Flipkart", "role": "Software Engineer", "followers": "236K",
+    "linkedin": "https://in.linkedin.com/in/riyasha-jaiswal-765071199",
+    "journey": "Her public LinkedIn profile lists Flipkart and NIT Patna. Her public creator bio identifies earlier experience at Amazon and Sprinklr and a focus on backend development and Java.",
+    "topics": ["DSA", "System design", "Job switches", "Interview preparation"],
+    "attention": "She discusses preparation routines and the frustrations of technical hiring. These posts combine practical learning topics with situations familiar to early-career applicants.",
+    "sources": {
+      "Creator bio and previous companies": "https://www.anchors.in/riyashajaiswal",
+      "DSA and system design preparation": "https://www.linkedin.com/posts/riyasha-jaiswal-765071199_rejections-jobswitch-growth-activity-7441322314698301440-Vw2q",
+      "Technical hiring discussion": "https://www.linkedin.com/posts/riyasha-jaiswal-765071199_modern-tech-hiring-process-in-a-nutshell-activity-7452192219014336512-yNoW"
+    }
+  },
+  "riti-nema": {
+    "name": "Riti Nema", "initials": "RN", "company": "Atlassian", "role": "Software Developer", "followers": "103K",
+    "linkedin": "https://in.linkedin.com/in/riti-nema-707b1719b",
+    "journey": "Her public profile lists Atlassian and IET DAVV, Indore. In a personal account, she describes receiving several company offers and using her interview experience to guide other applicants. Offers are not treated as employment history.",
+    "topics": ["Coding", "Placement preparation", "Interview strategy", "Career guidance"],
+    "attention": "She connects her own application and interview experience with guidance for aspiring engineers, sharing that experience through LinkedIn and Medium.",
+    "sources": {"Career and guidance account": "https://www.linkedin.com/posts/riti-nema-707b1719b_beavailable-beavailable-mentorship-activity-7088134253384744960-DZoV"}
+  },
+  "harshit-trehan": {
+    "name": "Harshit Trehan", "initials": "HT", "company": "Atlassian", "role": "Software Engineer II", "followers": "145K",
+    "linkedin": "https://in.linkedin.com/in/harshit-trehan",
+    "journey": "His public profile identifies a Software Engineer II role at Atlassian, previous work at Juspay and Godfrey Phillips, and study at Maharaja Agrasen Institute of Technology, Delhi.",
+    "topics": ["DSA", "Python", "Internship preparation", "Learning roadmaps"],
+    "attention": "His posts turn preparation experiences into learning sequences, including DSA practice and Python projects. This gives learners concrete next steps to consider.",
+    "sources": {"DSA preparation account": "https://www.linkedin.com/posts/harshit-trehan_the-secret-to-landing-awesome-offers-from-activity-7307779989930749953-3pH8"}
+  }
+}

@@ -126,6 +126,7 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <div class="je-section-title"><span class="eyebrow">Career Preparation</span><h2>Prepare for entry-level development roles.</h2><p>Role readiness depends on practice, projects, interview performance and employer requirements.</p></div>
 <div class="row"><?php foreach ($course['roles'] as $role): ?><div class="col-6 col-lg-3 mb-4"><div class="je-stat-box"><strong><i class="fa fa-briefcase"></i></strong><span><?php echo htmlspecialchars($role); ?></span></div></div><?php endforeach; ?></div>
 </div></section>
+<?php if (($course['slug'] ?? '') === 'java-interview-preparation-jaipur.php') include __DIR__ . '/includes/industry-profile-reading.php'; ?>
 </main>
 <div class="je-mobile-cta"><a href="tel:<?php echo je_business_text('phone'); ?>"><i class="fa fa-phone mr-1"></i> Call</a><a href="#enquiry"><i class="fa fa-paper-plane mr-1"></i> Enquire</a></div>
 <?php endif; ?>

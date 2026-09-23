@@ -103,6 +103,7 @@
                             <ul class="site-map je-footer-links">
                                 <li><a href="blog.php">Blog</a></li>
                                 <li><a href="career-guides.php">Career Guides</a></li>
+                                <li><a href="industry-profiles/">Industry Profiles</a></li>
                                 <li><a href="interview-questions.php">Interview Questions</a></li>
                                 <li><a href="free-tutorials.php">Free Tutorials</a></li>
                                 <li><a href="events.php">Events</a></li>

@@ -137,6 +137,7 @@ $esc = static fn($text) => htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
         <div class="col-md-8"><h2>Need more information?</h2><p>Talk to Jaipur Engineers for current details, guidance and next steps.</p></div>
         <div class="col-md-4 text-md-right"><a href="#enquiry" class="je-primary-btn">Send Enquiry</a></div>
     </div></div></div></section>
+<?php if (in_array($slug, ['placements.php', 'placement-assistance.php', 'placement-process.php'], true)) include __DIR__ . '/includes/industry-profile-reading.php'; ?>
 </main>
 <div class="je-mobile-cta"><a href="tel:<?= je_business_text('phone') ?>"><i class="fa fa-phone mr-1" aria-hidden="true"></i> Call</a><a href="#enquiry"><i class="fa fa-paper-plane mr-1" aria-hidden="true"></i> Enquire</a></div>
 <?php include __DIR__ . '/footer.php'; ?>
