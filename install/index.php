@@ -66,23 +66,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked) {
     } elseif (!$allRequirements) {
         $errors[] = 'Please fix the failed server requirements before installation.';
     } else {
+        $dbPasswordInput = je_install_value('db_pass');
+        $dbPassword = $dbPasswordInput !== ''
+            ? $dbPasswordInput
+            : (isset($existingDb['password']) ? (string)$existingDb['password'] : '');
+
         $db = [
             'host' => trim(je_install_value('db_host', 'localhost')),
             'port' => (int)je_install_value('db_port', '3306'),
-            'database' => trim(je_install_value('db_name')),
-            'username' => trim(je_install_value('db_user')),
-            'password' => je_install_value('db_pass'),
+            'database' => trim(je_install_value('db_name', 'u950309299_xgroot')),
+            'username' => trim(je_install_value('db_user', 'u950309299_xgroot')),
+            'password' => $dbPassword,
             'charset' => 'utf8mb4',
         ];
 
         if ($db['host'] === '' || $db['database'] === '' || $db['username'] === '') {
             $errors[] = 'Database host, database name and database username are required.';
         }
+        if ($db['password'] === '') {
+            $errors[] = 'Database password is required for the first setup.';
+        }
         if ($db['port'] < 1 || $db['port'] > 65535) {
             $errors[] = 'Database port is invalid.';
         }
 
         $mailEnabled = isset($_POST['mail_enabled']) && $_POST['mail_enabled'] === '1';
+        $reuseDbPassword = isset($_POST['reuse_db_password_for_smtp']) && $_POST['reuse_db_password_for_smtp'] === '1';
+        $smtpPasswordInput = je_install_value('smtp_pass');
+        if ($smtpPasswordInput !== '') {
+            $smtpPassword = $smtpPasswordInput;
+        } elseif ($reuseDbPassword && $db['password'] !== '') {
+            $smtpPassword = $db['password'];
+        } else {
+            $smtpPassword = isset($existingMail['password']) ? (string)$existingMail['password'] : '';
+        }
+
         $encryptionValue = je_install_value('smtp_encryption', 'ssl');
         $mail = [
             'enabled' => $mailEnabled,
@@ -91,10 +109,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked) {
             'port' => (int)je_install_value('smtp_port', '465'),
             'encryption' => in_array($encryptionValue, ['tls', 'ssl', 'none'], true) ? $encryptionValue : 'ssl',
             'username' => trim(je_install_value('smtp_user', 'info@jaipurengineers.com')),
-            'password' => je_install_value('smtp_pass'),
+            'password' => $smtpPassword,
             'from_email' => trim(je_install_value('from_email', 'info@jaipurengineers.com')),
             'from_name' => trim(je_install_value('from_name', 'Jaipur Engineers')) ?: 'Jaipur Engineers',
             'notify_email' => trim(je_install_value('notify_email', 'mygrootacademy@gmail.com')),
+            'auto_reply_enabled' => true,
+            'auto_reply_subject' => 'Thanks for contacting Jaipur Engineers - {course}',
+            'website_url' => 'https://jaipurengineers.com/',
+            'courses_url' => 'https://jaipurengineers.com/courses.php',
         ];
 
         if ($mailEnabled) {
@@ -104,8 +126,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked) {
             if (!filter_var($mail['notify_email'], FILTER_VALIDATE_EMAIL)) {
                 $errors[] = 'A valid lead notification email is required when mail notifications are enabled.';
             }
-            if ($mail['driver'] === 'smtp' && ($mail['host'] === '' || $mail['port'] < 1 || $mail['port'] > 65535)) {
-                $errors[] = 'SMTP host and a valid SMTP port are required.';
+            if ($mail['driver'] === 'smtp') {
+                if ($mail['host'] === '' || $mail['port'] < 1 || $mail['port'] > 65535) {
+                    $errors[] = 'SMTP host and a valid SMTP port are required.';
+                }
+                if ($mail['username'] !== '' && $mail['password'] === '') {
+                    $errors[] = 'SMTP password is required for the first setup.';
+                }
             }
         }
 
@@ -155,14 +182,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jaipur Engineers Website Installer</title>
 <style>
-:root{--orange:#f15a24;--dark:#18263a;--muted:#667085;--line:#e6eaf0;--bg:#f6f8fb;--ok:#087a52;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--dark)}.wrap{max-width:980px;margin:34px auto;padding:0 18px}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(19,33,54,.06)}.hero{padding:24px;margin-bottom:18px;border-top:4px solid var(--orange)}h1{margin:0 0 8px;font-size:27px}.hero p{margin:0;color:var(--muted);line-height:1.55}.card{padding:22px;margin-bottom:18px}h2{margin:0 0 16px;font-size:19px}.requirements{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.req{border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13px}.req.ok{background:#effaf5;color:var(--ok)}.req.bad{background:#fff1f0;color:var(--bad)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:12px;font-weight:700}.hint{font-size:11px;color:var(--muted);line-height:1.4}input,select{width:100%;border:1px solid #d8dee8;border-radius:9px;padding:10px 11px;font-size:14px;background:#fff}input:focus,select:focus{outline:2px solid rgba(241,90,36,.15);border-color:#f69a70}.check{display:flex;align-items:flex-start;gap:8px;margin:4px 0 15px}.check input{width:auto;margin-top:2px}.btn{border:0;border-radius:10px;background:var(--orange);color:#fff;font-weight:700;padding:12px 18px;cursor:pointer}.btn:disabled{opacity:.5}.alert{border-radius:11px;padding:12px 14px;margin-bottom:16px;font-size:13px;line-height:1.5}.alert.bad{background:#fff1f0;color:var(--bad);border:1px solid #ffd3cf}.alert.ok{background:#effaf5;color:var(--ok);border:1px solid #c7eedc}.locked{font-size:14px;line-height:1.6}.code{font-family:Consolas,monospace;background:#f2f4f7;border-radius:6px;padding:2px 6px}@media(max-width:700px){.grid,.requirements{grid-template-columns:1fr}.full{grid-column:auto}.wrap{margin:16px auto}.hero,.card{border-radius:13px;padding:17px}}
+:root{--orange:#f15a24;--dark:#18263a;--muted:#667085;--line:#e6eaf0;--bg:#f6f8fb;--ok:#087a52;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--dark)}.wrap{max-width:980px;margin:34px auto;padding:0 18px}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(19,33,54,.06)}.hero{padding:24px;margin-bottom:18px;border-top:4px solid var(--orange)}h1{margin:0 0 8px;font-size:27px}.hero p{margin:0;color:var(--muted);line-height:1.55}.card{padding:22px;margin-bottom:18px}h2{margin:0 0 16px;font-size:19px}.requirements{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.req{border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13px}.req.ok{background:#effaf5;color:var(--ok)}.req.bad{background:#fff1f0;color:var(--bad)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:12px;font-weight:700}.hint{font-size:11px;color:var(--muted);line-height:1.4}.ready-note{margin:0 0 16px;padding:12px 14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;font-size:13px;line-height:1.55}input,select{width:100%;border:1px solid #d8dee8;border-radius:9px;padding:10px 11px;font-size:14px;background:#fff}input:focus,select:focus{outline:2px solid rgba(241,90,36,.15);border-color:#f69a70}.check{display:flex;align-items:flex-start;gap:8px;margin:4px 0 15px}.check input{width:auto;margin-top:2px}.btn{border:0;border-radius:10px;background:var(--orange);color:#fff;font-weight:700;padding:12px 18px;cursor:pointer}.btn:disabled{opacity:.5}.alert{border-radius:11px;padding:12px 14px;margin-bottom:16px;font-size:13px;line-height:1.5}.alert.bad{background:#fff1f0;color:var(--bad);border:1px solid #ffd3cf}.alert.ok{background:#effaf5;color:var(--ok);border:1px solid #c7eedc}.locked{font-size:14px;line-height:1.6}.code{font-family:Consolas,monospace;background:#f2f4f7;border-radius:6px;padding:2px 6px}@media(max-width:700px){.grid,.requirements{grid-template-columns:1fr}.full{grid-column:auto}.wrap{margin:16px auto}.hero,.card{border-radius:13px;padding:17px}}
 </style>
 </head>
 <body>
 <div class="wrap">
     <div class="hero">
         <h1>Jaipur Engineers Website Installer</h1>
-        <p>One-time setup for MySQL lead storage, admin lead alerts and student confirmation emails. Passwords stay only in hosting-side PHP config files ignored by Git.</p>
+        <p>One-time setup for MySQL lead storage, admin lead alerts and student confirmation emails. All non-secret Jaipur Engineers values are already filled. Passwords are saved only in hosting-side PHP config files ignored by Git.</p>
     </div>
 
     <?php if ($errors): ?><div class="alert bad"><strong>Setup not completed.</strong><br><?php echo implode('<br>', array_map('je_install_h', $errors)); ?></div><?php endif; ?>
@@ -181,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked) {
         <div class="card locked">
             <h2>Installer locked</h2>
             <p>The setup lock exists at <span class="code">config/install.lock</span>. This prevents public changes to database or mail credentials.</p>
-            <p>To reconfigure, delete <span class="code">config/install.lock</span> in Hostinger File Manager, reopen this page, update the values, then complete setup again.</p>
+            <p>If this page is locked, the saved runtime configuration is already active. To intentionally reconfigure, delete <span class="code">config/install.lock</span> in Hostinger File Manager and reopen this page.</p>
             <p><a href="/">Return to Jaipur Engineers website</a></p>
         </div>
     <?php else: ?>
@@ -190,12 +217,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked) {
 
         <div class="card">
             <h2>1. MySQL database</h2>
+            <p class="ready-note"><strong>Ready:</strong> database host, port, database name and username are prefilled. On the first install, enter the database password once below.</p>
             <div class="grid">
                 <div class="field"><label>DB Host *</label><input name="db_host" required value="<?php echo je_install_h(je_install_value('db_host', isset($existingDb['host']) ? $existingDb['host'] : 'localhost')); ?>"></div>
                 <div class="field"><label>DB Port *</label><input name="db_port" inputmode="numeric" required value="<?php echo je_install_h(je_install_value('db_port', isset($existingDb['port']) ? $existingDb['port'] : '3306')); ?>"></div>
-                <div class="field"><label>Database Name *</label><input name="db_name" required value="<?php echo je_install_h(je_install_value('db_name', isset($existingDb['database']) ? $existingDb['database'] : '')); ?>"></div>
-                <div class="field"><label>Database User *</label><input name="db_user" required value="<?php echo je_install_h(je_install_value('db_user', isset($existingDb['username']) ? $existingDb['username'] : '')); ?>"></div>
-                <div class="field full"><label>Database Password *</label><input type="password" name="db_pass" value="" placeholder="Enter hosting database password"><span class="hint">The password is written only to the ignored hosting config file.</span></div>
+                <div class="field"><label>Database Name *</label><input name="db_name" required value="<?php echo je_install_h(je_install_value('db_name', isset($existingDb['database']) ? $existingDb['database'] : 'u950309299_xgroot')); ?>"></div>
+                <div class="field"><label>Database User *</label><input name="db_user" required value="<?php echo je_install_h(je_install_value('db_user', isset($existingDb['username']) ? $existingDb['username'] : 'u950309299_xgroot')); ?>"></div>
+                <div class="field full"><label>Database Password</label><input type="password" name="db_pass" autocomplete="new-password" value="" placeholder="Enter only on first setup"><span class="hint">If a runtime database config already exists, leaving this blank keeps the saved password.</span></div>
             </div>
         </div>
 
@@ -208,17 +236,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked) {
                 <div class="field"><label>SMTP Host</label><input name="smtp_host" value="<?php echo je_install_h(je_install_value('smtp_host', isset($existingMail['host']) ? $existingMail['host'] : 'smtp.hostinger.com')); ?>"></div>
                 <div class="field"><label>SMTP Port</label><input name="smtp_port" inputmode="numeric" value="<?php echo je_install_h(je_install_value('smtp_port', isset($existingMail['port']) ? $existingMail['port'] : '465')); ?>"></div>
                 <div class="field"><label>SMTP Username</label><input name="smtp_user" autocomplete="off" value="<?php echo je_install_h(je_install_value('smtp_user', isset($existingMail['username']) ? $existingMail['username'] : 'info@jaipurengineers.com')); ?>"></div>
-                <div class="field"><label>SMTP Password</label><input type="password" name="smtp_pass" autocomplete="new-password" value="" placeholder="Mailbox password"></div>
+                <div class="field"><label>SMTP Password</label><input type="password" name="smtp_pass" autocomplete="new-password" value="" placeholder="Leave blank when reusing DB password"></div>
                 <div class="field"><label>From Email</label><input type="email" name="from_email" value="<?php echo je_install_h(je_install_value('from_email', isset($existingMail['from_email']) ? $existingMail['from_email'] : 'info@jaipurengineers.com')); ?>"></div>
                 <div class="field"><label>From Name</label><input name="from_name" value="<?php echo je_install_h(je_install_value('from_name', isset($existingMail['from_name']) ? $existingMail['from_name'] : 'Jaipur Engineers')); ?>"></div>
                 <div class="field full"><label>Send New Lead Alerts To</label><input type="email" name="notify_email" value="<?php echo je_install_h(je_install_value('notify_email', isset($existingMail['notify_email']) ? $existingMail['notify_email'] : 'mygrootacademy@gmail.com')); ?>"></div>
             </div>
-            <label class="check" style="margin-top:15px"><input type="checkbox" name="send_test" value="1" checked><span><strong>Send a test email before locking setup</strong><br><span class="hint">If SMTP authentication fails, setup stays unlocked so you can correct the values.</span></span></label>
+            <label class="check" style="margin-top:15px"><input type="checkbox" name="reuse_db_password_for_smtp" value="1" <?php echo (!$_POST || isset($_POST['reuse_db_password_for_smtp'])) ? 'checked' : ''; ?>><span><strong>Use the database password for SMTP too</strong><br><span class="hint">Keep this checked for the current Jaipur Engineers setup. Then you only type one password on first install.</span></span></label>
+            <label class="check"><input type="checkbox" name="send_test" value="1" checked><span><strong>Send a test email before locking setup</strong><br><span class="hint">If database or SMTP authentication fails, setup remains unlocked and shows the error instead of saving a broken configuration.</span></span></label>
         </div>
 
         <div class="card">
             <h2>3. Create tables & finish</h2>
-            <p class="hint">This tests MySQL, creates or upgrades <strong>je_leads</strong>, tests mail, writes protected runtime configs and creates the installer lock.</p>
+            <p class="hint">This tests MySQL, creates or upgrades <strong>je_leads</strong>, tests SMTP, writes protected runtime config files, enables the student follow-up settings and creates the installer lock.</p>
             <button class="btn" type="submit" <?php echo !$allRequirements ? 'disabled' : ''; ?>>Test, Create Tables & Finish Setup</button>
         </div>
     </form>
