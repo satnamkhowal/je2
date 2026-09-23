@@ -1,77 +1,528 @@
 {
   "divya-porwal": {
-    "name": "Divya Porwal", "initials": "DP", "company": "Google", "role": "Software Engineer II", "followers": "275K",
+    "name": "Divya Porwal",
+    "initials": "DP",
+    "company": "Google",
+    "role": "Software Engineer II",
+    "followers": "275K",
     "linkedin": "https://in.linkedin.com/in/-divya-porwal",
-    "journey": "Her public profile lists KNIT Sultanpur. In her own joining announcement, she describes reaching a Google SWE-II offer after an earlier rejection. An exact joining date is not established here.",
-    "topics": ["DSA", "CS fundamentals", "Interview preparation"],
+    "journey": "From engineering studies at KNIT Sultanpur to internships and a software development role at Flipkart, Divya’s public accounts trace a path to Google. She shares interview preparation lessons alongside her career updates.",
+    "topics": [
+      "DSA",
+      "CS fundamentals",
+      "Interview preparation"
+    ],
     "attention": "Her rejection-to-offer story connects interview preparation with a personal career milestone. Her posts discuss practice patterns, fundamentals and mock interviews.",
     "sources": {
       "Google role and career announcement": "https://www.linkedin.com/posts/-divya-porwal_2024-you-are-rejected-2025-congratulations-activity-7434589499390574592-4MZ2",
-      "DSA and fundamentals discussion (marked paid partnership)": "https://www.linkedin.com/posts/-divya-porwal_dsa-csfundamentals-placements-activity-7360877476635402240-CTu6"
-    }
+      "DSA and fundamentals discussion (marked paid partnership)": "https://www.linkedin.com/posts/-divya-porwal_dsa-csfundamentals-placements-activity-7360877476635402240-CTu6",
+      "Earlier Flipkart role": "https://www.linkedin.com/posts/-divya-porwal_flipkart-timessquare-softwaredeveloper-activity-7332990355602059265-zcIR",
+      "Cisco internship announcement": "https://www.linkedin.com/posts/cdc-knit_knitsultanpur-cisco-careerdevelopment-activity-7167187319349821441-ZHTt",
+      "Earlier internship bio": "https://topmate.io/divya_porwal"
+    },
+    "photo": "assets/images/industry-profiles/divya-porwal.jpg",
+    "photoSource": "https://topmate.io/divya_porwal",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "Public profile · reviewed September 2026",
+        "title": "Software Engineer II",
+        "organization": "Google",
+        "detail": "Publicly listed role; see the source for the latest status.",
+        "source": "https://in.linkedin.com/in/-divya-porwal"
+      },
+      {
+        "date": "Previous role · dates not confirmed",
+        "title": "Software Developer",
+        "organization": "Flipkart",
+        "detail": "Described in her own career account.",
+        "source": "https://www.linkedin.com/posts/-divya-porwal_flipkart-timessquare-softwaredeveloper-activity-7332990355602059265-zcIR"
+      },
+      {
+        "date": "2024 announcement · term not confirmed",
+        "title": "Software engineering internship",
+        "organization": "Cisco",
+        "detail": "Internship selection announced by KNIT’s Career Development Cell.",
+        "source": "https://www.linkedin.com/posts/cdc-knit_knitsultanpur-cisco-careerdevelopment-activity-7167187319349821441-ZHTt"
+      },
+      {
+        "date": "Earlier internship · dates not confirmed",
+        "title": "Software engineering intern",
+        "organization": "Siemens Digital",
+        "detail": "Listed in her creator bio.",
+        "source": "https://topmate.io/divya_porwal"
+      }
+    ],
+    "education": [
+      {
+        "date": "2020–2024",
+        "title": "Engineering studies",
+        "organization": "KNIT Sultanpur",
+        "detail": "Education period listed on her public profile.",
+        "source": "https://in.linkedin.com/in/-divya-porwal"
+      }
+    ],
+    "milestones": [
+      {
+        "date": "2024 rejection; later offer",
+        "title": "Google interview journey",
+        "organization": "Career milestone",
+        "detail": "Her posts describe rejection followed by an offer. Conflicting offer-year references are not used to infer a start date.",
+        "source": "https://www.linkedin.com/posts/-divya-porwal_2024-you-are-rejected-2025-congratulations-activity-7434589499390574592-4MZ2"
+      }
+    ]
   },
   "shivam-shrivastava": {
-    "name": "Shivam Shrivastava", "initials": "SS", "company": "Google", "role": "Software Engineer, Machine Learning", "followers": "233K",
+    "name": "Shivam Shrivastava",
+    "initials": "SS",
+    "company": "Google",
+    "role": "Software Engineer, Machine Learning",
+    "followers": "233K",
     "linkedin": "https://in.linkedin.com/in/shivam-shrivastava-ab6404179",
     "journey": "His public profile identifies him as a machine-learning software engineer at Google and lists IIT Kharagpur. A colleague's public recommendation describes working with him in Microsoft's data science team.",
-    "topics": ["Machine learning", "AI tools", "Engineering careers"],
+    "topics": [
+      "Machine learning",
+      "AI tools",
+      "Engineering careers"
+    ],
     "attention": "His feed connects an engineering career with practical AI discussions, including coding agents and how developers check their output.",
-    "sources": {"Career guidance post": "https://www.linkedin.com/posts/shivam-shrivastava-ab6404179_i-want-to-work-at-google-or-microsoft-activity-7400843543025741824-rcAD"}
+    "sources": {
+      "Career guidance post": "https://www.linkedin.com/posts/shivam-shrivastava-ab6404179_i-want-to-work-at-google-or-microsoft-activity-7400843543025741824-rcAD",
+      "Microsoft joining announcement": "https://www.linkedin.com/posts/shivam-shrivastava-ab6404179_microsoft-softwaredeveloper-newbeginnings-activity-7089269453774888960-yAT0",
+      "Public CV: internship": "https://shiv314.github.io/Portfolio/CV.pdf"
+    },
+    "photo": "assets/images/industry-profiles/shivam-shrivastava.webp",
+    "photoSource": "https://www.anchors.in/shivamshrivastava",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "Public profile · reviewed September 2026",
+        "title": "Software Engineer, Machine Learning",
+        "organization": "Google",
+        "detail": "Publicly listed role; see the source for the latest status.",
+        "source": "https://in.linkedin.com/in/shivam-shrivastava-ab6404179"
+      },
+      {
+        "date": "Joined July 2023 · end not confirmed",
+        "title": "Software Developer",
+        "organization": "Microsoft",
+        "detail": "Joining month stated in his own announcement.",
+        "source": "https://www.linkedin.com/posts/shivam-shrivastava-ab6404179_microsoft-softwaredeveloper-newbeginnings-activity-7089269453774888960-yAT0"
+      },
+      {
+        "date": "May–July 2022",
+        "title": "Software Development Intern",
+        "organization": "Microsoft",
+        "detail": "Internship period listed in his public CV.",
+        "source": "https://shiv314.github.io/Portfolio/CV.pdf"
+      }
+    ],
+    "education": [
+      {
+        "date": "Education · dates not confirmed",
+        "title": "University studies",
+        "organization": "IIT Kharagpur",
+        "detail": "Institution listed on his public profile.",
+        "source": "https://in.linkedin.com/in/shivam-shrivastava-ab6404179"
+      }
+    ],
+    "milestones": [
+      {
+        "date": "November 2024",
+        "title": "Executive Challenge winner",
+        "organization": "Microsoft Global Hackathon",
+        "detail": "Award listed in his public profile.",
+        "source": "https://in.linkedin.com/in/shivam-shrivastava-ab6404179"
+      }
+    ]
   },
   "shreya-narayan": {
-    "name": "Shreya Narayan", "initials": "SN", "company": "Google", "role": "Software Engineer", "followers": "102K",
+    "name": "Shreya Narayan",
+    "initials": "SN",
+    "company": "Google",
+    "role": "Software Engineer",
+    "followers": "102K",
     "linkedin": "https://in.linkedin.com/in/shreya-narayan-1536271a4",
     "journey": "Her profile lists Bangalore Institute of Technology. In a personal career account, she describes a Goldman Sachs internship in 2023 and a Google full-time offer in 2024.",
-    "topics": ["Placement preparation", "Resumes", "DSA", "Internships"],
+    "topics": [
+      "Placement preparation",
+      "Resumes",
+      "DSA",
+      "Internships"
+    ],
     "attention": "She combines a student-to-engineer journey with specific preparation advice. Her discussion of setbacks and internship awareness gives students context beyond an offer announcement.",
     "sources": {
       "Personal career timeline": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_careergrowth-engineeringjourney-googlefte-activity-7345294558567489536-qaCx",
       "Software engineer role and placement content": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_10kfollowers-instagrammilestone-contentcreator-activity-7457266850989514752-CpPu",
       "Resume advice": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_resumetips-jobsearch-careeradvice-activity-7325724312944963584-qoAG"
-    }
+    },
+    "photo": "assets/images/industry-profiles/shreya-narayan.jpg",
+    "photoSource": "https://topmate.io/shreya_narayan",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "Public profile · reviewed September 2026",
+        "title": "Software Engineer",
+        "organization": "Google",
+        "detail": "Publicly listed role; see the source for the latest status.",
+        "source": "https://in.linkedin.com/in/shreya-narayan-1536271a4"
+      },
+      {
+        "date": "2023",
+        "title": "Summer Analyst internship",
+        "organization": "Goldman Sachs",
+        "detail": "Internship year described in her career timeline.",
+        "source": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_careergrowth-engineeringjourney-googlefte-activity-7345294558567489536-qaCx"
+      }
+    ],
+    "education": [
+      {
+        "date": "2020–2024",
+        "title": "Engineering studies",
+        "organization": "Bangalore Institute of Technology",
+        "detail": "Education period listed on her public profile.",
+        "source": "https://in.linkedin.com/in/shreya-narayan-1536271a4"
+      }
+    ],
+    "milestones": [
+      {
+        "date": "2024",
+        "title": "Google full-time offer",
+        "organization": "Career milestone",
+        "detail": "Offer year stated in her own account, not an exact employment start date.",
+        "source": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_careergrowth-engineeringjourney-googlefte-activity-7345294558567489536-qaCx"
+      },
+      {
+        "date": "2022 & 2023",
+        "title": "Hackathon wins",
+        "organization": "EthIndia",
+        "detail": "Wins listed on her public profile.",
+        "source": "https://in.linkedin.com/in/shreya-narayan-1536271a4"
+      },
+      {
+        "date": "2022",
+        "title": "Hackathon wins",
+        "organization": "Smart India & UNESCO India Africa",
+        "detail": "Awards listed on her public profile.",
+        "source": "https://in.linkedin.com/in/shreya-narayan-1536271a4"
+      },
+      {
+        "date": "2021",
+        "title": "Started exploring DSA and web development",
+        "organization": "Learning journey",
+        "detail": "Learning milestone from her personal account.",
+        "source": "https://www.linkedin.com/posts/shreya-narayan-1536271a4_careergrowth-engineeringjourney-googlefte-activity-7345294558567489536-qaCx"
+      }
+    ]
   },
   "palak-awasthi": {
-    "name": "Palak Awasthi", "initials": "PA", "company": "Salesforce", "role": "Software Engineer (MTS)", "followers": "120K",
+    "name": "Palak Awasthi",
+    "initials": "PA",
+    "company": "Salesforce",
+    "role": "Software Engineer (MTS)",
+    "followers": "120K",
     "linkedin": "https://in.linkedin.com/in/palakawasthi",
     "journey": "Her public profile lists Salesforce, and a recent event account identifies her as a Software Engineer (MTS). A public colleague recommendation confirms earlier work together at PayPal. She also lists a Women Techmakers ambassador role.",
-    "topics": ["Career development", "Interview preparation", "AI", "Women in tech"],
+    "topics": [
+      "Career development",
+      "Interview preparation",
+      "AI",
+      "Women in tech"
+    ],
     "attention": "Her public activity blends career support, technology events and workplace experiences. Posts about referrals and hiring discussions address questions job seekers face.",
-    "sources": {}
+    "sources": {
+      "Creator bio: previous companies and education": "https://topmate.io/palak_awasthi"
+    },
+    "photo": "assets/images/industry-profiles/palak-awasthi.jpg",
+    "photoSource": "https://topmate.io/palak_awasthi",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "Public profile · reviewed September 2026",
+        "title": "Software Engineer (MTS)",
+        "organization": "Salesforce",
+        "detail": "Publicly listed role; see the source for the latest status.",
+        "source": "https://in.linkedin.com/in/palakawasthi"
+      },
+      {
+        "date": "Previous role · dates not confirmed",
+        "title": "Engineering experience",
+        "organization": "PayPal",
+        "detail": "Earlier employer confirmed by a colleague recommendation and her creator bio.",
+        "source": "https://topmate.io/palak_awasthi"
+      },
+      {
+        "date": "Previous role · dates not confirmed",
+        "title": "Technology experience",
+        "organization": "Qualcomm",
+        "detail": "Earlier employer listed in her creator bio; role title not confirmed.",
+        "source": "https://topmate.io/palak_awasthi"
+      }
+    ],
+    "education": [
+      {
+        "date": "Education · dates not confirmed",
+        "title": "Master of Technology",
+        "organization": "NIT Allahabad",
+        "detail": "Qualification listed in her creator bio.",
+        "source": "https://topmate.io/palak_awasthi"
+      }
+    ],
+    "milestones": [
+      {
+        "date": "From August 2024",
+        "title": "Women Techmakers Ambassador",
+        "organization": "Community contribution",
+        "detail": "Ambassador role listed on her public profile.",
+        "source": "https://in.linkedin.com/in/palakawasthi"
+      }
+    ]
   },
   "piyush-sharma": {
-    "name": "Piyush Sharma", "initials": "PS", "company": "Microsoft", "role": "Software Engineer II", "followers": "43K",
+    "name": "Piyush Sharma",
+    "initials": "PS",
+    "company": "Microsoft",
+    "role": "Software Engineer II",
+    "followers": "43K",
     "linkedin": "https://in.linkedin.com/in/thepiyushway",
     "journey": "His LinkedIn profile identifies Microsoft. His public professional bio describes a Software Engineer II role in the Teams organization, following work at Amazon and American Express.",
-    "topics": ["Software engineering", "AI", "System design", "Interview preparation"],
+    "topics": [
+      "Software engineering",
+      "AI",
+      "System design",
+      "Interview preparation"
+    ],
     "attention": "His content focuses on software engineering and interview preparation. His professional bio connects that guidance to experience building large-scale products and offering mock interviews.",
-    "sources": {"Professional bio, role and previous companies": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"}
+    "sources": {
+      "Professional bio, role and previous companies": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"
+    },
+    "photo": "assets/images/industry-profiles/piyush-sharma.jpg",
+    "photoSource": "https://topmate.io/thepiyushway",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "January 2025–present (source listing)",
+        "title": "Software Engineer II",
+        "organization": "Microsoft",
+        "detail": "Teams organization; dates reported in the linked professional profile.",
+        "source": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"
+      },
+      {
+        "date": "June 2023–January 2025",
+        "title": "Software Development Engineer",
+        "organization": "Kotak Mahindra Bank",
+        "detail": "Worked on banking software.",
+        "source": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"
+      },
+      {
+        "date": "June 2022–March 2023",
+        "title": "Software Development Engineer I",
+        "organization": "Amazon",
+        "detail": "Worked on customer-behaviour systems.",
+        "source": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"
+      },
+      {
+        "date": "July 2021–June 2022",
+        "title": "Engineer III",
+        "organization": "American Express",
+        "detail": "Enterprise cloud platform work.",
+        "source": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"
+      },
+      {
+        "date": "January–June 2020",
+        "title": "Technology Intern",
+        "organization": "American Express",
+        "detail": "Data modernization internship.",
+        "source": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"
+      }
+    ],
+    "education": [
+      {
+        "date": "2017–2021",
+        "title": "BTech, Computer Science",
+        "organization": "Punjab Engineering College",
+        "detail": "Period reported in the linked professional profile.",
+        "source": "https://www.stackforce.co/talent/piyush-sharma-software-engineer-6917aa4842a57d107dab10b1"
+      }
+    ],
+    "milestones": []
   },
   "riyasha-jaiswal": {
-    "name": "Riyasha Jaiswal", "initials": "RJ", "company": "Flipkart", "role": "Software Engineer", "followers": "236K",
+    "name": "Riyasha Jaiswal",
+    "initials": "RJ",
+    "company": "Flipkart",
+    "role": "Software Engineer",
+    "followers": "236K",
     "linkedin": "https://in.linkedin.com/in/riyasha-jaiswal-765071199",
     "journey": "Her public LinkedIn profile lists Flipkart and NIT Patna. Her public creator bio identifies earlier experience at Amazon and Sprinklr and a focus on backend development and Java.",
-    "topics": ["DSA", "System design", "Job switches", "Interview preparation"],
+    "topics": [
+      "DSA",
+      "System design",
+      "Job switches",
+      "Interview preparation"
+    ],
     "attention": "She discusses preparation routines and the frustrations of technical hiring. These posts combine practical learning topics with situations familiar to early-career applicants.",
     "sources": {
       "Creator bio and previous companies": "https://www.anchors.in/riyashajaiswal",
       "DSA and system design preparation": "https://www.linkedin.com/posts/riyasha-jaiswal-765071199_rejections-jobswitch-growth-activity-7441322314698301440-Vw2q",
       "Technical hiring discussion": "https://www.linkedin.com/posts/riyasha-jaiswal-765071199_modern-tech-hiring-process-in-a-nutshell-activity-7452192219014336512-yNoW"
-    }
+    },
+    "photo": "assets/images/industry-profiles/riyasha-jaiswal.webp",
+    "photoSource": "https://www.anchors.in/riyashajaiswal",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "Public profile · reviewed September 2026",
+        "title": "Software Engineer",
+        "organization": "Flipkart",
+        "detail": "Publicly listed role; see the source for the latest status.",
+        "source": "https://in.linkedin.com/in/riyasha-jaiswal-765071199"
+      },
+      {
+        "date": "Previous role · dates/order not confirmed",
+        "title": "Engineering experience",
+        "organization": "Amazon",
+        "detail": "Earlier employer listed in her public creator bio.",
+        "source": "https://www.anchors.in/riyashajaiswal"
+      },
+      {
+        "date": "Previous role · dates/order not confirmed",
+        "title": "Engineering experience",
+        "organization": "Sprinklr",
+        "detail": "Earlier employer listed in her public creator bio.",
+        "source": "https://www.anchors.in/riyashajaiswal"
+      }
+    ],
+    "education": [
+      {
+        "date": "2019–2023",
+        "title": "Engineering studies",
+        "organization": "NIT Patna",
+        "detail": "Education period listed on her public profile.",
+        "source": "https://in.linkedin.com/in/riyasha-jaiswal-765071199"
+      }
+    ],
+    "milestones": []
   },
   "riti-nema": {
-    "name": "Riti Nema", "initials": "RN", "company": "Atlassian", "role": "Software Developer", "followers": "103K",
+    "name": "Riti Nema",
+    "initials": "RN",
+    "company": "Atlassian",
+    "role": "Software Developer",
+    "followers": "103K",
     "linkedin": "https://in.linkedin.com/in/riti-nema-707b1719b",
     "journey": "Her public profile lists Atlassian and IET DAVV, Indore. In a personal account, she describes receiving several company offers and using her interview experience to guide other applicants. Offers are not treated as employment history.",
-    "topics": ["Coding", "Placement preparation", "Interview strategy", "Career guidance"],
+    "topics": [
+      "Coding",
+      "Placement preparation",
+      "Interview strategy",
+      "Career guidance"
+    ],
     "attention": "She connects her own application and interview experience with guidance for aspiring engineers, sharing that experience through LinkedIn and Medium.",
-    "sources": {"Career and guidance account": "https://www.linkedin.com/posts/riti-nema-707b1719b_beavailable-beavailable-mentorship-activity-7088134253384744960-DZoV"}
+    "sources": {
+      "Career and guidance account": "https://www.linkedin.com/posts/riti-nema-707b1719b_beavailable-beavailable-mentorship-activity-7088134253384744960-DZoV",
+      "Internship and full-time announcement": "https://www.linkedin.com/posts/riti-nema-707b1719b_atlassian-internship-fulltime-activity-6954509696351244288-194b",
+      "Atlassian community event": "https://ace.atlassian.com/events/details/atlassian-visakhapatnam-presents-save-the-date-may-19th-team-24-visakhapatnam/"
+    },
+    "photo": "assets/images/industry-profiles/riti-nema.jpg",
+    "photoSource": "https://topmate.io/ritinema23",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "Public profile · reviewed September 2026",
+        "title": "Software Developer",
+        "organization": "Atlassian",
+        "detail": "Publicly listed role; see the source for the latest status.",
+        "source": "https://in.linkedin.com/in/riti-nema-707b1719b"
+      },
+      {
+        "date": "2022 internship-to-full-time announcement",
+        "title": "Software engineering internship",
+        "organization": "Atlassian",
+        "detail": "Completed a six-month internship with the JSM scalability and migrations team before announcing a full-time role.",
+        "source": "https://www.linkedin.com/posts/riti-nema-707b1719b_atlassian-internship-fulltime-activity-6954509696351244288-194b"
+      }
+    ],
+    "education": [
+      {
+        "date": "2018–2022",
+        "title": "Engineering studies",
+        "organization": "IET DAVV, Indore",
+        "detail": "Education period listed on her public profile.",
+        "source": "https://in.linkedin.com/in/riti-nema-707b1719b"
+      }
+    ],
+    "milestones": [
+      {
+        "date": "19 May 2024",
+        "title": "Community event speaker",
+        "organization": "Atlassian Community · Visakhapatnam",
+        "detail": "Listed speaker on developer experience with Atlassian products.",
+        "source": "https://ace.atlassian.com/events/details/atlassian-visakhapatnam-presents-save-the-date-may-19th-team-24-visakhapatnam/"
+      }
+    ]
   },
   "harshit-trehan": {
-    "name": "Harshit Trehan", "initials": "HT", "company": "Atlassian", "role": "Software Engineer II", "followers": "145K",
+    "name": "Harshit Trehan",
+    "initials": "HT",
+    "company": "Atlassian",
+    "role": "Software Engineer II",
+    "followers": "145K",
     "linkedin": "https://in.linkedin.com/in/harshit-trehan",
     "journey": "His public profile identifies a Software Engineer II role at Atlassian, previous work at Juspay and Godfrey Phillips, and study at Maharaja Agrasen Institute of Technology, Delhi.",
-    "topics": ["DSA", "Python", "Internship preparation", "Learning roadmaps"],
+    "topics": [
+      "DSA",
+      "Python",
+      "Internship preparation",
+      "Learning roadmaps"
+    ],
     "attention": "His posts turn preparation experiences into learning sequences, including DSA practice and Python projects. This gives learners concrete next steps to consider.",
-    "sources": {"DSA preparation account": "https://www.linkedin.com/posts/harshit-trehan_the-secret-to-landing-awesome-offers-from-activity-7307779989930749953-3pH8"}
+    "sources": {
+      "DSA preparation account": "https://www.linkedin.com/posts/harshit-trehan_the-secret-to-landing-awesome-offers-from-activity-7307779989930749953-3pH8"
+    },
+    "photo": "assets/images/industry-profiles/harshit-trehan.jpg",
+    "photoSource": "https://topmate.io/harshit_trehan",
+    "reviewed": "2026-09-23",
+    "experience": [
+      {
+        "date": "Public profile · reviewed September 2026",
+        "title": "Software Engineer II",
+        "organization": "Atlassian",
+        "detail": "Publicly listed role; see the source for the latest status.",
+        "source": "https://in.linkedin.com/in/harshit-trehan"
+      },
+      {
+        "date": "Earlier internship · dates not confirmed",
+        "title": "Software engineering internship",
+        "organization": "Juspay",
+        "detail": "Internship discussed in his public career posts. Dates are not established here.",
+        "source": "https://www.linkedin.com/posts/harshit-trehan_careerjourney-internshipexperience-authenticitymatters-activity-7259967629560315904-7VHl"
+      },
+      {
+        "date": "Previous employer · dates not confirmed",
+        "title": "Earlier experience",
+        "organization": "Godfrey Phillips",
+        "detail": "Earlier employer listed on his public profile; exact role not confirmed here.",
+        "source": "https://in.linkedin.com/in/harshit-trehan"
+      }
+    ],
+    "education": [
+      {
+        "date": "2018–2022",
+        "title": "Information Technology studies",
+        "organization": "Maharaja Agrasen Institute of Technology, Delhi",
+        "detail": "Public profile lists a gold medal and a 9.63 CGPA.",
+        "source": "https://in.linkedin.com/in/harshit-trehan"
+      }
+    ],
+    "milestones": [
+      {
+        "date": "December 2023",
+        "title": "Technology writing",
+        "organization": "Public articles",
+        "detail": "Published articles discussing India Stack and the software industry.",
+        "source": "https://in.linkedin.com/in/harshit-trehan"
+      }
+    ]
   }
 }
