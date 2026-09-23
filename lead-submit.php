@@ -1,43 +1,53 @@
 <?php
-function je_clean_input(string $value, int $limit = 255): string
-{
-    $value = trim(strip_tags($value));
-    $value = preg_replace('/\s+/', ' ', $value) ?? '';
-    return substr($value, 0, $limit);
-}
+require_once __DIR__ . '/includes/je-ai-system.php';
 
-function je_storage_dir(): string
+function je_form_student_confirmation(array $lead)
 {
-    $dir = __DIR__ . '/storage';
-    if (!is_dir($dir)) {
-        mkdir($dir, 0755, true);
+    $mail = je_ai_runtime_config('mail');
+    if (empty($mail['enabled'])) {
+        return false;
     }
-    return $dir;
-}
 
-function je_save_pending_lead(array $lead): bool
-{
-    $line = json_encode($lead, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . PHP_EOL;
-    return file_put_contents(je_storage_dir() . '/leads-pending.jsonl', $line, FILE_APPEND | LOCK_EX) !== false;
-}
+    $email = je_ai_clean(isset($lead['email']) ? $lead['email'] : '', 180);
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return false;
+    }
 
-function je_valid_phone(string $phone): bool
-{
-    $digits = preg_replace('/\D+/', '', $phone) ?? '';
-    return strlen($digits) >= 7 && strlen($digits) <= 15;
+    $name = je_ai_clean(isset($lead['name']) ? $lead['name'] : '', 150);
+    $course = je_ai_clean(isset($lead['course']) ? $lead['course'] : '', 180);
+    $message = je_ai_clean(isset($lead['message']) ? $lead['message'] : '', 1200);
+    $pageUrl = je_ai_clean(isset($lead['page_url']) ? $lead['page_url'] : '', 500);
+
+    $courseLabel = $course !== '' ? $course : 'Course Enquiry';
+    $courseUrl = $pageUrl !== '' ? $pageUrl : 'https://jaipurengineers.com/courses.php';
+    $subject = 'Thanks for contacting Jaipur Engineers - ' . $courseLabel;
+    $body = "Hi " . ($name !== '' ? $name : 'there') . ",\n\n"
+        . "Thank you for contacting Jaipur Engineers about {$courseLabel}. We have received your enquiry.\n\n"
+        . ($message !== '' ? "Your message: {$message}\n" : '')
+        . "Course / page details: {$courseUrl}\n\n"
+        . "Explore practical training, hands-on projects, mentor guidance, and internship or placement-assistance options available for applicable courses and batches. Our admissions team will contact you with current batch timing, course structure and admission details.\n\n"
+        . "Website: https://jaipurengineers.com/\n"
+        . "Courses: https://jaipurengineers.com/courses.php\n\n"
+        . "Regards,\nJaipur Engineers Admissions Team";
+
+    $mailError = '';
+    $sent = je_ai_send_mail($mail, $email, $subject, $body, $mailError);
+    if (!$sent && $mailError !== '') {
+        error_log('JE website form student mail error: ' . $mailError);
+    }
+    return $sent;
 }
 
 $isPost = ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST';
 $lead = [
-    'name' => $isPost ? je_clean_input((string)($_POST['name'] ?? ''), 150) : '',
-    'phone' => $isPost ? je_clean_input((string)($_POST['phone'] ?? ''), 40) : '',
-    'email' => $isPost ? je_clean_input((string)($_POST['email'] ?? ''), 180) : '',
-    'course' => $isPost ? je_clean_input((string)($_POST['course'] ?? ''), 180) : '',
-    'source' => $isPost ? je_clean_input((string)($_POST['source'] ?? ''), 180) : '',
-    'message' => $isPost ? je_clean_input((string)($_POST['message'] ?? ''), 1000) : '',
-    'page_url' => je_clean_input((string)($_SERVER['HTTP_REFERER'] ?? ''), 255),
-    'user_agent' => je_clean_input((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 255),
-    'created_at' => date('c'),
+    'name' => $isPost ? je_ai_clean($_POST['name'] ?? '', 150) : '',
+    'phone' => $isPost ? je_ai_clean($_POST['phone'] ?? '', 40) : '',
+    'email' => $isPost ? je_ai_clean($_POST['email'] ?? '', 180) : '',
+    'course' => $isPost ? je_ai_clean($_POST['course'] ?? '', 180) : '',
+    'source' => $isPost ? (je_ai_clean($_POST['source'] ?? '', 180) ?: 'WEBSITE_FORM') : 'WEBSITE_FORM',
+    'message' => $isPost ? je_ai_clean($_POST['message'] ?? '', 1000) : '',
+    'page_url' => je_ai_clean($_SERVER['HTTP_REFERER'] ?? '', 500),
+    'user_agent' => je_ai_clean($_SERVER['HTTP_USER_AGENT'] ?? '', 500),
 ];
 
 $saved = false;
@@ -50,59 +60,25 @@ header('Pragma: no-cache', true);
 
 if (!$isPost) {
     $notice = 'Please submit an enquiry from a Jaipur Engineers course page.';
-} elseif ($lead['name'] === '' || $lead['phone'] === '') {
-    $notice = 'Please submit your name and mobile number.';
-} elseif (!je_valid_phone($lead['phone'])) {
-    $notice = 'Please enter a valid mobile number.';
-} elseif ($lead['email'] !== '' && filter_var($lead['email'], FILTER_VALIDATE_EMAIL) === false) {
-    $notice = 'Please enter a valid email address or leave the email field blank.';
 } else {
-    $configPath = __DIR__ . '/config/database.php';
-    if (is_file($configPath)) {
-        try {
-            $config = include $configPath;
-            if (!is_array($config)) {
-                throw new RuntimeException('Invalid database configuration.');
-            }
+    try {
+        $result = je_ai_store_lead($lead);
+        $saved = !empty($result['database_saved']);
+        $queued = !$saved && !empty($result['fallback_saved']);
+        je_form_student_confirmation($lead);
 
-            foreach (['host', 'database', 'username', 'password'] as $requiredKey) {
-                if (!array_key_exists($requiredKey, $config)) {
-                    throw new RuntimeException('Incomplete database configuration.');
-                }
-            }
-
-            $charset = $config['charset'] ?? 'utf8mb4';
-            $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['database'] . ';charset=' . $charset;
-            $pdo = new PDO($dsn, $config['username'], $config['password'], [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                PDO::ATTR_EMULATE_PREPARES => false,
-            ]);
-
-            // Database/table creation belongs to install-expert.php. Do not run install SQL on every lead.
-            $stmt = $pdo->prepare('INSERT INTO je_leads (name, phone, email, course, source, message, page_url, user_agent) VALUES (:name, :phone, :email, :course, :source, :message, :page_url, :user_agent)');
-            $stmt->execute([
-                ':name' => $lead['name'],
-                ':phone' => $lead['phone'],
-                ':email' => $lead['email'] !== '' ? $lead['email'] : null,
-                ':course' => $lead['course'] !== '' ? $lead['course'] : null,
-                ':source' => $lead['source'] !== '' ? $lead['source'] : null,
-                ':message' => $lead['message'] !== '' ? $lead['message'] : null,
-                ':page_url' => $lead['page_url'] !== '' ? $lead['page_url'] : null,
-                ':user_agent' => $lead['user_agent'] !== '' ? $lead['user_agent'] : null,
-            ]);
-            $saved = true;
-        } catch (Throwable $exception) {
-            $queued = je_save_pending_lead($lead + ['db_error' => 'Database write unavailable']);
-            $notice = $queued
-                ? 'Your enquiry has been received and queued safely for database review.'
-                : 'We could not save this enquiry. Please return to the course page and try again.';
+        if ($saved) {
+            $notice = 'Thank you. Your enquiry has been received.';
+        } elseif ($queued) {
+            $notice = 'Your enquiry has been received and queued safely for database review.';
+        } else {
+            $notice = 'We could not save this enquiry. Please return to the course page and try again.';
         }
-    } else {
-        $queued = je_save_pending_lead($lead + ['db_error' => 'Database config missing']);
-        $notice = $queued
-            ? 'Your enquiry has been received and queued safely while database setup is completed.'
-            : 'We could not save this enquiry. Please return to the course page and try again.';
+    } catch (InvalidArgumentException $exception) {
+        $notice = $exception->getMessage();
+    } catch (Throwable $exception) {
+        error_log('JE website lead error: ' . $exception->getMessage());
+        $notice = 'We could not save this enquiry. Please return to the course page and try again.';
     }
 }
 
@@ -125,9 +101,9 @@ $pageDescription = 'Jaipur Engineers enquiry submission status.';
     <div class="container">
         <div class="je-install-card">
             <?php if ($saved): ?>
-                <div class="je-alert je-alert-success">Thank you. Your enquiry has been received.</div>
+                <div class="je-alert je-alert-success"><?php echo htmlspecialchars($notice, ENT_QUOTES, 'UTF-8'); ?></div>
                 <h1>Our team will contact you soon.</h1>
-                <p>You can continue exploring Jaipur Engineers courses and career guides.</p>
+                <p>If you provided an email address, you will also receive a confirmation with your course/page link.</p>
             <?php elseif ($queued): ?>
                 <div class="je-alert je-alert-success"><?php echo htmlspecialchars($notice, ENT_QUOTES, 'UTF-8'); ?></div>
                 <h1>Your enquiry is safely queued.</h1>
