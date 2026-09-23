@@ -1,0 +1,8 @@
+# Hosting-only secrets and installer locks
+/config/database.php
+/config/mail.php
+/config/install.lock
+
+# Runtime lead queues / rate limit files
+/storage/*.jsonl
+/storage/rate-limit/
