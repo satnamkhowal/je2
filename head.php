@@ -117,3 +117,6 @@ if (isset($course) && is_array($course) && !empty($course['h1']) && !empty($cano
 <link rel="stylesheet" href="assets/css/site-footer.css">
 <link rel="stylesheet" href="assets/css/java-full-stack-course-card.css">
 <link rel="stylesheet" href="assets/css/site-theme.css">
+<!-- Local AI assistant: no paid external API required. -->
+<link rel="stylesheet" href="/assets/css/je-ai-assistant.css">
+<script defer src="/assets/js/je-ai-assistant.js"></script>
