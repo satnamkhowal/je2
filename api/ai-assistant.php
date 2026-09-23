@@ -88,6 +88,43 @@ function je_ai_answer($message, array $knowledge)
     ];
 }
 
+function je_ai_send_student_confirmation(array $data)
+{
+    $mail = je_ai_runtime_config('mail');
+    if (empty($mail['enabled'])) {
+        return false;
+    }
+
+    $email = je_ai_clean(isset($data['email']) ? $data['email'] : '', 180);
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return false;
+    }
+
+    $name = je_ai_clean(isset($data['name']) ? $data['name'] : '', 150);
+    $course = je_ai_clean(isset($data['course']) ? $data['course'] : (isset($data['interested_course']) ? $data['interested_course'] : ''), 180);
+    $message = je_ai_clean(isset($data['message']) ? $data['message'] : '', 1200);
+    $pageUrl = je_ai_clean(isset($data['page_url']) ? $data['page_url'] : '', 500);
+
+    $courseLabel = $course !== '' ? $course : 'Course Enquiry';
+    $courseUrl = $pageUrl !== '' ? $pageUrl : 'https://jaipurengineers.com/courses.php';
+    $subject = 'Thanks for contacting Jaipur Engineers - ' . $courseLabel;
+    $body = "Hi " . ($name !== '' ? $name : 'there') . ",\n\n"
+        . "Thank you for contacting Jaipur Engineers about {$courseLabel}. We have received your enquiry.\n\n"
+        . ($message !== '' ? "Your message: {$message}\n" : '')
+        . "Course / page details: {$courseUrl}\n\n"
+        . "Explore practical training, hands-on projects, mentor guidance, and internship or placement-assistance options available for applicable courses and batches. Our admissions team will contact you with current batch timing, course structure and admission details.\n\n"
+        . "Website: https://jaipurengineers.com/\n"
+        . "Courses: https://jaipurengineers.com/courses.php\n\n"
+        . "Regards,\nJaipur Engineers Admissions Team";
+
+    $mailError = '';
+    $sent = je_ai_send_mail($mail, $email, $subject, $body, $mailError);
+    if (!$sent && $mailError !== '') {
+        error_log('JE student confirmation mail error: ' . $mailError);
+    }
+    return $sent;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     je_ai_json([
         'ok' => true,
@@ -140,12 +177,14 @@ if ($action === 'lead') {
 
     try {
         $result = je_ai_store_lead($data);
+        $studentMailSent = je_ai_send_student_confirmation($data);
         je_ai_json([
             'ok' => true,
             'message' => 'Thanks! Your enquiry has been saved. The Jaipur Engineers team can now follow up with you.',
             'lead_id' => $result['lead_id'],
             'database_saved' => $result['database_saved'],
             'fallback_saved' => $result['fallback_saved'],
+            'student_mail_sent' => $studentMailSent,
         ]);
     } catch (InvalidArgumentException $e) {
         je_ai_json(['ok' => false, 'message' => $e->getMessage()], 422);
