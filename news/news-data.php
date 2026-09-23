@@ -2,6 +2,36 @@
 function je_news_articles(): array
 {
     return [
+        'ai-leaders-call-for-safer-pace-frontier-ai-risks' => [
+            'title' => 'AI Leaders Call for a Safer Pace as Frontier AI Risks Grow',
+            'date' => 'September 14, 2026',
+            'category' => 'Artificial Intelligence',
+            'description' => 'A technology news update on calls from AI leaders for stronger safeguards and a more measured pace of frontier AI development.',
+        ],
+        'ai-linked-stocks-slide-after-frontier-ai-slowdown-calls' => [
+            'title' => 'AI-Linked Stocks Slide After Calls to Slow Frontier AI Development',
+            'date' => 'September 14, 2026',
+            'category' => 'Technology Business',
+            'description' => 'Technology business news covering how renewed AI safety concerns can affect expectations around AI investment and infrastructure spending.',
+        ],
+        'india-telecom-sector-ai-autonomous-networks' => [
+            'title' => 'India’s Telecom Sector Looks to AI for More Autonomous Networks',
+            'date' => 'September 14, 2026',
+            'category' => 'AI in India',
+            'description' => 'Technology news about AI-driven telecom networks in India, network automation, reliability and responsible deployment.',
+        ],
+        'hackathon-news-2026' => [
+            'title' => 'Gridlock Hackathon 2.0 Shows How AI Hackathons Can Solve Real-World Problems',
+            'date' => 'September 14, 2026',
+            'category' => 'Hackathon News',
+            'description' => '33,600 participants created more than 1,100 AI and machine-learning prototypes for Bengaluru traffic and urban mobility challenges.',
+        ],
+        'jaipur-hackathon-events-september-2026' => [
+            'title' => 'Upcoming Hackathon Events in Jaipur and India: September 2026',
+            'date' => 'September 14, 2026',
+            'category' => 'Hackathon Events',
+            'description' => 'A roundup of upcoming September hackathons covering AI, Web3, hardware, software and student innovation.',
+        ],
         'infocomm-india-2026-mumbai' => [
             'title' => 'InfoComm India 2026 Mumbai: AI, Smart Learning and Integrated Technology',
             'date' => 'September 15, 2026',
