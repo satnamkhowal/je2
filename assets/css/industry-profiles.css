@@ -15,7 +15,7 @@
 .ip-hero-tags span:before { content:''; width:5px; height:5px; background:#0a66c2; border-radius:50%; display:inline-block; vertical-align:middle; margin-right:6px; }
 .ip-portrait-wall { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; transform:rotate(-5deg); }
 .ip-portrait-wall img { width:100%; height:auto; aspect-ratio:1; object-fit:cover; border:4px solid #fff; border-radius:22px; box-shadow:0 6px 12px #14334e12; }
-.ip-portrait-wall img:nth-child(even) { transform:translateY(16px); }
+.ip-portrait-wall a:nth-child(even) { transform:translateY(16px); }
 .ip-directory-heading { display:flex; justify-content:space-between; align-items:end; gap:24px; margin:40px 0 22px; }
 .ip-directory-heading h2 { font-size:26px; line-height:1.25; margin:0; }
 .ip-directory-heading p { font-size:12px; color:var(--ip-muted); margin:0; }
@@ -111,3 +111,12 @@
 @media(max-width:991px) { .ip-directory-hero { padding:32px; gap:24px; } .ip-directory-hero h1 { font-size:34px; } .ip-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .ip-layout { grid-template-columns:minmax(0,1fr); } .ip-sidebar { grid-template-columns:repeat(2,minmax(0,1fr)); } .ip-sidebar .ip-learning { grid-column:1/-1; } .ip-directory-heading { display:block; } .ip-directory-heading p { margin-top:10px; } }
 @media(max-width:575px) { .ip-main { padding-top:18px; } .ip-directory-hero { grid-template-columns:1fr; padding:28px 24px; } .ip-directory-hero h1 { font-size:33px; } .ip-portrait-wall { gap:10px; margin:8px 6px 16px; } .ip-portrait-wall img { border-radius:15px; } .ip-directory-heading h2 { font-size:23px; } .ip-card-grid,.ip-sidebar { grid-template-columns:minmax(0,1fr); } .ip-card-grid { gap:18px; } .ip-cover { height:150px; } .ip-cover-small { height:92px; } .ip-cover-label { left:22px; top:24px; } .ip-cover-label b { font-size:15px; } .ip-cover-company { right:20px; bottom:20px; font-size:12px; } .ip-intro-body { padding:0 22px 24px; } .ip-avatar-large { width:116px; height:116px; margin-top:-52px; } .ip-editorial-label { position:static; margin-bottom:12px; } .ip-intro h1 { font-size:30px; } .ip-headline { font-size:16px; } .ip-followers span { display:block; margin-top:5px; } .ip-intro-actions { display:grid; grid-template-columns:1fr; } .ip-section { padding:24px 22px; } .ip-section-nav { padding:0 22px; gap:22px; } .ip-bottom { display:block; } .ip-bottom-links { margin-top:20px; } .ip-timeline>li { gap:12px; grid-template-columns:40px minmax(0,1fr); } .ip-timeline-mark { width:40px; height:40px; } .ip-timeline>li:before { left:19px; } }
 @media(prefers-reduced-motion:reduce) { .ip-card { transition:none; } }
+.ip-filters { display:flex; align-items:end; gap:16px; padding:22px; margin-bottom:18px; background:#fff; border:1px solid var(--ip-border); border-radius:16px; flex-wrap:wrap; }
+.ip-filters label { flex:1 1 200px; font-size:13px; font-weight:600; margin:0; }
+.ip-filters input,.ip-filters select { display:block; width:100%; min-height:44px; margin-top:8px; padding:10px 12px; background:#fff; color:#233549; border:1px solid #b6c5d4; border-radius:8px; }
+.ip-filters .ip-text-link { padding:12px 0; }
+.ip-pagination { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin:32px 0; }
+.ip-pagination a { display:grid; place-items:center; min-width:44px; min-height:44px; border:1px solid var(--ip-border); border-radius:8px; background:#fff; }
+.ip-pagination a[aria-current=page] { background:#0a66c2; color:#fff; }
+.ip-main a:focus-visible,.ip-main button:focus-visible,.ip-main input:focus-visible,.ip-main select:focus-visible { outline:3px solid #0a66c2; outline-offset:3px; }
+.ip-portrait-wall a { min-width:0; }

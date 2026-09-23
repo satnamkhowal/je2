@@ -4,19 +4,40 @@ if (!isset($profileSlug)) { http_response_code(404); exit('Profile not found'); 
 $profiles = json_decode(file_get_contents(__DIR__ . '/profiles.json'), true, 512, JSON_THROW_ON_ERROR);
 if ($profileSlug !== '' && !isset($profiles[$profileSlug])) { http_response_code(404); exit('Profile not found'); }
 $profile = $profileSlug === '' ? null : $profiles[$profileSlug];
+$queryText = is_string($_GET['q'] ?? null) ? trim(substr($_GET['q'], 0, 120)) : '';
+$companyFilter = is_string($_GET['company'] ?? null) ? $_GET['company'] : '';
+$companies = array_values(array_unique(array_column($profiles, 'company')));
+sort($companies);
+if (!in_array($companyFilter, $companies, true)) $companyFilter = '';
+$filteredProfiles = array_filter($profiles, static function ($person) use ($queryText, $companyFilter) {
+    $matchesCompany = $companyFilter === '' || $person['company'] === $companyFilter;
+    $haystack = implode(' ', [$person['name'], $person['company'], $person['role'], implode(' ', $person['topics'])]);
+    return $matchesCompany && ($queryText === '' || stripos($haystack, $queryText) !== false);
+});
+$perPage = 18;
+$pageCount = max(1, (int)ceil(count($filteredProfiles) / $perPage));
+$requestedPage = is_string($_GET['page'] ?? null) && ctype_digit($_GET['page']) ? (int)$_GET['page'] : 1;
+$pageNumber = max(1, min($pageCount, $requestedPage));
+$visibleProfiles = array_slice($filteredProfiles, ($pageNumber - 1) * $perPage, $perPage, true);
+$listingUrl = static function ($number) use ($queryText, $companyFilter) {
+    $params = array_filter(['q' => $queryText, 'company' => $companyFilter, 'page' => $number > 1 ? $number : ''], static fn($value) => $value !== '');
+    return 'industry-profiles/' . ($params ? '?' . http_build_query($params) : '');
+};
 $esc = static fn($value) => htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
 $title = $profile ? $profile['name'] : 'Industry Professionals & Tech Educators';
 $pageTitle = $profile ? $title . ' | Career & Learning Profile | Jaipur Engineers' : $title . ' | Jaipur Engineers';
-$pageDescription = $profile ? 'Explore ' . $title . "'s public career journey, learning topics and LinkedIn presence. An independent, sourced editorial profile." : 'Explore eight industry professionals sharing technology, interview and career guidance, with sourced biographies and dated LinkedIn follower snapshots.';
+$pageDescription = $profile ? 'Explore ' . $title . "'s public career journey, learning topics and LinkedIn presence. An independent, sourced editorial profile." : 'Explore ' . count($profiles) . ' industry professionals sharing technology, interview and career guidance, with sourced biographies and dated LinkedIn follower snapshots.';
 $route = 'industry-profiles/' . ($profile ? $profileSlug . '.php' : '');
 $canonical = 'https://jaipurengineers.com/' . $route;
+if (!$profile && $pageNumber > 1) $canonical .= '?page=' . $pageNumber;
 $disclaimer = 'Independent editorial profiles: the people featured here are not affiliated with, employed by, or endorsing Jaipur Engineers. No such relationship has been verified. They are not presented as our faculty or mentors.';
 $schema = ['@context' => 'https://schema.org', '@type' => 'WebPage', 'name' => $pageTitle, 'url' => $canonical, 'description' => $pageDescription];
 if ($profile) {
-    $schema['mainEntity'] = ['@type' => 'Person', 'name' => $profile['name'], 'sameAs' => [$profile['linkedin']], 'image' => 'https://jaipurengineers.com/' . $profile['photo']];
+    $schema['mainEntity'] = ['@type' => 'Person', 'name' => $profile['name'], 'sameAs' => [$profile['linkedin']]];
+    if (($profile['photoKind'] ?? 'portrait') !== 'initials') $schema['mainEntity']['image'] = 'https://jaipurengineers.com/' . $profile['photo'];
 } else {
     $schema['mainEntity'] = ['@type' => 'ItemList', 'itemListElement' => []];
-    foreach ($profiles as $slug => $person) {
+    foreach ($visibleProfiles as $slug => $person) {
         $schema['mainEntity']['itemListElement'][] = ['@type' => 'ListItem', 'position' => count($schema['mainEntity']['itemListElement']) + 1, 'name' => $person['name'], 'url' => 'https://jaipurengineers.com/industry-profiles/' . $slug . '.php'];
     }
 }
@@ -30,6 +51,7 @@ if ($profile) {
     <title><?= $esc($pageTitle) ?></title>
     <meta name="description" content="<?= $esc($pageDescription) ?>">
     <link rel="canonical" href="<?= $esc($canonical) ?>">
+    <?php if (!$profile && ($queryText !== '' || $companyFilter !== '')): ?><meta name="robots" content="noindex,follow"><?php endif; ?>
     <?php include dirname(__DIR__) . '/head.php'; ?>
     <?php if ($profile): ?>
     <meta property="og:image" content="<?= $esc('https://jaipurengineers.com/' . $profile['photo']) ?>">
@@ -46,16 +68,23 @@ if ($profile) {
         <nav class="ip-breadcrumb" aria-label="Breadcrumb"><a href="index.php">Home</a><span aria-hidden="true">/</span><?php if ($profile): ?><a href="industry-profiles/">Industry profiles</a><span aria-hidden="true">/</span><?php endif; ?><span aria-current="page"><?= $esc($profile ? $title : 'Industry profiles') ?></span></nav>
         <?php if (!$profile): ?>
         <section class="ip-directory-hero">
-            <div class="ip-hero-copy"><span class="ip-eyebrow">THE INDUSTRY EDIT</span><h1>People to learn from.<br><span>Journeys to explore.</span></h1><p>Inside the careers of engineers sharing their knowledge. Discover the experience, ideas and learning paths behind the profiles.</p><div class="ip-hero-tags"><span>8 industry voices</span><span>5 technology companies</span><span>Independent profiles</span></div></div>
-            <div class="ip-portrait-wall" aria-hidden="true"><?php foreach ($profiles as $person): ?><img src="<?= $esc($person['photo']) ?>" alt="" width="96" height="96"><?php endforeach; ?></div>
+            <div class="ip-hero-copy"><span class="ip-eyebrow">THE INDUSTRY EDIT</span><h1>People to learn from.<br><span>Journeys to explore.</span></h1><p>Inside the careers of professionals sharing their knowledge. Discover the experience, ideas and learning paths behind the profiles.</p><div class="ip-hero-tags"><span><?= count($profiles) ?> industry voices</span><span><?= count($companies) ?> companies</span><span>Independent profiles</span></div></div>
+            <div class="ip-portrait-wall"><?php foreach (array_slice($profiles, 0, 8, true) as $slug => $person): ?><a href="industry-profiles/<?= $esc($slug) ?>.php" aria-label="Explore <?= $esc($person['name']) ?>"><img src="<?= $esc($person['photo']) ?>" alt="" width="96" height="96"></a><?php endforeach; ?></div>
         </section>
         <div class="ip-directory-heading"><div><span class="ip-eyebrow">FEATURED PROFESSIONALS</span><h2>Explore the people behind the posts</h2></div><p>Engineering · Learning · Career growth</p></div>
+        <form class="ip-filters" action="industry-profiles/" method="get" role="search">
+            <label>Find a professional<input type="search" name="q" value="<?= $esc($queryText) ?>" placeholder="Name, skill or topic" maxlength="120"></label>
+            <label>Company<select name="company"><option value="">All companies</option><?php foreach ($companies as $company): ?><option value="<?= $esc($company) ?>" <?= $companyFilter === $company ? 'selected' : '' ?>><?= $esc($company) ?></option><?php endforeach; ?></select></label>
+            <button class="ip-button" type="submit">Search profiles</button><a class="ip-text-link" href="industry-profiles/">Clear filters</a>
+        </form>
+        <p class="ip-muted"><?= count($filteredProfiles) ?> profiles found · Page <?= $pageNumber ?> of <?= $pageCount ?></p>
+        <?php if (!$visibleProfiles): ?><div class="ip-panel ip-section"><h2>No matching profiles</h2><p>Try a different name, topic or company.</p></div><?php endif; ?>
         <div class="ip-card-grid">
-            <?php foreach ($profiles as $slug => $person): ?>
+            <?php foreach ($visibleProfiles as $slug => $person): ?>
             <article class="ip-card">
                 <div class="ip-cover ip-cover-small" aria-hidden="true"><span><?= $esc($person['company']) ?></span></div>
                 <div class="ip-card-body">
-                    <img class="ip-avatar" src="<?= $esc($person['photo']) ?>" alt="<?= $esc($person['name']) ?>" width="100" height="100" loading="lazy">
+                    <a href="industry-profiles/<?= $esc($slug) ?>.php" aria-label="Explore <?= $esc($person['name']) ?>"><img class="ip-avatar" src="<?= $esc($person['photo']) ?>" alt="<?= $esc($person['name']) ?>" width="100" height="100" loading="lazy"></a>
                     <h3><a href="industry-profiles/<?= $esc($slug) ?>.php"><?= $esc($person['name']) ?></a></h3>
                     <p class="ip-role"><?= $esc($person['role']) ?></p><p class="ip-company"><?= $esc($person['company']) ?> <span>· Industry professional</span></p>
                     <p class="ip-followers"><strong><?= $esc($person['followers']) ?></strong> approximate LinkedIn followers</p>
@@ -65,13 +94,14 @@ if ($profile) {
             </article>
             <?php endforeach; ?>
         </div>
+        <?php if ($pageCount > 1): ?><nav class="ip-pagination" aria-label="Profile directory pages"><?php for ($number = 1; $number <= $pageCount; $number++): ?><a href="<?= $esc($listingUrl($number)) ?>" <?= $number === $pageNumber ? 'aria-current="page"' : '' ?>><?= $number ?></a><?php endfor; ?></nav><?php endif; ?>
         <?php else: ?>
         <div class="ip-layout">
             <div class="ip-primary">
                 <section class="ip-panel ip-intro">
                     <div class="ip-cover"><span class="ip-cover-label">INDUSTRY VOICES<br><b>Ideas. Experience. Perspective.</b></span><span class="ip-cover-company"><?= $esc($profile['company']) ?></span></div>
                     <div class="ip-intro-body">
-                        <img class="ip-avatar ip-avatar-large" src="<?= $esc($profile['photo']) ?>" alt="<?= $esc($profile['name']) ?>" width="144" height="144" fetchpriority="high">
+                        <a href="<?= $esc($profile['linkedin']) ?>" aria-label="<?= $esc($profile['name']) ?> on LinkedIn"><img class="ip-avatar ip-avatar-large" src="<?= $esc($profile['photo']) ?>" alt="<?= $esc($profile['name']) ?>" width="144" height="144" fetchpriority="high"></a>
                         <span class="ip-editorial-label">Independent editorial profile</span>
                         <h1><?= $esc($profile['name']) ?></h1>
                         <p class="ip-headline"><?= $esc($profile['role']) ?> <span>at</span> <?= $esc($profile['company']) ?></p>
@@ -87,19 +117,19 @@ if ($profile) {
                     <p class="ip-muted">Publicly documented career history. Unconfirmed dates and ordering are marked; this is not a complete LinkedIn export.</p>
                     <?php $entries = $profile['experience']; include __DIR__ . '/timeline.php'; ?>
                 </section>
-                <section class="ip-panel ip-section" id="education"><h2>Education</h2><?php $entries = $profile['education']; include __DIR__ . '/timeline.php'; ?></section>
+                <section class="ip-panel ip-section" id="education"><h2>Education</h2><?php if ($profile['education']): $entries = $profile['education']; include __DIR__ . '/timeline.php'; else: ?><p class="ip-muted">Verified education details have not been added to this editorial profile.</p><?php endif; ?></section>
                 <?php if ($profile['milestones']): ?><section class="ip-panel ip-section" id="milestones"><h2>Milestones & community</h2><?php $entries = $profile['milestones']; include __DIR__ . '/timeline.php'; ?></section><?php endif; ?>
-                <section class="ip-panel ip-section" id="topics"><h2>What they share</h2><ul class="ip-topics"><?php foreach ($profile['topics'] as $topic): ?><li><?= $esc($topic) ?></li><?php endforeach; ?></ul><h3 class="ip-subheading">Why people pay attention</h3><p><?= $esc($profile['attention']) ?></p><p class="ip-muted">Our editorial reading of their public content, not a measured engagement claim.</p></section>
-                <section class="ip-panel ip-section" id="sources"><h2>Sources & photo credit</h2><p class="ip-muted">Paraphrased from public profiles and announcements. Sources reviewed 23 September 2026. Search indexing may lag; roles and counts can change.</p><ul class="ip-sources"><li><a href="<?= $esc($profile['linkedin']) ?>">LinkedIn profile and approximate follower snapshot</a></li><?php foreach ($profile['sources'] as $label => $url): ?><li><a href="<?= $esc($url) ?>"><?= $esc($label) ?></a></li><?php endforeach; ?><li><a href="<?= $esc($profile['photoSource']) ?>">Portrait source: public creator profile</a></li></ul></section>
+                <section class="ip-panel ip-section" id="topics"><h2>What they share</h2><ul class="ip-topics"><?php foreach ($profile['topics'] as $topic): ?><li><?= $esc($topic) ?></li><?php endforeach; ?></ul><h3 class="ip-subheading">Why explore their content</h3><p><?= $esc($profile['attention']) ?></p><p class="ip-muted">Our editorial reading of their public content, not a measured engagement claim.</p></section>
+                <section class="ip-panel ip-section" id="sources"><h2>Sources & photo credit</h2><p class="ip-muted">Paraphrased from public profiles and announcements. Sources reviewed 23 September 2026. Search indexing may lag; roles and counts can change.</p><ul class="ip-sources"><li><a href="<?= $esc($profile['linkedin']) ?>">LinkedIn professional profile</a></li><?php foreach ($profile['sources'] as $label => $url): ?><li><a href="<?= $esc($url) ?>"><?= $esc($label) ?></a></li><?php endforeach; ?><?php if (!empty($profile['photoSource'])): ?><li><a href="<?= $esc($profile['photoSource']) ?>">Portrait source: public professional biography</a></li><?php else: ?><li>Neutral initials avatar; no portrait is used.</li><?php endif; ?></ul></section>
             </div>
             <aside class="ip-sidebar">
                 <section class="ip-panel ip-section"><span class="ip-eyebrow">PROFILE NOTES</span><h2 class="ip-sidebar-title">A career worth exploring</h2><dl class="ip-facts"><dt>Publicly listed company</dt><dd><?= $esc($profile['company']) ?></dd><dt>Learning focus</dt><dd><?= $esc($profile['topics'][0]) ?></dd><dt>Profile reviewed</dt><dd>23 September 2026</dd></dl><p class="ip-muted">Use individual experiences as perspective when planning your own learning journey.</p></section>
-                <section class="ip-panel ip-section"><h2 class="ip-sidebar-title">More industry voices</h2><div class="ip-related"><?php foreach ($profiles as $slug => $person): if ($slug === $profileSlug) continue; ?><a href="industry-profiles/<?= $esc($slug) ?>.php"><img src="<?= $esc($person['photo']) ?>" alt="" width="48" height="48" loading="lazy"><span><strong><?= $esc($person['name']) ?></strong><small><?= $esc($person['company']) ?> · <?= $esc($person['topics'][0]) ?></small></span><span aria-hidden="true">›</span></a><?php endforeach; ?></div></section>
+                <section class="ip-panel ip-section"><h2 class="ip-sidebar-title">More industry voices</h2><div class="ip-related"><?php $related = array_slice(array_diff_key($profiles, [$profileSlug => true]), 0, 6, true); foreach ($related as $slug => $person): ?><a href="industry-profiles/<?= $esc($slug) ?>.php"><img src="<?= $esc($person['photo']) ?>" alt="" width="48" height="48" loading="lazy"><span><strong><?= $esc($person['name']) ?></strong><small><?= $esc($person['company']) ?> · <?= $esc($person['topics'][0]) ?></small></span><span aria-hidden="true">›</span></a><?php endforeach; ?></div><a class="ip-text-link" href="industry-profiles/">Browse all profiles →</a></section>
                 <section class="ip-panel ip-section ip-learning"><span class="ip-eyebrow">YOUR NEXT CHAPTER</span><h2 class="ip-sidebar-title">Turn inspiration into practice.</h2><p>Build projects, strengthen fundamentals and prepare for interviews.</p><a class="ip-text-link" href="career-guides.php">Explore career guides →</a></section>
             </aside>
         </div>
         <?php endif; ?>
-        <aside class="ip-disclaimer" aria-label="Independence disclaimer"><strong>Independent profiles, clearly sourced.</strong><p><?= $esc($disclaimer) ?> This section is not affiliated with LinkedIn.</p><p class="ip-muted">Approximate follower counts are public search-index snapshots reviewed on <time datetime="2026-09-23">23 September 2026</time>, not live measurements.</p></aside>
+        <aside class="ip-disclaimer" aria-label="Independence disclaimer"><strong>Independent profiles, clearly sourced.</strong><p><?= $esc($disclaimer) ?> This section is not affiliated with LinkedIn.</p><p class="ip-muted">Approximate follower counts are public-source snapshots reviewed on <time datetime="2026-09-23">23 September 2026</time>, not live measurements.</p></aside>
         <section class="ip-bottom"><div><span class="ip-eyebrow">BUILD YOUR OWN PATH</span><h2>Your learning journey starts with practice.</h2><p>Explore Jaipur Engineers resources for your next step.</p></div><div class="ip-bottom-links"><a href="career-guides.php">Career guides ↗</a><a href="placement-assistance.php">Placement assistance ↗</a><a href="java-interview-preparation-jaipur.php">Java interview preparation ↗</a></div></section>
     </div>
 </main>
