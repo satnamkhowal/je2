@@ -204,6 +204,13 @@ $extraCourses = [
 ];
 
 $allCourses = array_merge($allCourses, $extraCourses);
+// Add uploaded cards missing from the catalog without duplicating existing courses.
+$catalogSlugs = array_column($allCourses, 'slug');
+foreach (je_course_cards() as $slug => $card) {
+    if (!in_array($slug, $catalogSlugs, true)) {
+        $allCourses[$slug] = $card;
+    }
+}
 $courses = $allCourses;
 $query = trim((string)($_GET['q'] ?? ''));
 

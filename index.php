@@ -161,7 +161,7 @@
                 <div class="col-lg-4 col-md-6 grid-item filter1 filter2">
                     <div class="courses-item mb-30">
                         <div class="img-part">
-                            <a href="java-full-stack-course-jaipur.php"><img src="assets/images/courses/home14/2.jpg" width="600" height="400" loading="lazy" alt="Java Full Stack course in Jaipur at Jaipur Engineers"></a>
+                            <a href="java-full-stack-course-jaipur.php"><img src="assets/images/java-full-stack-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Java Full Stack course in Jaipur at Jaipur Engineers"></a>
                         </div>
                         <div class="content-part">
                             <ul class="meta-part"><li><span class="price">Practical Training</span></li></ul>
@@ -192,7 +192,7 @@
                 <div class="col-lg-4 col-md-6 grid-item filter3">
                     <div class="courses-item md-mb-30">
                         <div class="img-part">
-                            <a href="data-science-course-jaipur.php"><img src="assets/images/courses/home14/4.jpg" width="600" height="400" loading="lazy" alt="Data Science and AI course in Jaipur at Jaipur Engineers"></a>
+                            <a href="data-science-course-jaipur.php"><img src="assets/images/data-science-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Data Science and AI course in Jaipur at Jaipur Engineers"></a>
                         </div>
                         <div class="content-part">
                             <ul class="meta-part"><li><span class="price">Data &amp; AI</span></li></ul>
@@ -204,7 +204,7 @@
                 <div class="col-lg-4 col-md-6 grid-item filter4">
                     <div class="courses-item sm-mb-30">
                         <div class="img-part">
-                            <a href="cloud-computing-course-jaipur.php"><img src="assets/images/courses/home14/5.jpg" width="600" height="400" loading="lazy" alt="Cloud Computing and DevOps training in Jaipur at Jaipur Engineers"></a>
+                            <a href="cloud-computing-course-jaipur.php"><img src="assets/images/cloud-computing-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Cloud Computing and DevOps training in Jaipur at Jaipur Engineers"></a>
                         </div>
                         <div class="content-part">
                             <ul class="meta-part"><li><span class="price">Cloud Skills</span></li></ul>
@@ -216,7 +216,7 @@
                 <div class="col-lg-4 col-md-6 grid-item filter4">
                     <div class="courses-item">
                         <div class="img-part">
-                            <a href="cyber-security-course-jaipur.php"><img src="assets/images/courses/home14/6.jpg" width="600" height="400" loading="lazy" alt="Cyber Security course in Jaipur at Jaipur Engineers"></a>
+                            <a href="cyber-security-course-jaipur.php"><img src="assets/images/cyber-security-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Cyber Security course in Jaipur at Jaipur Engineers"></a>
                         </div>
                         <div class="content-part">
                             <ul class="meta-part"><li><span class="price">Security</span></li></ul>
@@ -295,7 +295,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="data-science-course-jaipur.php"><img src="assets/images/categories/main-home/3.jpg" width="600" height="400" loading="lazy" alt="Data Science and Artificial Intelligence courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="data-science-course-jaipur.php"><img src="assets/images/data-science-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Data Science and Artificial Intelligence courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/3.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
@@ -309,7 +309,7 @@
 
                 <div class="col-lg-4 col-md-6 md-mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="cloud-computing-course-jaipur.php"><img src="assets/images/categories/main-home/4.jpg" width="600" height="400" loading="lazy" alt="Cloud Computing and DevOps courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="cloud-computing-course-jaipur.php"><img src="assets/images/cloud-computing-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Cloud Computing and DevOps courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/4.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
@@ -323,7 +323,7 @@
 
                 <div class="col-lg-4 col-md-6 sm-mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="cyber-security-course-jaipur.php"><img src="assets/images/categories/main-home/5.jpg" width="600" height="400" loading="lazy" alt="Cyber Security and Ethical Hacking courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="cyber-security-course-jaipur.php"><img src="assets/images/cyber-security-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Cyber Security and Ethical Hacking courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/5.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
@@ -337,7 +337,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="software-testing-course-jaipur.php"><img src="assets/images/categories/main-home/6.jpg" width="600" height="400" loading="lazy" alt="Software Testing courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="software-testing-course-jaipur.php"><img src="assets/images/software-testing-course-jaipur-jaipur-engineers.webp" width="600" height="400" loading="lazy" alt="Software Testing courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/6.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">

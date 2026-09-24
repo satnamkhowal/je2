@@ -118,6 +118,7 @@ $canonical = "https://jaipurengineers.com/java-full-stack-course-jaipur.php";
 
             <div class="col-lg-4">
                 <div class="je-course-summary-card js-tilt wow fadeInRight" data-wow-delay=".15s">
+                    <img class="img-fluid mb-3" src="assets/images/java-full-stack-course-jaipur-jaipur-engineers.webp" alt="Java Full Stack Course in Jaipur" loading="eager" fetchpriority="high" decoding="async">
                     <span class="je-summary-label">Course Snapshot</span>
                     <h3>Java Full Stack Development</h3>
                     <div class="je-summary-row"><strong>Learning Mode</strong><span>Classroom / Guided Training</span></div>

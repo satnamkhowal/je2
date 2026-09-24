@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/course-card-data.php';
 $course = $course ?? null;
 $courseAssetImages = [
     'advanced-excel-course-jaipur.php' => 'courses/advanced-excel-course-jaipur-jaipur-engineers.webp',
@@ -32,6 +33,7 @@ if ($course && !empty($course['slug'])) {
     if (isset($courseAssetImages[$course['slug']])) {
         $course['image'] = $courseAssetImages[$course['slug']];
     }
+    $course['image'] = je_course_card_image($course['slug'], $course['image'] ?? 'assets/images/courses/home14/1.jpg');
     if (empty($course['syllabus']) && isset($courseSyllabusPdfs[$course['slug']])) {
         $course['syllabus'] = $courseSyllabusPdfs[$course['slug']];
     }

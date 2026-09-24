@@ -1,7 +1,8 @@
 <?php
+require_once __DIR__ . '/course-card-data.php';
 function je_course_pages(): array
 {
-    return [
+    $pages = [
         'java-full-stack' => [
             'slug' => 'java-full-stack-course-jaipur.php',
             'title' => 'Java Full Stack Course in Jaipur | Jaipur Engineers',
@@ -138,6 +139,11 @@ function je_course_pages(): array
             'roles' => ['Digital Marketing Executive', 'SEO Trainee', 'Ads Trainee', 'Social Media Executive'],
         ],
     ];
+    foreach ($pages as &$page) {
+        $page['image'] = je_course_card_image($page['slug'], $page['image']);
+    }
+    unset($page);
+    return $pages;
 }
 
 function je_get_course_page(string $key): ?array
