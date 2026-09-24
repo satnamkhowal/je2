@@ -19,7 +19,7 @@ function je_form_student_confirmation(array $lead)
     $pageUrl = je_ai_clean(isset($lead['page_url']) ? $lead['page_url'] : '', 500);
 
     $courseLabel = $course !== '' ? $course : 'Course Enquiry';
-    $courseUrl = $pageUrl !== '' ? $pageUrl : 'https://jaipurengineers.com/courses.php';
+    $courseUrl = $pageUrl !== '' ? $pageUrl : 'https://jaipurengineers.com/courses';
     $subject = 'Thanks for contacting Jaipur Engineers - ' . $courseLabel;
     $body = "Hi " . ($name !== '' ? $name : 'there') . ",\n\n"
         . "Thank you for contacting Jaipur Engineers about {$courseLabel}. We have received your enquiry.\n\n"
@@ -27,7 +27,7 @@ function je_form_student_confirmation(array $lead)
         . "Course / page details: {$courseUrl}\n\n"
         . "Explore practical training, hands-on projects, mentor guidance, and internship or placement-assistance options available for applicable courses and batches. Our admissions team will contact you with current batch timing, course structure and admission details.\n\n"
         . "Website: https://jaipurengineers.com/\n"
-        . "Courses: https://jaipurengineers.com/courses.php\n\n"
+        . "Courses: https://jaipurengineers.com/courses\n\n"
         . "Regards,\nJaipur Engineers Admissions Team";
 
     $mailError = '';
@@ -113,7 +113,7 @@ $pageDescription = 'Jaipur Engineers enquiry submission status.';
                 <h1>Enquiry not submitted.</h1>
                 <p>Please check the details and submit the enquiry again from the relevant course page.</p>
             <?php endif; ?>
-            <a class="je-card-link" href="courses.php">Explore Courses <i class="fa fa-angle-right"></i></a>
+            <a class="je-card-link" href="courses">Explore Courses <i class="fa fa-angle-right"></i></a>
         </div>
     </div>
 </main>
