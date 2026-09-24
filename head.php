@@ -59,7 +59,7 @@ if (isset($course) && is_array($course) && !empty($course['h1']) && !empty($cano
                 '@type' => 'ListItem',
                 'position' => 2,
                 'name' => 'Courses',
-                'item' => 'https://jaipurengineers.com/courses.php',
+                'item' => 'https://jaipurengineers.com/courses',
             ],
             [
                 '@type' => 'ListItem',
