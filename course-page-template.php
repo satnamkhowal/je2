@@ -13,7 +13,7 @@ if (!$course) {
     $pageDescription = $course['meta'];
 }
 
-$canonical = $course ? 'https://jaipurengineers.com/' . $course['slug'] : 'https://jaipurengineers.com/courses.php';
+$canonical = $course ? 'https://jaipurengineers.com/' . preg_replace('/\\.php$/i', '', $course['slug']) : 'https://jaipurengineers.com/courses';
 $allCourses = je_course_pages();
 $courseSyllabusMap = [
     'artificial-intelligence-course-jaipur.php' => 'courses/jaipur-engineers-academy-Artificial-Intelligence-Machine-Learning-course-syllabus.pdf',
@@ -80,7 +80,7 @@ if ($course) {
     <div class="container">
         <h1>Course not found</h1>
         <p>Please visit the course catalog to choose an available program.</p>
-        <a class="je-primary-btn" href="courses.php">View Courses</a>
+        <a class="je-primary-btn" href="courses">View Courses</a>
     </div>
 </main>
 <?php else: ?>
@@ -90,7 +90,7 @@ if ($course) {
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="je-breadcrumb">
-                        <a href="index.php">Home</a> / <a href="courses.php">Courses</a> / <?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>
+                        <a href="index">Home</a> / <a href="courses">Courses</a> / <?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>
                     </div>
                     <span class="je-kicker"><?php echo htmlspecialchars($course['kicker'], ENT_QUOTES, 'UTF-8'); ?></span>
                     <h1><?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?></h1>
@@ -165,7 +165,7 @@ if ($course) {
                     <div class="je-sidebar">
                         <div class="je-sidebar-card" id="enquiry">
                             <h3>Get Course Details</h3>
-                            <form action="lead-submit.php" method="post">
+                            <form action="lead-submit" method="post">
                                 <input type="hidden" name="source" value="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>">
                                 <label class="sr-only" for="je-lead-name">Your Name</label>
                                 <input id="je-lead-name" class="je-form-control" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
@@ -182,7 +182,7 @@ if ($course) {
                             <h3>Popular Courses</h3>
                             <ul class="je-course-links">
                                 <?php foreach (array_slice($allCourses, 0, 7) as $item): ?>
-                                    <li><a href="<?php echo htmlspecialchars($item['slug'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($item['h1'], ENT_QUOTES, 'UTF-8'); ?> <i class="fa fa-angle-right"></i></a></li>
+                                    <li><a href="<?php echo htmlspecialchars(preg_replace('/\\.php$/i', '', $item['slug']), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($item['h1'], ENT_QUOTES, 'UTF-8'); ?> <i class="fa fa-angle-right"></i></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
