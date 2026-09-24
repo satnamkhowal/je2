@@ -7,7 +7,7 @@ $lead = (string)($page['lead'] ?? 'Explore practical training and student suppor
 $items = $page['items'] ?? [];
 $pageTitle = $title . ' | Jaipur Engineers';
 $pageDescription = $lead;
-$canonical = 'https://jaipurengineers.com/' . $slug;
+$canonical = 'https://jaipurengineers.com/' . preg_replace('/\\.php$/i', '', $slug);
 $isAdmissions = $slug === 'college-admission-guidance-jaipur.php';
 $isContact = $slug === 'contact-us.php';
 $pageAssetImages = [
@@ -53,7 +53,7 @@ $esc = static fn($text) => htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
     <section class="je-hero">
         <div class="container"><div class="row align-items-center">
             <div class="col-lg-8">
-                <div class="je-breadcrumb"><a href="index.php">Home</a> / <?= $esc($title) ?></div>
+                <div class="je-breadcrumb"><a href="index">Home</a> / <?= $esc($title) ?></div>
                 <span class="je-kicker"><?= $esc($kicker) ?></span>
                 <h1><?= $esc($title) ?></h1>
                 <p class="je-hero-lead"><?= $esc($lead) ?></p>
@@ -102,13 +102,13 @@ $esc = static fn($text) => htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
                 <?php endforeach; ?>
             </div>
             <?php if (!empty($page['note'])): ?><p><?= $esc($page['note']) ?></p><?php endif; ?>
-            <?php if ($isAdmissions): ?><p>Looking for skills training? Explore our <a href="courses.php">IT training courses</a> or <a href="internship-programs-jaipur.php">internship programs</a>.</p><?php endif; ?>
+            <?php if ($isAdmissions): ?><p>Looking for skills training? Explore our <a href="courses">IT training courses</a> or <a href="internship-programs-jaipur">internship programs</a>.</p><?php endif; ?>
         </div>
         <div class="col-lg-4">
             <?php je_render_design_card(); ?>
             <div class="je-sidebar-card" id="enquiry">
                 <h2 class="h3">Request Details</h2>
-                <form action="lead-submit.php" method="post">
+                <form action="lead-submit" method="post">
                     <input type="hidden" name="source" value="<?= $esc($title) ?>">
                     <label for="enquiry-name">Your name</label><input id="enquiry-name" class="je-form-control" name="name" type="text" autocomplete="name" required>
                     <label for="enquiry-phone">Mobile number</label><input id="enquiry-phone" class="je-form-control" name="phone" type="tel" autocomplete="tel" required>
