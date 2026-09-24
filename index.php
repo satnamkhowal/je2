@@ -16,7 +16,7 @@ foreach ($homeCourseGroups as $key => $groups) {
         '@type' => 'ListItem',
         'position' => count($homeCourseItems) + 1,
         'name' => $item['h1'],
-        'url' => 'https://jaipurengineers.com/' . $item['slug'],
+        'url' => 'https://jaipurengineers.com/' . preg_replace('/\\.php$/i', '', $item['slug']),
     ];
 }
 ?>
@@ -103,8 +103,8 @@ foreach ($homeCourseGroups as $key => $groups) {
                             Learn Full Stack Development, Java, Python, Data Science &amp; AI, Cloud, DevOps, Cyber Security, Software Testing and more through industry-focused training, projects and career guidance at Jaipur Engineers.
                         </p>
                         <div class="btn-part mt-30">
-                            <a class="readon2 cta-btn mr-15" href="courses.php">Explore IT Courses</a>
-                            <a class="readon2 cta-btn" href="enquiry.php">Enquire Now</a>
+                            <a class="readon2 cta-btn mr-15" href="courses">Explore IT Courses</a>
+                            <a class="readon2 cta-btn" href="enquiry">Enquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -185,13 +185,13 @@ foreach ($homeCourseGroups as $key => $groups) {
                 <article class="je-home-course" data-groups="<?php echo htmlspecialchars($groups, ENT_QUOTES, 'UTF-8'); ?>">
                     <div class="courses-item">
                         <div class="img-part">
-                            <a href="<?php echo htmlspecialchars($homeCourse['slug'], ENT_QUOTES, 'UTF-8'); ?>"><img src="<?php echo htmlspecialchars($homeCourse['image'], ENT_QUOTES, 'UTF-8'); ?>" width="<?php echo $imageSize[0]; ?>" height="<?php echo $imageSize[1]; ?>" loading="lazy" decoding="async" alt="<?php echo htmlspecialchars($homeCourse['h1'] . ' at Jaipur Engineers', ENT_QUOTES, 'UTF-8'); ?>"></a>
+                            <a href="<?php echo htmlspecialchars(preg_replace('/\\.php$/i', '', $homeCourse['slug']), ENT_QUOTES, 'UTF-8'); ?>"><img src="<?php echo htmlspecialchars($homeCourse['image'], ENT_QUOTES, 'UTF-8'); ?>" width="<?php echo $imageSize[0]; ?>" height="<?php echo $imageSize[1]; ?>" loading="lazy" decoding="async" alt="<?php echo htmlspecialchars($homeCourse['h1'] . ' at Jaipur Engineers', ENT_QUOTES, 'UTF-8'); ?>"></a>
                         </div>
                         <div class="content-part">
                             <p class="je-home-course-category"><?php echo htmlspecialchars($homeCourse['category'], ENT_QUOTES, 'UTF-8'); ?></p>
-                            <h3 class="title"><a href="<?php echo htmlspecialchars($homeCourse['slug'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($homeCourse['h1'], ENT_QUOTES, 'UTF-8'); ?></a></h3>
+                            <h3 class="title"><a href="<?php echo htmlspecialchars(preg_replace('/\\.php$/i', '', $homeCourse['slug']), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($homeCourse['h1'], ENT_QUOTES, 'UTF-8'); ?></a></h3>
                             <p class="je-home-course-desc"><?php echo htmlspecialchars($homeCourse['lead'], ENT_QUOTES, 'UTF-8'); ?></p>
-                            <a class="je-home-course-link" href="<?php echo htmlspecialchars($homeCourse['slug'], ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo htmlspecialchars('Explore ' . $homeCourse['h1'], ENT_QUOTES, 'UTF-8'); ?>">Explore course <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="je-home-course-link" href="<?php echo htmlspecialchars(preg_replace('/\\.php$/i', '', $homeCourse['slug']), ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo htmlspecialchars('Explore ' . $homeCourse['h1'], ENT_QUOTES, 'UTF-8'); ?>">Explore course <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </article>
@@ -202,7 +202,7 @@ foreach ($homeCourseGroups as $key => $groups) {
             <div class="sec-title5 text-center mt-40">
                 <div class="description title-color">
                     Explore programming, development, data, cloud, security, testing, marketing and design programs.
-                    <span><a href="courses.php">View All IT Courses <i class="flaticon-right-arrow"></i></a></span>
+                    <span><a href="courses">View All IT Courses <i class="flaticon-right-arrow"></i></a></span>
                 </div>
             </div>
         </div>
@@ -221,7 +221,7 @@ foreach ($homeCourseGroups as $key => $groups) {
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="btn-part text-right">
-                        <a class="readon2 cta-btn" href="enquiry.php">Talk to Our Training Team</a>
+                        <a class="readon2 cta-btn" href="enquiry">Talk to Our Training Team</a>
                     </div>
                 </div>
             </div>
@@ -240,13 +240,13 @@ foreach ($homeCourseGroups as $key => $groups) {
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="programming-language-courses-jaipur.php"><img src="assets/images/categories/main-home/1.jpg" width="600" height="400" loading="lazy" alt="Programming language courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="programming-language-courses-jaipur"><img src="assets/images/categories/main-home/1.jpg" width="600" height="400" loading="lazy" alt="Programming language courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/1.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
-                                <h3 class="title"><a href="programming-language-courses-jaipur.php">Programming Languages</a></h3>
+                                <h3 class="title"><a href="programming-language-courses-jaipur">Programming Languages</a></h3>
                                 <span class="course-qnty">Python, Java, C, C++, JavaScript &amp; more</span>
-                                <div class="btn2"><a href="programming-language-courses-jaipur.php">Explore Programming Courses</a></div>
+                                <div class="btn2"><a href="programming-language-courses-jaipur">Explore Programming Courses</a></div>
                             </div>
                         </div>
                     </div>
@@ -254,13 +254,13 @@ foreach ($homeCourseGroups as $key => $groups) {
 
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="full-stack-development-course-jaipur.php"><img src="assets/images/categories/main-home/2.jpg" width="600" height="400" loading="lazy" alt="Full Stack Development courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="full-stack-development-course-jaipur"><img src="assets/images/categories/main-home/2.jpg" width="600" height="400" loading="lazy" alt="Full Stack Development courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/2.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
-                                <h3 class="title"><a href="full-stack-development-course-jaipur.php">Full Stack Development</a></h3>
+                                <h3 class="title"><a href="full-stack-development-course-jaipur">Full Stack Development</a></h3>
                                 <span class="course-qnty">MERN, MEAN, Java, Python, React &amp; Node.js</span>
-                                <div class="btn2"><a href="full-stack-development-course-jaipur.php">Explore Full Stack Courses</a></div>
+                                <div class="btn2"><a href="full-stack-development-course-jaipur">Explore Full Stack Courses</a></div>
                             </div>
                         </div>
                     </div>
@@ -268,13 +268,13 @@ foreach ($homeCourseGroups as $key => $groups) {
 
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="data-science-course-jaipur.php"><img src="assets/images/data-science-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Data Science and Artificial Intelligence courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="data-science-course-jaipur"><img src="assets/images/data-science-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Data Science and Artificial Intelligence courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/3.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
-                                <h3 class="title"><a href="data-science-course-jaipur.php">Data Science &amp; AI</a></h3>
+                                <h3 class="title"><a href="data-science-course-jaipur">Data Science &amp; AI</a></h3>
                                 <span class="course-qnty">Analytics, ML, AI, Generative AI &amp; Power BI</span>
-                                <div class="btn2"><a href="data-science-course-jaipur.php">Explore Data &amp; AI Courses</a></div>
+                                <div class="btn2"><a href="data-science-course-jaipur">Explore Data &amp; AI Courses</a></div>
                             </div>
                         </div>
                     </div>
@@ -282,13 +282,13 @@ foreach ($homeCourseGroups as $key => $groups) {
 
                 <div class="col-lg-4 col-md-6 md-mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="cloud-computing-course-jaipur.php"><img src="assets/images/cloud-computing-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Cloud Computing and DevOps courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="cloud-computing-course-jaipur"><img src="assets/images/cloud-computing-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Cloud Computing and DevOps courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/4.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
-                                <h3 class="title"><a href="cloud-computing-course-jaipur.php">Cloud Computing &amp; DevOps</a></h3>
+                                <h3 class="title"><a href="cloud-computing-course-jaipur">Cloud Computing &amp; DevOps</a></h3>
                                 <span class="course-qnty">AWS, Azure, Google Cloud, Docker &amp; Kubernetes</span>
-                                <div class="btn2"><a href="cloud-computing-course-jaipur.php">Explore Cloud Courses</a></div>
+                                <div class="btn2"><a href="cloud-computing-course-jaipur">Explore Cloud Courses</a></div>
                             </div>
                         </div>
                     </div>
@@ -296,13 +296,13 @@ foreach ($homeCourseGroups as $key => $groups) {
 
                 <div class="col-lg-4 col-md-6 sm-mb-30">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="cyber-security-course-jaipur.php"><img src="assets/images/cyber-security-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Cyber Security and Ethical Hacking courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="cyber-security-course-jaipur"><img src="assets/images/cyber-security-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Cyber Security and Ethical Hacking courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/5.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
-                                <h3 class="title"><a href="cyber-security-course-jaipur.php">Cyber Security</a></h3>
+                                <h3 class="title"><a href="cyber-security-course-jaipur">Cyber Security</a></h3>
                                 <span class="course-qnty">Ethical Hacking, SOC, Pen Testing &amp; Network Security</span>
-                                <div class="btn2"><a href="cyber-security-course-jaipur.php">Explore Cyber Security Courses</a></div>
+                                <div class="btn2"><a href="cyber-security-course-jaipur">Explore Cyber Security Courses</a></div>
                             </div>
                         </div>
                     </div>
@@ -310,13 +310,13 @@ foreach ($homeCourseGroups as $key => $groups) {
 
                 <div class="col-lg-4 col-md-6">
                     <div class="categories-items">
-                        <div class="cate-images"><a href="software-testing-course-jaipur.php"><img src="assets/images/software-testing-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Software Testing courses in Jaipur"></a></div>
+                        <div class="cate-images"><a href="software-testing-course-jaipur"><img src="assets/images/software-testing-course-jaipur-jaipur-engineers.webp" width="1200" height="675" loading="lazy" alt="Software Testing courses in Jaipur"></a></div>
                         <div class="contents">
                             <div class="img-part"><img src="assets/images/categories/main-home/icon/6.png" width="64" height="64" loading="lazy" alt=""></div>
                             <div class="content-wrap">
-                                <h3 class="title"><a href="software-testing-course-jaipur.php">Software Testing</a></h3>
+                                <h3 class="title"><a href="software-testing-course-jaipur">Software Testing</a></h3>
                                 <span class="course-qnty">Manual, Automation, Selenium, API &amp; Playwright</span>
-                                <div class="btn2"><a href="software-testing-course-jaipur.php">Explore Testing Courses</a></div>
+                                <div class="btn2"><a href="software-testing-course-jaipur">Explore Testing Courses</a></div>
                             </div>
                         </div>
                     </div>
@@ -338,12 +338,12 @@ foreach ($homeCourseGroups as $key => $groups) {
                             Jaipur Engineers was founded in Jaipur with a clear goal: bridge the gap between academic learning and real industry requirements. Our training approach focuses on skills, logic, hands-on practice and real-world problem solving so learners can build stronger foundations for software and technology careers.
                         </p>
                         <p>
-                            Students can explore <a href="full-stack-development-course-jaipur.php">Full Stack Development training in Jaipur</a>, <a href="java-courses-jaipur.php">Java courses in Jaipur</a>, <a href="data-science-course-jaipur.php">Data Science &amp; AI training</a>, <a href="cloud-computing-course-jaipur.php">Cloud Computing programs</a>, <a href="cyber-security-course-jaipur.php">Cyber Security courses</a> and many other practical technology tracks.
+                            Students can explore <a href="full-stack-development-course-jaipur">Full Stack Development training in Jaipur</a>, <a href="java-courses-jaipur">Java courses in Jaipur</a>, <a href="data-science-course-jaipur">Data Science &amp; AI training</a>, <a href="cloud-computing-course-jaipur">Cloud Computing programs</a>, <a href="cyber-security-course-jaipur">Cyber Security courses</a> and many other practical technology tracks.
                         </p>
                         <p>
-                            Learn more about our <a href="about-institute.php">institute</a>, <a href="mission-vision.php">mission and vision</a>, <a href="our-trainers.php">trainers</a>, <a href="success-stories.php">student success stories</a> and <a href="faqs.php">frequently asked questions</a>.
+                            Learn more about our <a href="about-institute">institute</a>, <a href="mission-vision">mission and vision</a>, <a href="our-trainers">trainers</a>, <a href="success-stories">student success stories</a> and <a href="faqs">frequently asked questions</a>.
                         </p>
-                        <div class="btn-part mt-30"><a class="readon2 cta-btn" href="about-us.php">About Jaipur Engineers</a></div>
+                        <div class="btn-part mt-30"><a class="readon2 cta-btn" href="about-us">About Jaipur Engineers</a></div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -364,7 +364,7 @@ foreach ($homeCourseGroups as $key => $groups) {
                         <div class="content-part">
                             <h2 class="title">IT Internship Programs in Jaipur</h2>
                             <div class="description mb-27">Gain practical exposure through summer internships, winter internships, industrial training, live projects and final-year project guidance.</div>
-                            <div class="btn-part"><a class="readon2 cta-btn" href="internship-programs-jaipur.php">Explore Internship Programs</a></div>
+                            <div class="btn-part"><a class="readon2 cta-btn" href="internship-programs-jaipur">Explore Internship Programs</a></div>
                         </div>
                     </div>
                 </div>
@@ -373,7 +373,7 @@ foreach ($homeCourseGroups as $key => $groups) {
                         <div class="content-part">
                             <h2 class="title">Placement Assistance &amp; Career Preparation</h2>
                             <div class="description mb-27">Strengthen interview readiness, practical skills and career preparation with placement-focused guidance and training support.</div>
-                            <div class="btn-part"><a class="readon2 cta-btn" href="placement-assistance.php">Explore Placement Assistance</a></div>
+                            <div class="btn-part"><a class="readon2 cta-btn" href="placement-assistance">Explore Placement Assistance</a></div>
                         </div>
                     </div>
                 </div>
@@ -418,7 +418,7 @@ foreach ($homeCourseGroups as $key => $groups) {
             </div>
 
             <div class="text-center mt-20">
-                <a class="readon2 cta-btn" href="why-choose-forsk.php">Why Choose Jaipur Engineers</a>
+                <a class="readon2 cta-btn" href="why-choose-forsk">Why Choose Jaipur Engineers</a>
             </div>
         </div>
     </section>
@@ -432,16 +432,16 @@ foreach ($homeCourseGroups as $key => $groups) {
             </div>
 
             <div class="row text-center">
-                <div class="col-lg-3 col-md-6 mb-30"><a href="interview-questions.php"><strong>Interview Questions</strong></a></div>
-                <div class="col-lg-3 col-md-6 mb-30"><a href="career-guides.php"><strong>Career Guides</strong></a></div>
-                <div class="col-lg-3 col-md-6 mb-30"><a href="free-tutorials.php"><strong>Free Tutorials</strong></a></div>
-                <div class="col-lg-3 col-md-6 mb-30"><a href="blog.php"><strong>IT Training &amp; Career Blog</strong></a></div>
+                <div class="col-lg-3 col-md-6 mb-30"><a href="interview-questions"><strong>Interview Questions</strong></a></div>
+                <div class="col-lg-3 col-md-6 mb-30"><a href="career-guides"><strong>Career Guides</strong></a></div>
+                <div class="col-lg-3 col-md-6 mb-30"><a href="free-tutorials"><strong>Free Tutorials</strong></a></div>
+                <div class="col-lg-3 col-md-6 mb-30"><a href="blog"><strong>IT Training &amp; Career Blog</strong></a></div>
             </div>
 
             <div class="text-center mt-20">
-                <a href="resources.php">Explore All Jaipur Engineers Resources</a> &nbsp; | &nbsp;
-                <a href="events.php">Events &amp; Webinars</a> &nbsp; | &nbsp;
-                <a href="corporate-training-jaipur.php">Corporate IT Training in Jaipur</a>
+                <a href="resources">Explore All Jaipur Engineers Resources</a> &nbsp; | &nbsp;
+                <a href="events">Events &amp; Webinars</a> &nbsp; | &nbsp;
+                <a href="corporate-training-jaipur">Corporate IT Training in Jaipur</a>
             </div>
         </div>
     </section>
