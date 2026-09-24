@@ -42,11 +42,11 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
     http_response_code(404);
     $pageTitle = 'Course Not Found | Jaipur Engineers';
     $pageDescription = 'The requested course page could not be found.';
-    $canonical = 'https://jaipurengineers.com/courses.php';
+    $canonical = 'https://jaipurengineers.com/courses';
 } else {
     $pageTitle = $course['name'] . ' | Jaipur Engineers';
     $pageDescription = $course['lead'] . ' Practical project-focused training at Jaipur Engineers.';
-    $canonical = 'https://jaipurengineers.com/' . $course['slug'];
+    $canonical = 'https://jaipurengineers.com/' . preg_replace('/\\.php$/i', '', $course['slug']);
 }
 ?>
 <!doctype html>
@@ -70,12 +70,12 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <body class="defult-home je-course-page">
 <?php include __DIR__ . '/header.php'; ?>
 <?php if (!$course): ?>
-<main class="je-section"><div class="container"><h1>Course not found</h1><p>Please visit our course catalog.</p><a class="je-primary-btn" href="courses.php">View Courses</a></div></main>
+<main class="je-section"><div class="container"><h1>Course not found</h1><p>Please visit our course catalog.</p><a class="je-primary-btn" href="courses">View Courses</a></div></main>
 <?php else: ?>
 <main>
 <section class="je-hero"><div class="container"><div class="row align-items-center">
 <div class="col-lg-8">
-<div class="je-breadcrumb"><a href="index.php">Home</a> / <a href="courses.php">Courses</a> / <?php echo htmlspecialchars($course['name']); ?></div>
+<div class="je-breadcrumb"><a href="index">Home</a> / <a href="courses">Courses</a> / <?php echo htmlspecialchars($course['name']); ?></div>
 <span class="je-kicker"><?php echo htmlspecialchars($course['kicker']); ?></span>
 <h1><?php echo htmlspecialchars($course['name']); ?></h1>
 <p class="je-hero-lead"><?php echo htmlspecialchars($course['lead']); ?></p>
@@ -104,7 +104,7 @@ if (!$course || empty($course['slug']) || empty($course['name'])) {
 <div class="col-lg-4">
 <?php je_render_design_card(); ?><div class="je-sidebar"><div class="je-sidebar-card" id="enquiry">
 <h3>Get Course Details</h3>
-<form action="lead-submit.php" method="post">
+<form action="lead-submit" method="post">
 <input type="hidden" name="source" value="<?php echo htmlspecialchars($course['name']); ?>">
 <input aria-label="Your name" class="je-form-control" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
 <input aria-label="Mobile number" class="je-form-control" type="tel" name="phone" placeholder="Mobile Number" autocomplete="tel" required>
