@@ -21,6 +21,7 @@ $courseSyllabusMap = [
 ];
 $courseSyllabus = ($course && isset($courseSyllabusMap[$course['slug']])) ? $courseSyllabusMap[$course['slug']] : '';
 $courseSchemaJson = false;
+$faqSchemaJson = false;
 if ($course) {
     $courseSchema = [
         '@context' => 'https://schema.org',
@@ -40,6 +41,19 @@ if ($course) {
         'inLanguage' => 'en-IN',
     ];
     $courseSchemaJson = json_encode($courseSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if (!empty($course['faq'])) {
+        $faqSchemaJson = json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => array_map(static function ($faq) {
+                return [
+                    '@type' => 'Question',
+                    'name' => $faq[0],
+                    'acceptedAnswer' => ['@type' => 'Answer', 'text' => $faq[1]],
+                ];
+            }, $course['faq']),
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    }
 }
 ?>
 <!doctype html>
@@ -53,6 +67,9 @@ if ($course) {
     <?php include __DIR__ . '/head.php'; ?>
     <?php if ($courseSchemaJson !== false): ?>
     <script type="application/ld+json"><?php echo $courseSchemaJson; ?></script>
+    <?php endif; ?>
+    <?php if ($faqSchemaJson !== false): ?>
+    <script type="application/ld+json"><?php echo $faqSchemaJson; ?></script>
     <?php endif; ?>
 </head>
 <body class="defult-home je-course-page">
@@ -215,6 +232,28 @@ if ($course) {
             </div>
         </div>
     </section>
+
+    <?php if (!empty($course['faq'])): ?>
+    <section class="je-section je-section-soft" id="faq">
+        <div class="container">
+            <div class="je-section-title">
+                <span class="eyebrow">Frequently Asked Questions</span>
+                <h2>Full Stack course questions students ask before joining.</h2>
+                <p>Use these answers as a starting point and confirm current batch-specific details directly with Jaipur Engineers.</p>
+            </div>
+            <div class="row">
+                <?php foreach ($course['faq'] as $faq): ?>
+                <div class="col-lg-6 mb-4">
+                    <div class="je-content-card h-100">
+                        <h3><?php echo htmlspecialchars($faq[0], ENT_QUOTES, 'UTF-8'); ?></h3>
+                        <p><?php echo htmlspecialchars($faq[1], ENT_QUOTES, 'UTF-8'); ?></p>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
 
     <section class="je-section je-section-dark">
         <div class="container">
