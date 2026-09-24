@@ -221,14 +221,14 @@ if ($query !== '') {
     });
 }
 
-$catalogUrl = 'https://jaipurengineers.com/courses.php';
+$catalogUrl = 'https://jaipurengineers.com/courses';
 $itemList = [];
 $position = 1;
 foreach ($allCourses as $course) {
     $itemList[] = [
         '@type' => 'ListItem',
         'position' => $position++,
-        'url' => 'https://jaipurengineers.com/' . $course['slug'],
+        'url' => 'https://jaipurengineers.com/' . preg_replace('/\\.php$/i', '', $course['slug']),
         'name' => $course['h1'],
     ];
 }
@@ -285,7 +285,7 @@ $catalogSchema = [
                     <p>Choose from practical training programs in development, programming, data, AI, cloud, security, networking, mobile development and digital marketing. Newly uploaded Jaipur Engineers course cards are used directly in this catalog.</p>
                 </div>
                 <div class="col-lg-4">
-                    <form action="courses.php" method="get" role="search">
+                    <form action="courses" method="get" role="search">
                         <label class="sr-only" for="course-search">Search IT courses</label>
                         <input id="course-search" class="je-form-control" type="search" name="q" value="<?php echo htmlspecialchars($query, ENT_QUOTES, 'UTF-8'); ?>" placeholder="Search courses" autocomplete="off">
                         <button class="je-submit-btn" type="submit">Search Courses</button>
@@ -303,7 +303,7 @@ $catalogSchema = [
                         <div class="je-install-card">
                             <h2>No courses found</h2>
                             <p>Try another keyword or view all available programs.</p>
-                            <a class="je-card-link" href="courses.php">View all courses <i class="fa fa-angle-right"></i></a>
+                            <a class="je-card-link" href="courses">View all courses <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -311,19 +311,19 @@ $catalogSchema = [
                 <?php foreach ($courses as $course): ?>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <article class="je-catalog-card">
-                        <a href="<?php echo htmlspecialchars($course['slug'], ENT_QUOTES, 'UTF-8'); ?>">
+                        <a href="<?php echo htmlspecialchars(preg_replace('/\\.php$/i', '', $course['slug']), ENT_QUOTES, 'UTF-8'); ?>">
                             <img src="<?php echo htmlspecialchars($course['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?>" loading="lazy" decoding="async">
                         </a>
                         <div class="je-catalog-body">
                             <span class="je-catalog-label"><i class="fa <?php echo htmlspecialchars($course['icon'], ENT_QUOTES, 'UTF-8'); ?>"></i><?php echo htmlspecialchars($course['category'], ENT_QUOTES, 'UTF-8'); ?></span>
-                            <h2 class="h3"><a href="<?php echo htmlspecialchars($course['slug'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?></a></h2>
+                            <h2 class="h3"><a href="<?php echo htmlspecialchars(preg_replace('/\\.php$/i', '', $course['slug']), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($course['h1'], ENT_QUOTES, 'UTF-8'); ?></a></h2>
                             <p><?php echo htmlspecialchars($course['lead'], ENT_QUOTES, 'UTF-8'); ?></p>
                             <div class="je-chip-row">
                                 <?php foreach (array_slice($course['chips'], 0, 4) as $chip): ?>
                                     <span><?php echo htmlspecialchars($chip, ENT_QUOTES, 'UTF-8'); ?></span>
                                 <?php endforeach; ?>
                             </div>
-                            <a class="je-card-link" href="<?php echo htmlspecialchars($course['slug'], ENT_QUOTES, 'UTF-8'); ?>">View course details <i class="fa fa-angle-right"></i></a>
+                            <a class="je-card-link" href="<?php echo htmlspecialchars(preg_replace('/\\.php$/i', '', $course['slug']), ENT_QUOTES, 'UTF-8'); ?>">View course details <i class="fa fa-angle-right"></i></a>
                         </div>
                     </article>
                 </div>
