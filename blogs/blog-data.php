@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/custom-posts.php';
+
 function je_blog_seed_courses(): array
 {
     return [
@@ -33,7 +35,7 @@ function je_blog_seed_angles(): array
 
 function je_blog_posts(): array
 {
-    $posts = [];
+    $posts = je_custom_blog_posts();
     $date = new DateTimeImmutable('2026-09-14');
     foreach (je_blog_seed_courses() as $courseIndex => $course) {
         foreach (je_blog_seed_angles() as $angleIndex => $angle) {
