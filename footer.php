@@ -13,7 +13,7 @@
                     <p>Explore practical training, internships, live projects and career-focused programs at Jaipur Engineers.</p>
                 </div>
                 <div class="col-lg-4 col-md-4 text-md-right mt-3 mt-md-0">
-                    <a href="enquiry.php" class="je-footer-cta-btn">Enquire Now</a>
+                    <a href="enquiry" class="je-footer-cta-btn">Enquire Now</a>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-widget md-mb-50">
                     <div class="footer-logo mb-25">
-                        <a href="index.php" aria-label="Jaipur Engineers Home">
+                        <a href="index" aria-label="Jaipur Engineers Home">
                             <img src="assets/images/dark-logo.png" alt="Jaipur Engineers - IT Training Institute in Jaipur">
                         </a>
                     </div>
@@ -64,25 +64,25 @@
                         </li>
                         <li>
                             <i class="fa fa-paper-plane"></i>
-                            <div class="desc"><a href="enquiry.php">Send Course Enquiry</a></div>
+                            <div class="desc"><a href="enquiry">Send Course Enquiry</a></div>
                         </li>
                     </ul>
-                    <a href="contact-us.php" class="je-footer-inline-link">View Contact Page <i class="fa fa-angle-right"></i></a>
+                    <a href="contact-us" class="je-footer-inline-link">View Contact Page <i class="fa fa-angle-right"></i></a>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-widget sm-mb-50">
                     <h3 class="widget-title">Popular Courses</h3>
                     <ul class="site-map je-footer-links">
-                        <li><a href="full-stack-development-course-jaipur.php">Full Stack Development</a></li>
-                        <li><a href="java-full-stack-course-jaipur.php">Java Full Stack</a></li>
-                        <li><a href="python-full-stack-course-jaipur.php">Python Full Stack</a></li>
-                        <li><a href="data-science-course-jaipur.php">Data Science</a></li>
-                        <li><a href="artificial-intelligence-course-jaipur.php">Artificial Intelligence</a></li>
-                        <li><a href="cyber-security-course-jaipur.php">Cyber Security</a></li>
-                        <li><a href="cloud-computing-course-jaipur.php">Cloud Computing</a></li>
-                        <li><a href="digital-marketing-course-jaipur.php">Digital Marketing</a></li>
+                        <li><a href="full-stack-development-course-jaipur">Full Stack Development</a></li>
+                        <li><a href="java-full-stack-course-jaipur">Java Full Stack</a></li>
+                        <li><a href="python-full-stack-course-jaipur">Python Full Stack</a></li>
+                        <li><a href="data-science-course-jaipur">Data Science</a></li>
+                        <li><a href="artificial-intelligence-course-jaipur">Artificial Intelligence</a></li>
+                        <li><a href="cyber-security-course-jaipur">Cyber Security</a></li>
+                        <li><a href="cloud-computing-course-jaipur">Cloud Computing</a></li>
+                        <li><a href="digital-marketing-course-jaipur">Digital Marketing</a></li>
                     </ul>
-                    <a href="courses.php" class="je-footer-inline-link">View All Courses <i class="fa fa-angle-right"></i></a>
+                    <a href="courses" class="je-footer-inline-link">View All Courses <i class="fa fa-angle-right"></i></a>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
@@ -90,30 +90,30 @@
                     <div class="row">
                         <div class="col-6">
                             <ul class="site-map je-footer-links">
-                                <li><a href="about-us.php">About Us</a></li>
-                                <li><a href="college-admission-guidance-jaipur.php">College Admission Guidance</a></li>
-                                <li><a href="our-trainers.php">Our Trainers</a></li>
-                                <li><a href="internship-programs-jaipur.php">Internships</a></li>
-                                <li><a href="placements.php">Placements</a></li>
-                                <li><a href="placement-partners.php">Placement Partners</a></li>
-                                <li><a href="testimonials.php">Testimonials</a></li>
+                                <li><a href="about-us">About Us</a></li>
+                                <li><a href="college-admission-guidance-jaipur">College Admission Guidance</a></li>
+                                <li><a href="our-trainers">Our Trainers</a></li>
+                                <li><a href="internship-programs-jaipur">Internships</a></li>
+                                <li><a href="placements">Placements</a></li>
+                                <li><a href="placement-partners">Placement Partners</a></li>
+                                <li><a href="testimonials">Testimonials</a></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul class="site-map je-footer-links">
-                                <li><a href="blog.php">Blog</a></li>
-                                <li><a href="career-guides.php">Career Guides</a></li>
+                                <li><a href="blog">Blog</a></li>
+                                <li><a href="career-guides">Career Guides</a></li>
                                 <li><a href="industry-profiles/">Industry Profiles</a></li>
-                                <li><a href="interview-questions.php">Interview Questions</a></li>
-                                <li><a href="free-tutorials.php">Free Tutorials</a></li>
-                                <li><a href="events.php">Events</a></li>
-                                <li><a href="faqs.php">FAQs</a></li>
+                                <li><a href="interview-questions">Interview Questions</a></li>
+                                <li><a href="free-tutorials">Free Tutorials</a></li>
+                                <li><a href="events">Events</a></li>
+                                <li><a href="faqs">FAQs</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="je-footer-actions">
-                        <a href="branches.php">Branches</a>
-                        <a href="support.php">Support</a>
+                        <a href="branches">Branches</a>
+                        <a href="support">Support</a>
                     </div>
                 </div>
 
@@ -123,31 +123,31 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <h4>Development</h4>
-                        <a href="programming-language-courses-jaipur.php">Programming Courses</a>
-                        <a href="mern-stack-course-jaipur.php">MERN Stack</a>
-                        <a href="react-js-course-jaipur.php">React.js</a>
-                        <a href="node-js-course-jaipur.php">Node.js</a>
+                        <a href="programming-language-courses-jaipur">Programming Courses</a>
+                        <a href="mern-stack-course-jaipur">MERN Stack</a>
+                        <a href="react-js-course-jaipur">React.js</a>
+                        <a href="node-js-course-jaipur">Node.js</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4>Data &amp; AI</h4>
-                        <a href="data-analytics-course-jaipur.php">Data Analytics</a>
-                        <a href="machine-learning-course-jaipur.php">Machine Learning</a>
-                        <a href="generative-ai-course-jaipur.php">Generative AI</a>
-                        <a href="power-bi-course-jaipur.php">Power BI</a>
+                        <a href="data-analytics-course-jaipur">Data Analytics</a>
+                        <a href="machine-learning-course-jaipur">Machine Learning</a>
+                        <a href="generative-ai-course-jaipur">Generative AI</a>
+                        <a href="power-bi-course-jaipur">Power BI</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4>Cloud &amp; Security</h4>
-                        <a href="aws-course-jaipur.php">AWS</a>
-                        <a href="devops-course-jaipur.php">DevOps</a>
-                        <a href="ethical-hacking-course-jaipur.php">Ethical Hacking</a>
-                        <a href="network-security-course-jaipur.php">Network Security</a>
+                        <a href="aws-course-jaipur">AWS</a>
+                        <a href="devops-course-jaipur">DevOps</a>
+                        <a href="ethical-hacking-course-jaipur">Ethical Hacking</a>
+                        <a href="network-security-course-jaipur">Network Security</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4>Career Programs</h4>
-                        <a href="diploma-programs-jaipur.php">Diploma Programs</a>
-                        <a href="industrial-training-jaipur.php">Industrial Training</a>
-                        <a href="live-project-training-jaipur.php">Live Projects</a>
-                        <a href="placement-assistance.php">Placement Assistance</a>
+                        <a href="diploma-programs-jaipur">Diploma Programs</a>
+                        <a href="industrial-training-jaipur">Industrial Training</a>
+                        <a href="live-project-training-jaipur">Live Projects</a>
+                        <a href="placement-assistance">Placement Assistance</a>
                     </div>
                 </div>
             </div>
@@ -164,12 +164,12 @@
                 </div>
                 <div class="col-lg-6 text-right md-text-left">
                     <ul class="copy-right-menu">
-                        <li><a href="about-us.php">About</a></li>
-                        <li><a href="courses.php">Courses</a></li>
-                        <li><a href="internship-programs-jaipur.php">Internships</a></li>
-                        <li><a href="placements.php">Placements</a></li>
-                        <li><a href="blog.php">Blog</a></li>
-                        <li><a href="contact-us.php">Contact</a></li>
+                        <li><a href="about-us">About</a></li>
+                        <li><a href="courses">Courses</a></li>
+                        <li><a href="internship-programs-jaipur">Internships</a></li>
+                        <li><a href="placements">Placements</a></li>
+                        <li><a href="blog">Blog</a></li>
+                        <li><a href="contact-us">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -184,7 +184,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="search-block clearfix">
-                <form action="courses.php" method="get" role="search">
+                <form action="courses" method="get" role="search">
                     <div class="form-group">
                         <input class="form-control" name="q" placeholder="Search courses..." type="search" aria-label="Search Jaipur Engineers courses">
                     </div>
