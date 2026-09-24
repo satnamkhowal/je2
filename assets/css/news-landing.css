@@ -1,0 +1,42 @@
+/* Jaipur Engineers News landing page — theme-aligned editorial design */
+.je-news-page{background:#f7f9fc;color:#505050}
+.je-news-page .je-news-hero{position:relative;overflow:hidden;padding:88px 0 76px;background:linear-gradient(135deg,#101b36 0%,#172a4f 58%,#213d68 100%);color:#fff}
+.je-news-page .je-news-hero:before{content:"";position:absolute;width:460px;height:460px;right:-150px;top:-230px;border-radius:50%;background:rgba(33,167,208,.16);filter:blur(2px)}
+.je-news-page .je-news-hero:after{content:"";position:absolute;width:280px;height:280px;left:-120px;bottom:-190px;border-radius:50%;background:rgba(255,84,33,.14)}
+.je-news-page .je-news-hero .container{position:relative;z-index:2}
+.je-news-page .je-news-kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);font-size:13px;font-weight:600;letter-spacing:.4px;color:#fff}
+.je-news-page .je-news-kicker i{color:#ff5421}
+.je-news-page .je-news-hero h1{margin:0 0 18px;color:#fff;font-size:clamp(40px,5vw,66px);line-height:1.08;font-weight:800;max-width:820px}
+.je-news-page .je-news-hero h1 span{color:#ff6a3d}
+.je-news-page .je-news-hero .hero-copy{max-width:760px;margin:0;color:rgba(255,255,255,.78);font-size:18px;line-height:1.75}
+.je-news-page .je-news-hero-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);box-shadow:0 22px 60px rgba(0,0,0,.16);backdrop-filter:blur(10px)}
+.je-news-page .je-news-hero-card .stat{font-size:34px;line-height:1;font-weight:800;color:#fff}
+.je-news-page .je-news-hero-card .label{margin-top:7px;color:rgba(255,255,255,.65);font-size:13px}
+.je-news-page .je-news-hero-card .mini-line{height:1px;margin:20px 0;background:rgba(255,255,255,.12)}
+.je-news-page .je-news-toolbar{padding:34px 0 8px}
+.je-news-page .je-news-toolbar h2{margin:0;color:#171f32;font-size:28px}
+.je-news-page .je-news-filter{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.je-news-page .je-news-filter a{display:inline-block;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid #e7ebf1;color:#536074;font-size:13px;font-weight:600}
+.je-news-page .je-news-filter a:hover,.je-news-page .je-news-filter a.active{background:#ff5421;border-color:#ff5421;color:#fff}
+.je-news-page .je-news-content{padding:22px 0 90px}
+.je-news-page .je-news-feature{height:100%;padding:34px;border-radius:14px;background:#fff;border:1px solid #e8edf3;box-shadow:0 16px 45px rgba(23,31,50,.07);position:relative;overflow:hidden}
+.je-news-page .je-news-feature:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(#ff5421,#21a7d0)}
+.je-news-page .feature-badge{display:inline-block;margin-bottom:18px;padding:6px 11px;border-radius:4px;background:#fff0eb;color:#e84618;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+.je-news-page .je-news-feature h2{margin-bottom:15px;color:#171f32;font-size:34px;line-height:1.18}
+.je-news-page .je-news-feature p{margin-bottom:22px;color:#687386;font-size:16px;line-height:1.75}
+.je-news-page .je-news-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:#8a94a6;font-size:12px;font-weight:500}
+.je-news-page .je-news-meta .dot{width:4px;height:4px;border-radius:50%;background:#ff5421;display:inline-block}
+.je-news-page .je-news-read{display:inline-flex;align-items:center;gap:8px;margin-top:24px;color:#ff5421;font-size:14px;font-weight:700}
+.je-news-page .je-news-read:hover{color:#21a7d0}
+.je-news-page .je-news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.je-news-page .je-news-card{height:100%;padding:25px;border-radius:12px;background:#fff;border:1px solid #e8edf3;box-shadow:0 10px 32px rgba(23,31,50,.055);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.je-news-page .je-news-card:hover{transform:translateY(-4px);border-color:#dbe3ed;box-shadow:0 18px 42px rgba(23,31,50,.10)}
+.je-news-page .je-news-card .category{display:inline-block;margin-bottom:13px;color:#21a7d0;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.je-news-page .je-news-card h3{margin-bottom:12px;font-size:21px;line-height:1.3}
+.je-news-page .je-news-card h3 a{color:#171f32}
+.je-news-page .je-news-card h3 a:hover{color:#ff5421}
+.je-news-page .je-news-card p{margin:0;color:#707b8d;font-size:14px;line-height:1.7}
+.je-news-page .je-news-card .je-news-read{margin-top:18px;font-size:13px}
+.je-news-page .je-news-empty{padding:35px;text-align:center;background:#fff;border:1px solid #e8edf3;border-radius:12px;color:#687386}
+@media(max-width:991px){.je-news-page .je-news-hero{padding:65px 0 58px}.je-news-page .je-news-hero-card{margin-top:30px}.je-news-page .je-news-filter{justify-content:flex-start;margin-top:18px}}
+@media(max-width:767px){.je-news-page .je-news-hero h1{font-size:40px}.je-news-page .je-news-hero .hero-copy{font-size:16px}.je-news-page .je-news-feature{padding:27px}.je-news-page .je-news-feature h2{font-size:28px}.je-news-page .je-news-grid{grid-template-columns:1fr}.je-news-page .je-news-toolbar{padding-top:28px}}
