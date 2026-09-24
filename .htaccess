@@ -18,6 +18,10 @@ RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$ [NC]
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]) [NC]
 RewriteRule ^(.+)\.php$ /$1 [R=301,L,NE]
 
+# Handle route/file collisions where an extensionless page name also exists as a directory.
+# /courses serves courses.php, while /courses/... continues to use the real directory.
+RewriteRule ^courses/?$ courses.php [L,QSA]
+
 # Internally resolve /page to /page.php when that PHP file exists.
 # Existing files and directories (assets, install, api, etc.) are left untouched.
 RewriteCond %{REQUEST_FILENAME} !-f
